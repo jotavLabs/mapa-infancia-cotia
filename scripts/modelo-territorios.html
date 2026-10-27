@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conferir territórios</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+      integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+  :root { --borda: #d9d6cc; --texto: #1d1d1b; --suave: #5b5a55; }
+  html, body { margin: 0; height: 100%; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--texto); background: #f7f6f2; }
+  body { display: flex; flex-direction: column; }
+  header { padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--borda); }
+  header h1 { margin: 0; font-size: 1.05rem; }
+  header p { margin: 4px 0 0; color: var(--suave); }
+  .controles { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+  #mapa { flex: 1; }
+  .legenda { background: #fff; padding: 8px 10px; border-radius: 6px; box-shadow: 0 1px 4px #0003; line-height: 1.6; }
+  .legenda i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; border: 1px solid #0004; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Conferir territórios — Mapa Infância Cotia</h1>
+  <p>Setores do Censo 2022 coloridos pelo território atribuído. Contorno vermelho = setor de fronteira duvidoso. Clique num setor para ver os detalhes. Gerado em {{HOJE}}.</p>
+  <div class="controles">
+    <label>Mapa do PMAS por cima: <input type="range" id="opacidade" min="0" max="1" step="0.05" value="0"></label>
+    <label><input type="checkbox" id="so-duvidas"> Só setores duvidosos</label>
+  </div>
+</header>
+<div id="mapa"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+        integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+const SETORES = /*SETORES*/null;
+const CANTOS = /*CANTOS*/null;
+const CORES = /*CORES*/null;
+const NOMES = /*NOMES*/null;
+
+const mapa = L.map("mapa");
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+}).addTo(mapa);
+
+const estilo = (f) => ({
+  color: f.properties.d ? "#dc2626" : "#ffffff", weight: f.properties.d ? 2 : 0.6,
+  fillColor: CORES[f.properties.t], fillOpacity: 0.55,
+});
+let camada = L.geoJSON(SETORES, {
+  style: estilo,
+  onEachFeature: (f, l) => {
+    const p = f.properties;
+    l.bindPopup(`<strong>Setor ${p.CD_SETOR}</strong><br>Território: ${NOMES[p.t]}<br>Como: ${p.m}<br>Moradores: ${p.pop < 0 ? "sigilo ou sem dado" : p.pop}`);
+  },
+}).addTo(mapa);
+mapa.fitBounds(camada.getBounds());
+
+const pmas = L.imageOverlay("data:image/png;base64,{{PNG}}", [CANTOS[1], CANTOS[0]].map((c) => c), { opacity: 0 }).addTo(mapa);
+pmas.setBounds(L.latLngBounds([CANTOS[1][0], CANTOS[0][1]], [CANTOS[0][0], CANTOS[1][1]]));
+document.getElementById("opacidade").oninput = (e) => pmas.setOpacity(+e.target.value);
+document.getElementById("so-duvidas").onchange = (e) => {
+  camada.eachLayer((l) => {
+    const d = l.feature.properties.d;
+    l.setStyle(e.target.checked && !d ? { fillOpacity: 0, opacity: 0 } : { ...estilo(l.feature), opacity: 1 });
+  });
+};
+
+const leg = L.control({ position: "bottomright" });
+leg.onAdd = () => {
+  const div = L.DomUtil.create("div", "legenda");
+  div.innerHTML = Object.entries(NOMES).map(([k, v]) => `<div><i style="background:${CORES[k]}"></i>${k}. ${v}</div>`).join("");
+  return div;
+};
+leg.addTo(mapa);
+</script>
+</body>
+</html>

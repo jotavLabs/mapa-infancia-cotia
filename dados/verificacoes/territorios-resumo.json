@@ -1,0 +1,22 @@
+{
+ "data": "2026-10-27",
+ "setores": 754,
+ "iou": 0.957,
+ "rotacao_graus": -1.65,
+ "residuos_px": {
+  "norte": 3.0,
+  "sul": 23.5,
+  "oeste": 2.8,
+  "leste": 4.1
+ },
+ "m_por_px": 60.2,
+ "soma_setores": 274163,
+ "populacao_oficial": 274413,
+ "moradores_em_sigilo": 250,
+ "setores_sigilo": 19,
+ "setores_sem_dado": 14,
+ "setores_miolo": 16,
+ "pop_miolo": 4725,
+ "setores_cor_do_setor": 12,
+ "setores_duvidosos": 60
+}

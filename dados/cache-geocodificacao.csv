@@ -1,0 +1,137 @@
+consulta,lat,lon,tipo,nome_encontrado,data
+"APAE Cotia, Cotia, SP",,,,,2026-10-19
+"Rua Euricledes Formiga, 50, Cotia, SP",-23.5985669,-46.8802330,road,"Rua Euricledes Formiga, Jardim Claúdio, Paisagem Renoir, Cotia, São Paulo, Região Sudeste, 06714-300, Brasil",2026-10-19
+"CEFOR I Centro de Fisioterapia e Ortopedia, Cotia, SP",,,,,2026-10-19
+"Avenida Vasco Massafeli, 605, Cotia, SP",-23.5990993,-46.9075868,road,"Avenida Vasco Massafeli, Vila Santo Antônio do Portão, Jardim Rosalina, Cotia, São Paulo, Região Sudeste, 06716-737, Brasil",2026-10-19
+"CEFOR V Centro de Fisioterapia Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Av. Roque Celestino Pires, 730, Cotia, SP",-23.6857761,-47.0212759,road,"Avenida Roque Celestino Pires, Jardim São Luiz, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-105, Brasil",2026-10-19
+"UBS Arco Íris, Cotia, SP",,,,,2026-10-19
+"Estrada Velha da Olaria, 2400, Cotia, SP",-23.6238234,-46.9363296,road,"Estrada Velha da Olaria, Jardim Panorama, Jardim Arco Iris, Cotia, São Paulo, Região Sudeste, 06719-076, Brasil",2026-10-19
+"UBS Assa, Cotia, SP",,,,,2026-10-19
+"Rua Santo Antônio, 406, Cotia, SP",-23.5948872,-46.8404506,office,"ASSA - Assistência Social Santo Antônio, 406, Rua Santo Antônio, Vila Santo Antônio, Cotia, São Paulo, Região Sudeste, 06708-370, Brasil",2026-10-19
+"UBS Atalaia Dr. Mário Aguiar Filho, Cotia, SP",,,,,2026-10-19
+"Demétrio Calfat, 300, Cotia, SP",-23.6093410,-46.9479264,road,"Rua Demétrio Calfat, Atalaia, Cotia, São Paulo, Região Sudeste, 06700-595, Brasil",2026-10-19
+"UBS Cachoeira, Cotia, SP",-23.7339642,-47.0480439,amenity,"Unidade Básica de Saúde Cachoeira, Estrada Municipal da Cachoeira, Cachoeira, Ibiúna, São Paulo, Região Sudeste, 06722-555, Brasil",2026-10-19
+"Estrada da Cachoeira, s/n, Cotia, SP",-23.7940691,-46.9712052,road,"Estrada da Cachoeira, Caucaia do Alto, São Lourenço da Serra, São Paulo, Região Sudeste, Brasil",2026-10-19
+"UBS Caputera, Cotia, SP",,,,,2026-10-19
+"Estrada da Ressaca, 4520, Cotia, SP",-23.6723212,-46.8931006,road,"Estrada da Ressaca, Ressaca, Cotia, Itapecerica da Serra, São Paulo, Região Sudeste, 06724-100, Brasil",2026-10-19
+"UBS Caucaia do Alto, Cotia, SP",-23.6689324,-47.0215781,amenity,"Unidade Básica de Saúde Benedito Florêncio da  Costa, 105, Rua Urupema, Jardim dos Oliveiras, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06727-100, Brasil",2026-10-19
+"Av. Roque Celestino Pires, 1020, Cotia, SP",-23.6842340,-47.0208865,road,"Avenida Roque Celestino Pires, Jardim São Luiz, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"UBS Jardim Coimbra, Cotia, SP",-23.5976781,-46.9160366,amenity,"Unidade Básica de Saúde Turiguara, 10, Rua Natal, Jardim Estela Mari, Parque Turiguara, Cotia, São Paulo, Região Sudeste, 06703-190, Brasil",2026-10-19
+"Rua Azulão, 834, Cotia, SP",-23.5985894,-46.9116384,road,"Rua Azulão, Vila Santo Antônio do Portão, Jardim Cotia, Cotia, São Paulo, Região Sudeste, 06703-390, Brasil",2026-10-19
+"UBS Jardim Japão Alvaro Pedroso, Cotia, SP",,,,,2026-10-19
+"Rua Maria Quitéria, s/n, Cotia, SP",,,,,2026-10-19
+"UBS Jardim Petrópolis, Cotia, SP",-23.6230027,-46.9269227,amenity,"Unidade Básica de Saúde Jardim Petrópolis, 401, Rua Ameixeiras, Jardim Panorama, Jardim Petrópolis, Cotia, São Paulo, Região Sudeste, 06719-052, Brasil",2026-10-19
+"Rua das Ameixeiras, 401, Cotia, SP",-23.6230027,-46.9269227,amenity,"Unidade Básica de Saúde Jardim Petrópolis, 401, Rua Ameixeiras, Jardim Panorama, Jardim Petrópolis, Cotia, São Paulo, Região Sudeste, 06719-052, Brasil",2026-10-19
+"UBS Jardim Sandra, Cotia, SP",-23.6361754,-46.9525397,amenity,"Unidade Básica de Saúde Jardim Sandra, 1927, Estrada dos Fischer's, Jardim São Miguel Arcanjo, Jardim Sandra, Cotia, São Paulo, Região Sudeste, 06719-400, Brasil",2026-10-19
+"Estrada dos Fischers, s/n, Cotia, SP",,,,,2026-10-19
+"UBS Jardim São Miguel, Cotia, SP",-23.6330680,-46.9392101,amenity,"Unidade Básica de Saúde Jardim São Miguel, 187, Rua São Damião, Jardim São Miguel Arcanjo, Bairro das Graças, Cotia, São Paulo, Região Sudeste, 06719-380, Brasil",2026-10-19
+"Rua Santa Adelaide, 108, Cotia, SP",-23.6327235,-46.9361490,road,"Rua Santa Adelaide, Jardim São Miguel Arcanjo, Bairro das Graças, Cotia, São Paulo, Região Sudeste, 06719-050, Brasil",2026-10-19
+"UBS Jardim das Oliveiras Benedito Florêncio da Costa, Cotia, SP",,,,,2026-10-19
+"Rua Urupema, 105, Cotia, SP",-23.6689324,-47.0215781,amenity,"Unidade Básica de Saúde Benedito Florêncio da  Costa, 105, Rua Urupema, Jardim dos Oliveiras, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06727-100, Brasil",2026-10-19
+"UBS Jardim do Engenho, Cotia, SP",,,,,2026-10-19
+"Rua das Doninhas, 317, Cotia, SP",-23.6142557,-46.8346673,road,"Rua das Doninhas, Jardim do Engenho, Cotia, São Paulo, Região Sudeste, 06711-280, Brasil",2026-10-19
+"UBS Jd. São Vicente, Cotia, SP",,,,,2026-10-19
+"Estrada do Embu, 625, Cotia, SP",-23.5990387,-46.8579825,road,"Estrada do Embu, Jardim Torino, Granja Viana, Cotia, São Paulo, Região Sudeste, 06713-100, Brasil",2026-10-19
+"UBS Mendes, Cotia, SP",,,,,2026-10-19
+"Estrada dos Grilos, 105, Cotia, SP",-23.6883191,-47.0216287,amenity,"Paróquia Nossa Senhora Imaculada Conceição, 105, Rua José Manoel de Oliveira, Jardim São Luiz, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06727-187, Brasil",2026-10-19
+"UBS Miguel Mirizola, Cotia, SP",-23.5798301,-46.9206059,amenity,"Unidade Básica de Saúde Miguel Mirizola, 358, Rua Vicente Strifezzi, Parque Miguel Mirizola, Cotia, São Paulo, Região Sudeste, 06704-220, Brasil",2026-10-19
+"Rua Jorge Rizzo, 358, Cotia, SP",-23.5812867,-46.9200576,road,"Rua Jorge Rizzo, Parque Miguel Mirizola, Cotia, São Paulo, Região Sudeste, 06704-220, Brasil",2026-10-19
+"UBS Mirante da Mata, Cotia, SP",,,,,2026-10-19
+"Rua Francisco Alves, 78, Cotia, SP",-23.6148353,-46.9550177,road,"Rua Francisco Alves, Parque Mirante da Mata, Cotia, São Paulo, Região Sudeste, 06719-690, Brasil",2026-10-19
+"UBS Morro Grande, Cotia, SP",,,,,2026-10-19
+"Núcleo Residencial Sabesp, 14, Cotia, SP",,,,,2026-10-19
+"UBS Parque Alexandre, Cotia, SP",,,,,2026-10-19
+"Rua José de Andrade, 1287, Cotia, SP",-23.5959025,-46.8736267,road,"Rua José de Andrade, Jardim Claúdio, Residence Park, Cotia, São Paulo, Região Sudeste, 06714-190, Brasil",2026-10-19
+"UBS Parque São George, Cotia, SP",,,,,2026-10-19
+"Rua Karan, 606, Cotia, SP",-23.5956327,-46.8475815,road,"Rua Karan, Jardim Torino, Parque São Jorge, Cotia, São Paulo, Região Sudeste, 06708-230, Brasil",2026-10-19
+"UBS Parque Turiguara, Cotia, SP",-23.5976781,-46.9160366,amenity,"Unidade Básica de Saúde Turiguara, 10, Rua Natal, Jardim Estela Mari, Parque Turiguara, Cotia, São Paulo, Região Sudeste, 06703-190, Brasil",2026-10-19
+"Rua Natal, 10, Cotia, SP",-23.5976781,-46.9160366,amenity,"Unidade Básica de Saúde Turiguara, 10, Rua Natal, Jardim Estela Mari, Parque Turiguara, Cotia, São Paulo, Região Sudeste, 06703-190, Brasil",2026-10-19
+"UBS Portão, Cotia, SP",-23.5968843,-46.9043962,amenity,"Unidade Básica de Saúde Portão, 350, Avenida Vasco Massafeli, Vila Santo Antônio do Portão, Portão, Cotia, São Paulo, Região Sudeste, 06703-600, Brasil",2026-10-19
+"Avenida Vasco Massafeli, 350, Cotia, SP",-23.5967534,-46.9044925,amenity,"Unidade de Pronto Atendimento Portão, 350, Avenida Vasco Massafeli, Vila Santo Antônio do Portão, Portão, Cotia, São Paulo, Região Sudeste, 06703-600, Brasil",2026-10-19
+"UBS Recanto Suave Francisco de Paula Silva, Cotia, SP",,,,,2026-10-19
+"Rua Mendes Pimentel, s/n, Cotia, SP",-23.5959579,-46.8229012,road,"Rua Mendes Pimentel, Jardim Lambreta, Jardim Rebelato, Cotia, São Paulo, Região Sudeste, 06710-500, Brasil",2026-10-19
+"UBS Rio Cotia, Cotia, SP",-23.6043313,-46.8830166,amenity,"Unidade Básica de Saúde Rio Cotia, 12, Rua Pedro Rodrigues, Rio Cotia, Jardim Belizário, Cotia, São Paulo, Região Sudeste, 06715-770, Brasil",2026-10-19
+"Rua Pedro Rodrigues, 12, Cotia, SP",-23.6043313,-46.8830166,amenity,"Unidade Básica de Saúde Rio Cotia, 12, Rua Pedro Rodrigues, Rio Cotia, Jardim Belizário, Cotia, São Paulo, Região Sudeste, 06715-770, Brasil",2026-10-19
+"UBS Santa Ângela, Cotia, SP",,,,,2026-10-19
+"Rua Francisco Pereira a Filho, 1511, Cotia, SP",,,,,2026-10-19
+"UBS Água Espraiada, Cotia, SP",,,,,2026-10-19
+"Estrada Água Espraiada, s/n, Cotia, SP",-23.6465680,-47.0528068,road,"Estrada da Água Espraiada, Água Espraiada, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06739-548, Brasil",2026-10-19
+"Clínica da Mulher, Cotia, SP",,,,,2026-10-19
+"Av. Professor Manuel José Pedroso, 843, Cotia, SP",,,,,2026-10-19
+"Policlínica Portão Antônio de Camargo, Cotia, SP",,,,,2026-10-19
+"Vasco Massafeli, 250, Cotia, SP",-23.5818333,-46.8876503,road,"Rua Vasco Massafeli, Parque Rincão, Cotia, São Paulo, Região Sudeste, 06705-490, Brasil",2026-10-19
+"Hospital Regional de Cotia, Cotia, SP",-23.6086712,-46.9202236,amenity,"Hospital de Regional Cotia, 171, Avenida Doutor Odair Pacheco Pedroso, Jardim Normura, Jardim Monte Santo, Cotia, São Paulo, Região Sudeste, 06717-100, Brasil",2026-10-19
+"Av. Dr. Odair Pacheco Pedroso, 171, Cotia, SP",-23.6086712,-46.9202236,amenity,"Hospital de Regional Cotia, 171, Avenida Doutor Odair Pacheco Pedroso, Jardim Normura, Jardim Monte Santo, Cotia, São Paulo, Região Sudeste, 06717-100, Brasil",2026-10-19
+"CAPS II Cotia Adulto, Cotia, SP",,,,,2026-10-19
+"Rua Topázio, 96, Cotia, SP",-23.6079856,-46.9157743,amenity,"Centro de Atenção Psicossocial III Cotia Adulto, 96, Rua Topázio, Jardim Normura, Recanto dos Victors, Cotia, São Paulo, Região Sudeste, 06717-235, Brasil",2026-10-19
+"CAPS Infantil, Cotia, SP",,,,,2026-10-19
+"Rua Topázio, 159, Cotia, SP",-23.6071987,-46.9153266,road,"Rua Topázio, Jardim Normura, Recanto dos Victors, Cotia, São Paulo, Região Sudeste, 06717-235, Brasil",2026-10-19
+"CAPS Álcool e Drogas Dr. João Olavo do Canto Neto, Cotia, SP",,,,,2026-10-19
+"Rua Topázio, 318, Cotia, SP",-23.6071987,-46.9153266,road,"Rua Topázio, Jardim Normura, Recanto dos Victors, Cotia, São Paulo, Região Sudeste, 06717-235, Brasil",2026-10-19
+"PSI Pronto Socorro Infantil, Cotia, SP",,,,,2026-10-19
+"Rua Engenheiro Leon Psanquevich, 269, Cotia, SP",-23.6038354,-46.9232730,road,"Rua Engenheiro Leon Psanquevich, Jardim Dinorah, Vila Mont Serrat, Cotia, São Paulo, Região Sudeste, 06717-195, Brasil",2026-10-19
+"Pronto Atendimento Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Pronto Atendimento Parque São George, Cotia, SP",,,,,2026-10-19
+"Av. Denne, 111, Cotia, SP",-23.5973224,-46.8468291,road,"Avenida Denne, Jardim Torino, Parque São Jorge, Cotia, São Paulo, Região Sudeste, 06708-230, Brasil",2026-10-19
+"UPA Atalaia Dra. Rita de Cássia Sorio, Cotia, SP",,,,,2026-10-19
+"Estrada do Morro Grande, 326, Cotia, SP",-23.6076046,-46.9467030,amenity,"Unidade de Pronto Atendimento Atalaia, 326, Estrada do Morro Grande, Atalaia, Cotia, São Paulo, Região Sudeste, 06700-620, Brasil",2026-10-19
+"São Luiz, 189, Parque Turiguara, Cotia, SP",-23.5940706,-46.9154042,road,"Rua São Luiz, Jardim Estela Mari, Parque Turiguara, Cotia, São Paulo, Região Sudeste, 06703-190, Brasil",2026-10-19
+"São Luiz, 189, Cotia, SP",-23.6930426,-47.0209717,quarter,"Jardim São Luiz, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-025, Brasil",2026-10-19
+"06703-310, Cotia, SP",-23.5929722,-46.8048179,road,"Rodovia Raposo Tavares, Conjunto Promorar Raposo Tavares, Chácara Everest, Raposo Tavares, São Paulo, Região Sudeste, 06149-120, Brasil",2026-10-19
+"Oito de Dezembro, 520, Centro Caucaia do Alto, Cotia, SP",-23.6822020,-47.0205499,road,"Travessa Oito de Dezembro, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"Oito de Dezembro, 520, Cotia, SP",-23.6822020,-47.0205499,road,"Travessa Oito de Dezembro, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"06727-195, Cotia, SP",-23.5954191,-46.9213203,road,"Rodovia Coronel PM Nelson Tranchesi, Jardim Dinorah, Vila Clara, Cotia, São Paulo, Região Sudeste, 06702-155, Brasil",2026-10-19
+"CRAS Jardim Japão, Cotia, SP",,,,,2026-10-19
+"Rua Frézia, 60, Jardim Japão, Cotia, SP",,,,,2026-10-19
+"Rua Frézia, 60, Cotia, SP",,,,,2026-10-19
+"CRAS Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Benedito Ferreira das Dores, 289, Vila Santa Catarina, Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Benedito Ferreira das Dores, 289, Cotia, SP",-23.6806211,-47.0193544,road,"Rua Benedito Ferreira das Dores, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"CRAS Miguel Mirizola, Cotia, SP",-23.5797321,-46.9202818,amenity,"Centro de Referência de Assistência Social Mirizola, 131, Rua Vicente Strifezzi, Parque Miguel Mirizola, Cotia, São Paulo, Região Sudeste, 06704-220, Brasil",2026-10-19
+"CRAS Central (Monte Serrat), Cotia, SP",,,,,2026-10-19
+"Avenida Professor Manoel José Pedroso, 1565, Jardim Nomura, Cotia, SP",,,,,2026-10-19
+"Avenida Professor Manoel José Pedroso, 1565, Cotia, SP",-23.6056212,-46.9142104,road,"Avenida Professor Manoel José Pedroso, Jardim Normura, Parque Bahia, Cotia, São Paulo, Região Sudeste, 06717-235, Brasil",2026-10-19
+"CRAS Jardim Arco-Íris, Cotia, SP",,,,,2026-10-19
+"Avenida Marabás, 700, Jardim Arco-Íris, Cotia, SP",,,,,2026-10-19
+"Avenida Marabás, 700, Cotia, SP",,,,,2026-10-19
+"CRAS Caputera, Cotia, SP",,,,,2026-10-19
+"Estrada Municipal do Caputera, 4500, Caputera, Cotia, SP",,,,,2026-10-19
+"Estrada Municipal do Caputera, 4500, Cotia, SP",,,,,2026-10-19
+"Conselho Tutelar de Cotia, Cotia, SP",,,,,2026-10-19
+"Rua Jorge Caixe, 306, Jardim Nomura, Cotia, SP",-23.6027286,-46.9073663,building,"Centro Administrativo de Cotia, 306, Rua Jorge Caixe, Vila Santo Antônio do Portão, Portão, Cotia, São Paulo, Região Sudeste, 06716-737, Brasil",2026-10-19
+"Conselho Tutelar de Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Benedito Pires da Silva Sobrinho, 157, Jardim Planalto, Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Benedito Pires da Silva Sobrinho, 157, Cotia, SP",,,,,2026-10-19
+"CREAS Cotia, Cotia, SP",,,,,2026-10-19
+"Unidade Avançada do CREAS Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Frezia, 60, Cotia, SP",,,,,2026-10-19
+"Rua Frezia, Jardim Japão, Cotia",,,,,2026-10-19
+"Avenida Marabás, Cotia, SP",,,,,2026-10-19
+"Avenida dos Marabás, Cotia, SP",,,,,2026-10-19
+"Marabás, Jardim Arco Íris, Cotia",,,,,2026-10-19
+"Estrada do Caputera, Cotia, SP",-23.6914633,-46.9099913,road,"Estrada do Caputera, Jardim Samambaia, Cotia, Itapecerica da Serra, São Paulo, Região Sudeste, 06724-100, Brasil",2026-10-19
+"Estrada Municipal do Caputera, Cotia",,,,,2026-10-19
+"Estrada da Ressaca, Caputera, Cotia",,,,,2026-10-19
+"Rua Benedito Pires da Silva Sobrinho, Cotia, SP",,,,,2026-10-19
+"Benedito Pires da Silva Sobrinho, Caucaia do Alto, Cotia",,,,,2026-10-19
+"Rua Benedito Ferreira das Dores, Caucaia do Alto, Cotia",-23.6806211,-47.0193544,road,"Rua Benedito Ferreira das Dores, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"Rua Oito de Dezembro, 520, Cotia, SP",-23.6831670,-47.0228965,road,"Rua Oito de Dezembro, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"Rua Oito de Dezembro, Caucaia do Alto, Cotia",-23.6825055,-47.0200359,road,"Rua Oito de Dezembro, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"Rua São Luiz, 189, Parque Turiguara, Cotia",-23.5940706,-46.9154042,road,"Rua São Luiz, Jardim Estela Mari, Parque Turiguara, Cotia, São Paulo, Região Sudeste, 06703-190, Brasil",2026-10-19
+"Rua São Luiz, Cotia, SP",-23.5940706,-46.9154042,road,"Rua São Luiz, Jardim Estela Mari, Parque Turiguara, Cotia, São Paulo, Região Sudeste, 06703-190, Brasil",2026-10-19
+"Avenida Professor Manoel José Pedroso, Cotia, SP",-23.6056212,-46.9142104,road,"Avenida Professor Manoel José Pedroso, Jardim Normura, Parque Bahia, Cotia, São Paulo, Região Sudeste, 06717-235, Brasil",2026-10-19
+"Estrada Municipal do Caputera, Caputera, Cotia, SP",,,,,2026-10-19
+"Estrada Municipal do Caputera, Cotia, SP",,,,,2026-10-19
+"Caputera, Cotia, SP",-23.6914633,-46.9099913,road,"Estrada do Caputera, Jardim Samambaia, Cotia, Itapecerica da Serra, São Paulo, Região Sudeste, 06724-100, Brasil",2026-10-19
+"Avenida Marabás, Jardim Arco-Íris, Cotia, SP",,,,,2026-10-19
+"Jardim Arco-Íris, Cotia, SP",-23.6225175,-46.9357593,suburb,"Jardim Arco Iris, Cotia, São Paulo, Região Sudeste, 06719-076, Brasil",2026-10-19
+"Rua Frézia, Jardim Japão, Cotia, SP",,,,,2026-10-19
+"Rua Frézia, Cotia, SP",,,,,2026-10-19
+"Jardim Japão, Cotia, SP",-23.6645771,-47.0740279,suburb,"Jardim Japão, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-010, Brasil",2026-10-19
+"Rua Benedito Pires da Silva Sobrinho, Jardim Planalto, Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Jardim Planalto, Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Benedito Ferreira das Dores, Vila Santa Catarina, Caucaia do Alto, Cotia, SP",,,,,2026-10-19
+"Rua Benedito Ferreira das Dores, Cotia, SP",-23.6806211,-47.0193544,road,"Rua Benedito Ferreira das Dores, Centro, Caucaia do Alto, Cotia, São Paulo, Região Sudeste, 06725-110, Brasil",2026-10-19
+"Avenida Professor Manoel José Pedroso, Jardim Nomura, Cotia, SP",,,,,2026-10-19
+"Caucaia do Alto, Cotia, SP",-23.7149599,-47.0082925,city_district,"Caucaia do Alto, Cotia, São Paulo, Região Sudeste, Brasil",2026-10-19

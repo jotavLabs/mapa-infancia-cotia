@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metodologia — Mapa Infância Cotia</title>
+  <meta name="description" content="De onde vem cada dado do Mapa Infância Cotia, quando foi coletado, como os territórios foram desenhados e o que os números não mostram.">
+  <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/atkinson-next-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilo.css?v=7">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="marca">
+      <p class="sobretitulo">Cotia (SP) · 7 territórios de CRAS</p>
+      <p style="margin:2px 0 0"><a href="index.html" style="text-decoration:none"><span style="font-family:var(--fonte-titulo);font-stretch:118%;font-weight:800;font-size:clamp(1.25rem, .9rem + 1.1vw, 1.75rem);line-height:1.05">Mapa Infância Cotia</span></a></p>
+    </div>
+    <p class="lede">Fontes, datas, método e limitações.</p>
+    <nav class="nav-topo" aria-label="Seções">
+      <a href="index.html">Mapa</a>
+      <a href="index.html#comparar">Comparar territórios</a>
+      <a href="index.html#dados">Baixar dados</a>
+    </nav>
+  </header>
+
+  <main class="texto-longo" id="conteudo">
+    <p class="sobretitulo">Dados atualizados em 27/10/2026</p>
+    <h1>Metodologia</h1>
+    <p>O mapa junta dados públicos sobre os equipamentos de saúde, educação infantil, assistência social e proteção que atendem as crianças de Cotia, e a população de cada um dos 7 territórios de CRAS. Esta página diz de onde veio cada dado, quando ele foi coletado, como os territórios foram desenhados e o que os números não mostram.</p>
+
+    <h2 id="o-que-mostra">O que o mapa mostra</h2>
+    <table>
+      <thead><tr><th>Camada</th><th class="num">Equipamentos</th><th>Fonte</th></tr></thead>
+      <tbody>
+        <tr><td>UBS (atenção básica)</td><td class="num">26</td><td>CNES</td></tr>
+        <tr><td>Urgência e emergência</td><td class="num">4</td><td>CNES</td></tr>
+        <tr><td>Hospital</td><td class="num">1</td><td>CNES</td></tr>
+        <tr><td>Saúde mental (CAPS)</td><td class="num">3</td><td>CNES</td></tr>
+        <tr><td>Atenção especializada</td><td class="num">2</td><td>CNES</td></tr>
+        <tr><td>Reabilitação</td><td class="num">3</td><td>CNES</td></tr>
+        <tr><td>Creches e pré-escolas</td><td class="num">82</td><td>INEP</td></tr>
+        <tr><td>CRAS e CREAS</td><td class="num">9</td><td>Prefeitura de Cotia</td></tr>
+        <tr><td>Conselhos Tutelares</td><td class="num">2</td><td>Prefeitura de Cotia</td></tr>
+        <tr><td><strong>Total</strong></td><td class="num"><strong>132</strong></td><td></td></tr>
+      </tbody>
+    </table>
+    <p>Na saúde entram só as unidades públicas em atividade, mais a APAE Cotia, que é conveniada ao SUS e aparece como conveniada. Ficam de fora vigilâncias, SAMU, farmácias, regulação, a Secretaria de Saúde, medicina do trabalho e o serviço de verificação de óbito. Na educação entram as escolas públicas em atividade com matrícula de creche ou de pré-escola no Censo Escolar 2025, mais as privadas conveniadas com o poder público (1 em Cotia).</p>
+    <p><strong>Crianças</strong> são as pessoas de 0 a 14 anos. A faixa de 15 a 19 anos aparece à parte, como adolescentes, porque o Censo 2022 não separa a faixa de 0 a 17 anos.</p>
+
+    <h2 id="fontes">Fontes e datas</h2>
+    <ul class="fontes">
+      <li><strong>CNES — Cadastro Nacional de Estabelecimentos de Saúde</strong>, API de dados abertos do Ministério da Saúde.
+        <a href="https://apidadosabertos.saude.gov.br/cnes/estabelecimentos?codigo_municipio=351300&amp;limit=20&amp;offset=0">apidadosabertos.saude.gov.br</a>
+        <span class="data">Coleta em 19/10/2026. Cada ponto tem a data da última atualização no CNES.</span></li>
+      <li><strong>Censo Escolar 2025 — microdados</strong>, INEP. Oferta de creche e de pré-escola, dependência administrativa e convênio.
+        <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar">gov.br/inep</a>
+        <span class="data">Coleta em 19/10/2026.</span></li>
+      <li><strong>Catálogo de Escolas</strong>, INEP. Endereço, telefone e coordenadas de cada escola, que deixaram de sair nos microdados de 2025.
+        <a href="https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/inep-data/catalogo-de-escolas">gov.br/inep</a>
+        <span class="data">Fichas lidas em 19/10/2026. 80 das 82 escolas têm coordenada no catálogo.</span></li>
+      <li><strong>Plano Municipal de Assistência Social 2026–2029</strong>, aprovado pela Resolução CMAS nº 298, de 14/05/2026. Mapa e lista de bairros dos 7 territórios de CRAS.
+        <a href="https://cotia.sp.gov.br/wp-content/uploads/2026/06/298-resolucao-cmas-aprova-o-plano-municipal-de-assistencia-social-2026-a-2029-.pdf">cotia.sp.gov.br</a>
+        <span class="data">Documento de 14/05/2026, coletado em 19/10/2026.</span></li>
+      <li><strong>Página da Secretaria de Desenvolvimento Social de Cotia</strong>. Endereços e telefones dos CRAS, dos CREAS e dos Conselhos Tutelares.
+        <a href="https://cotia.sp.gov.br/desenvolvimento-social-2025/">cotia.sp.gov.br</a>
+        <span class="data">Página modificada em 14/07/2026, coletada em 19/10/2026.</span></li>
+      <li><strong>Carta de Serviços ao Usuário</strong>, Prefeitura de Cotia. Usada para conferir endereços e para o número de vagas de acolhimento.
+        <a href="https://cotia.sp.gov.br/carta-de-servico-ao-usuario/">cotia.sp.gov.br</a>
+        <span class="data">Página modificada em 27/08/2025, coletada em 19/10/2026.</span></li>
+      <li><strong>Censo Demográfico 2022</strong>, IBGE. Malha de setores censitários e agregados de demografia por setor.
+        <a href="https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/">ftp.ibge.gov.br</a>
+        <span class="data">Coleta em 27/10/2026. Total oficial de Cotia: 274.413 moradores (<a href="https://apisidra.ibge.gov.br/values/t/4709/n6/3513009/v/93/p/2022">SIDRA, tabela 4709</a>).</span></li>
+      <li><strong>Contorno do município</strong>, API de malhas do IBGE.
+        <a href="https://servicodados.ibge.gov.br/api/v3/malhas/municipios/3513009?formato=application/vnd.geo%2Bjson&amp;qualidade=maxima">servicodados.ibge.gov.br</a>
+        <span class="data">Coleta em 19/10/2026.</span></li>
+      <li><strong>OpenStreetMap</strong>. Mapa-base e localização por endereço (Nominatim) dos pontos sem coordenada oficial.
+        <a href="https://www.openstreetmap.org/copyright">openstreetmap.org</a>
+        <span class="data">Consultas em outubro de 2026.</span></li>
+    </ul>
+
+    <h2 id="territorios">Como os territórios foram desenhados</h2>
+    <p>Cotia não tem limites de bairro oficiais: o IBGE não tem bairros cadastrados para o município, e não há lei de abairramento publicada. Os 7 territórios de CRAS do Plano Municipal de Assistência Social são a única divisão com mapa e lista de bairros. Mas o plano publica o mapa como imagem, sem o arquivo dos limites. Por isso os limites deste site são uma aproximação, refeita assim:</p>
+    <ol>
+      <li><strong>Encaixe do mapa oficial.</strong> O contorno de Cotia, formado pelos 754 setores do Censo 2022, foi ajustado sobre a mancha colorida do mapa do PMAS, com escala, rotação e deslocamento. A sobreposição entre os dois chegou a 95,7%. Nos extremos norte, oeste e leste do município, a diferença entre os dois contornos ficou em até 250 m; no extremo sul, em 1,4 km.</li>
+      <li><strong>Cor de cada setor.</strong> Cada setor censitário recebeu o território da cor que cai sob o seu ponto interno. Quando o ponto cai num texto ou numa borda do mapa, vale a cor que domina a área do setor (12 setores).</li>
+      <li><strong>Miolo sem CRAS.</strong> O mapa do PMAS deixa uma área em verde-pálido sem CRAS de referência, que inclui a Reserva do Morro Grande. Os 16 setores dessa área (4.725 moradores, 1,72% da população) foram para o território vizinho com quem dividem a maior fronteira, dentro do mesmo distrito do IBGE (Cotia ou Caucaia do Alto).</li>
+      <li><strong>Conferência.</strong> 60 setores ficaram marcados como fronteira duvidosa. Para os equipamentos, o bairro do endereço foi comparado com as listas de bairros do plano: em 11 dos 132 equipamentos, o bairro aparece na lista de outro território. Esses casos têm um aviso na ficha do ponto.</li>
+    </ol>
+
+    <h2 id="populacao">População</h2>
+    <p>A população vem dos agregados por setor censitário do Censo 2022: moradores (variável V01006) e as faixas de 0 a 4, 5 a 9, 10 a 14 e 15 a 19 anos (V01031 a V01034). Somados por território, os setores dão 274.163 moradores, contra 274.413 do total oficial. A diferença, de 250 moradores (0,09%), está nos 19 setores em que o IBGE omite os números para proteger o sigilo (menos de 5 domicílios). Esses setores ficam fora das contagens, e não são tratados como zero.</p>
+
+    <h2 id="comparacoes">Como as comparações são feitas</h2>
+    <p>Para cada território, divide-se o número de crianças de 0 a 14 anos pelo número de equipamentos de cada tipo que ficam dentro dele: UBS, CRAS e creches e pré-escolas. A média de Cotia é o total de crianças dividido pelo total de equipamentos daquele tipo. No mapa, a cor compara o território com essa média: perto da média (até 5% de diferença), de 5% a 20% e mais de 20% acima ou abaixo.</p>
+    <p>A mesma faixa de 0 a 14 anos é usada nos três tipos, para comparar com a mesma régua, embora a educação infantil atenda só crianças até 5 anos.</p>
+
+    <h2 id="pontos">Como cada ponto foi localizado</h2>
+    <table>
+      <thead><tr><th>Origem da coordenada</th><th class="num">Pontos</th></tr></thead>
+      <tbody>
+        <tr><td>CNES (inclui o CRAS KM 21, que funciona numa sala da UBS Jardim Santa Ângela)</td><td class="num">40</td></tr>
+        <tr><td>Catálogo de Escolas do INEP</td><td class="num">80</td></tr>
+        <tr><td>Endereço localizado no OpenStreetMap (Nominatim), só com resultado no prédio ou no número</td><td class="num">2</td></tr>
+        <tr><td>Localização aproximada, ainda não conferida</td><td class="num">10</td></tr>
+      </tbody>
+    </table>
+    <p>Os pontos com localização aproximada aparecem no mapa com um contorno tracejado. Neles, o endereço está confirmado, mas o número não existe no OpenStreetMap: o ponto fica no meio da rua, no centro do bairro ou num equipamento vizinho, e a ficha diz qual foi o caso.</p>
+
+    <h2 id="verificacao">Verificação dos endereços de assistência e proteção</h2>
+    <p>Um endereço conta como confirmado quando aparece numa fonte oficial com data de 2025 ou depois: prefeitura, CMDCA, Ministério Público, Judiciário ou governo. Quando duas fontes oficiais divergem, vale a mais recente e as duas ficam registradas. Fontes não oficiais, como guias comerciais e redes sociais, não confirmam endereço.</p>
+    <p>Os 7 CRAS, os 2 CREAS e os 2 Conselhos Tutelares estão confirmados. Em páginas fixas da prefeitura, a data considerada é a da última modificação da página, porque o site não informa quando cada trecho foi alterado. Divergências encontradas:</p>
+    <ul>
+      <li>O CRAS de Caucaia do Alto e a unidade avançada do CREAS mudaram em 30/05/2026 para a Rua Benedito Ferreira das Dores, 289. O plano de 2026 ainda traz o endereço anterior.</li>
+      <li>O CREAS Cotia fica na Avenida Professor Manoel José Pedroso, 1565. A Carta de Serviços ainda traz um endereço antigo.</li>
+      <li>Os telefones do CRAS Central e do CRAS Mirizola na página da Secretaria diferem dos que estão no plano de 2026; vale o da página, mais recente.</li>
+    </ul>
+
+    <h2 id="fora">O que fica fora do mapa</h2>
+    <ul>
+      <li>Os serviços de acolhimento institucional de crianças e adolescentes. Cotia tem 2 unidades, com 60 vagas no total, e a prefeitura mantém os endereços em sigilo para proteger quem é acolhido.</li>
+      <li>Escolas privadas sem convênio com o poder público e serviços privados de saúde.</li>
+      <li>Escolas de ensino fundamental, cobertura vacinal e mortalidade infantil, que ficam para uma próxima versão.</li>
+    </ul>
+
+    <h2 id="limitacoes">Limitações</h2>
+    <ul>
+      <li>Os limites dos territórios são uma aproximação do mapa oficial, montada a partir de setores censitários.</li>
+      <li>A população é a do Censo 2022. Áreas que cresceram depois aparecem com menos moradores do que têm hoje.</li>
+      <li>Os 19 setores em sigilo (250 moradores) ficam fora das contagens por território.</li>
+      <li>Contar equipamentos não mede qualidade, equipe, horário nem fila.</li>
+      <li>O CNES depende do que a prefeitura declara ao Ministério da Saúde.</li>
+      <li>A Secretaria de Saúde de Cotia usa outra divisão interna, que não coincide com os territórios de CRAS.</li>
+      <li>Equipamentos perto de uma fronteira atendem também quem mora no território vizinho; a conta por território não capta isso.</li>
+      <li>As distâncias da busca por endereço são em linha reta, não pelo caminho das ruas.</li>
+    </ul>
+
+    <h2 id="privacidade">Privacidade</h2>
+    <p>O site não usa cookies nem ferramentas de rastreamento. As fontes tipográficas ficam no próprio site. A busca por endereço envia o texto digitado ao Nominatim, serviço da Fundação OpenStreetMap; a opção “Usar minha localização” calcula as distâncias no próprio navegador e não envia a posição a lugar nenhum. O mapa-base é carregado dos servidores do OpenStreetMap.</p>
+
+    <h2 id="refazer">Dados e reprodução</h2>
+    <p>Os dados do mapa podem ser baixados na <a href="index.html#dados">página principal</a>, com fonte e data de coleta em cada linha. Os scripts que baixam, conferem e montam os dados, e os relatórios de cada verificação, ficam no <a href="https://github.com/jotavLabs/mapa-infancia-cotia">repositório do projeto no GitHub</a>, com a ordem de execução no README.</p>
+  </main>
+
+  <footer class="rodape">
+    <p>Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia. Mapa-base © colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Sem cookies e sem rastreamento.</p>
+    <p><a href="index.html">Voltar ao mapa</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+ "data": "2026-10-27",
+ "total": 132,
+ "por_camada": {
+  "saude_atencao_basica": 26,
+  "saude_urgencia": 4,
+  "saude_hospital": 1,
+  "saude_mental": 3,
+  "saude_especializada": 2,
+  "reabilitacao": 3,
+  "educacao_infantil": 82,
+  "assistencia_social": 9,
+  "protecao": 2
+ },
+ "por_origem": {
+  "inep": 80,
+  "cnes": 40,
+  "pendente": 10,
+  "nominatim": 2
+ },
+ "por_gestao": {
+  "municipal": 129,
+  "conveniada": 2,
+  "estadual": 1
+ },
+ "divergencias_bairro": 11,
+ "nao_confirmados": 0
+}

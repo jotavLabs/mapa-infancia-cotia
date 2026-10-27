@@ -1,0 +1,755 @@
+CD_SETOR,SITUACAO,NM_DIST,territorio,metodo,classe_ponto,partilha_ponto,classe_poligono,partilha_poligono,V01006,V01031,V01032,V01033,V01034,sigilo,sem_dado,fronteira_duvidosa
+351300905000001,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,302.0,14.0,12.0,18.0,22.0,False,False,False
+351300905000002,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,337.0,18.0,17.0,21.0,31.0,False,False,False
+351300905000003,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,271.0,14.0,13.0,20.0,13.0,False,False,False
+351300905000004,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,336.0,11.0,11.0,15.0,13.0,False,False,False
+351300905000006,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,295.0,13.0,10.0,22.0,19.0,False,False,False
+351300905000018,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,682.0,36.0,45.0,54.0,42.0,False,False,False
+351300905000020,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,604.0,24.0,38.0,35.0,41.0,False,False,False
+351300905000021,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,386.0,14.0,32.0,23.0,22.0,False,False,False
+351300905000026,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,860.0,51.0,63.0,55.0,56.0,False,False,False
+351300905000029,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,916.0,83.0,73.0,57.0,70.0,False,False,False
+351300905000031,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.95,558.0,23.0,25.0,27.0,33.0,False,False,False
+351300905000036,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,0.95,610.0,30.0,40.0,42.0,48.0,False,False,False
+351300905000038,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,0.98,650.0,31.0,45.0,53.0,30.0,False,False,False
+351300905000045,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,0.91,876.0,84.0,95.0,88.0,75.0,False,False,False
+351300905000048,Urbana,Cotia,3,cor sob o ponto interno,3,0.69,3,0.83,774.0,54.0,47.0,53.0,55.0,False,False,False
+351300905000054,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,281.0,9.0,6.0,12.0,13.0,False,False,False
+351300905000055,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,365.0,14.0,19.0,17.0,20.0,False,False,False
+351300905000061,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,669.0,39.0,44.0,47.0,60.0,False,False,False
+351300905000070,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,718.0,34.0,46.0,39.0,40.0,False,False,False
+351300905000074,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,423.0,26.0,18.0,33.0,41.0,False,False,False
+351300905000075,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,213.0,9.0,17.0,10.0,11.0,False,False,False
+351300905000078,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,0.92,886.0,76.0,83.0,68.0,81.0,False,False,False
+351300905000083,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,651.0,42.0,46.0,44.0,52.0,False,False,False
+351300905000085,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,791.0,57.0,53.0,48.0,55.0,False,False,False
+351300905000093,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,1037.0,69.0,86.0,87.0,73.0,False,False,False
+351300905000104,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,761.0,36.0,51.0,35.0,48.0,False,False,False
+351300905000106,Urbana,Cotia,5,cor sob o ponto interno,5,0.57,5,0.61,334.0,16.0,28.0,25.0,25.0,False,False,True
+351300905000108,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,804.0,54.0,54.0,49.0,52.0,False,False,False
+351300905000110,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,502.0,30.0,31.0,22.0,30.0,False,False,False
+351300905000120,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,661.0,51.0,47.0,43.0,45.0,False,False,False
+351300905000126,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,True,False,False
+351300905000127,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,True,False,False
+351300905000133,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,809.0,29.0,42.0,67.0,46.0,False,False,False
+351300905000134,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,702.0,25.0,38.0,52.0,43.0,False,False,False
+351300905000136,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,459.0,22.0,26.0,22.0,24.0,False,False,False
+351300905000137,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,376.0,16.0,23.0,16.0,15.0,False,False,False
+351300905000138,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,436.0,15.0,12.0,22.0,24.0,False,False,False
+351300905000142,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,474.0,28.0,31.0,18.0,24.0,False,False,False
+351300905000143,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,330.0,7.0,9.0,9.0,13.0,False,False,False
+351300905000145,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,125.0,5.0,5.0,,8.0,False,False,False
+351300905000149,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,372.0,14.0,12.0,18.0,30.0,False,False,False
+351300905000156,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,0,0.0,329.0,44.0,34.0,25.0,47.0,False,False,False
+351300905000160,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,True,False,False
+351300905000165,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,514.0,32.0,36.0,29.0,31.0,False,False,False
+351300905000170,Urbana,Cotia,4,cor sob o ponto interno,4,0.79,4,0.86,560.0,30.0,32.0,34.0,39.0,False,False,False
+351300905000171,Urbana,Cotia,3,cor sob o ponto interno,3,0.73,3,1.0,485.0,36.0,36.0,32.0,29.0,False,False,False
+351300905000174,Urbana,Cotia,4,cor sob o ponto interno,4,0.8,4,0.69,271.0,17.0,29.0,17.0,23.0,False,False,False
+351300905000176,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,858.0,58.0,52.0,52.0,40.0,False,False,False
+351300905000178,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,183.0,8.0,13.0,13.0,11.0,False,False,False
+351300905000180,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,717.0,40.0,57.0,48.0,58.0,False,False,False
+351300905000181,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,658.0,34.0,37.0,42.0,46.0,False,False,False
+351300905000186,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,483.0,21.0,35.0,36.0,35.0,False,False,False
+351300905000187,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,272.0,11.0,17.0,23.0,20.0,False,False,False
+351300905000191,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,289.0,9.0,18.0,23.0,17.0,False,False,False
+351300905000193,Urbana,Cotia,4,cor sob o ponto interno,4,0.4,4,0.36,603.0,41.0,61.0,32.0,33.0,False,False,True
+351300905000195,Urbana,Cotia,6,cor sob o ponto interno,6,0.85,6,1.0,242.0,13.0,30.0,8.0,16.0,False,False,False
+351300905000196,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,496.0,27.0,46.0,37.0,34.0,False,False,False
+351300905000200,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,316.0,23.0,23.0,24.0,11.0,False,False,False
+351300905000208,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,558.0,28.0,63.0,59.0,31.0,False,False,False
+351300905000209,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,351.0,23.0,22.0,29.0,31.0,False,False,False
+351300905000216,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,748.0,49.0,43.0,56.0,51.0,False,False,False
+351300905000217,Urbana,Cotia,4,cor sob o ponto interno,4,0.95,4,0.82,473.0,26.0,27.0,34.0,34.0,False,False,False
+351300905000218,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,238.0,6.0,14.0,14.0,12.0,False,False,False
+351300905000219,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,405.0,15.0,37.0,33.0,21.0,False,False,False
+351300905000220,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,683.0,31.0,46.0,41.0,63.0,False,False,False
+351300905000221,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,214.0,10.0,19.0,13.0,11.0,False,False,False
+351300905000222,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,381.0,26.0,18.0,36.0,32.0,False,False,False
+351300905000223,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,512.0,23.0,43.0,28.0,30.0,False,False,False
+351300905000224,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,416.0,17.0,22.0,27.0,39.0,False,False,False
+351300905000225,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,365.0,19.0,15.0,25.0,27.0,False,False,False
+351300905000230,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,445.0,44.0,37.0,32.0,32.0,False,False,False
+351300905000231,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,821.0,52.0,59.0,66.0,67.0,False,False,False
+351300905000232,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,265.0,5.0,10.0,11.0,12.0,False,False,False
+351300905000233,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,324.0,18.0,20.0,14.0,21.0,False,False,False
+351300905000234,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,159.0,4.0,7.0,,4.0,False,False,False
+351300905000235,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,553.0,25.0,26.0,36.0,39.0,False,False,False
+351300905000236,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.96,672.0,45.0,68.0,46.0,46.0,False,False,False
+351300905000237,Urbana,Cotia,4,cor sob o ponto interno,4,0.91,4,0.9,503.0,28.0,39.0,34.0,36.0,False,False,False
+351300905000238,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,493.0,22.0,34.0,29.0,28.0,False,False,False
+351300905000239,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,513.0,24.0,37.0,31.0,26.0,False,False,False
+351300905000240,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,657.0,29.0,40.0,42.0,58.0,False,False,False
+351300905000241,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,764.0,39.0,44.0,49.0,48.0,False,False,False
+351300905000242,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,365.0,27.0,25.0,25.0,24.0,False,False,False
+351300905000243,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,731.0,41.0,52.0,56.0,65.0,False,False,False
+351300905000244,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,522.0,30.0,36.0,35.0,31.0,False,False,False
+351300905000245,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,313.0,12.0,13.0,17.0,26.0,False,False,False
+351300905000246,Urbana,Cotia,3,cor sob o ponto interno,3,0.71,3,0.87,623.0,33.0,45.0,38.0,46.0,False,False,False
+351300905000247,Urbana,Cotia,4,cor sob o ponto interno,4,0.64,3,0.38,377.0,28.0,31.0,13.0,27.0,False,False,True
+351300905000248,Urbana,Cotia,4,cor sob o ponto interno,4,0.77,4,0.5,627.0,48.0,44.0,34.0,41.0,False,False,False
+351300905000249,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,464.0,22.0,24.0,31.0,25.0,False,False,False
+351300905000250,Urbana,Cotia,4,cor sob o ponto interno,4,0.6,4,0.43,635.0,42.0,44.0,38.0,30.0,False,False,False
+351300905000251,Urbana,Cotia,4,cor sob o ponto interno,4,0.83,4,0.78,659.0,51.0,49.0,57.0,59.0,False,False,False
+351300905000252,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,416.0,29.0,23.0,21.0,35.0,False,False,False
+351300905000253,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,354.0,26.0,33.0,20.0,22.0,False,False,False
+351300905000254,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,648.0,40.0,48.0,40.0,43.0,False,False,False
+351300905000255,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,488.0,34.0,29.0,28.0,38.0,False,False,False
+351300905000256,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,358.0,17.0,24.0,16.0,26.0,False,False,False
+351300905000257,Urbana,Cotia,6,cor sob o ponto interno,6,0.89,6,1.0,653.0,33.0,52.0,32.0,51.0,False,False,False
+351300905000258,Urbana,Cotia,6,cor sob o ponto interno,6,0.7,6,0.67,86.0,11.0,4.0,5.0,,False,False,False
+351300905000259,Urbana,Cotia,6,cor sob o ponto interno,6,0.5,4,0.29,451.0,24.0,28.0,43.0,20.0,False,False,True
+351300905000260,Urbana,Cotia,4,cor sob o ponto interno,4,0.88,4,0.93,396.0,25.0,31.0,28.0,36.0,False,False,False
+351300905000261,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,739.0,58.0,64.0,55.0,63.0,False,False,False
+351300905000262,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,564.0,40.0,35.0,51.0,53.0,False,False,False
+351300905000263,Urbana,Cotia,4,cor sob o ponto interno,4,0.57,8,0.57,225.0,12.0,17.0,13.0,22.0,False,False,True
+351300905000265,Urbana,Cotia,4,cor sob o ponto interno,4,0.71,4,0.77,505.0,33.0,31.0,25.0,38.0,False,False,False
+351300905000266,Urbana,Cotia,4,cor sob o ponto interno,4,0.38,4,0.75,359.0,25.0,26.0,31.0,17.0,False,False,True
+351300905000268,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.97,407.0,23.0,27.0,34.0,31.0,False,False,False
+351300905000269,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,496.0,32.0,28.0,29.0,39.0,False,False,False
+351300905000270,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,407.0,28.0,17.0,25.0,33.0,False,False,False
+351300905000271,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,378.0,28.0,19.0,16.0,20.0,False,False,False
+351300905000272,Urbana,Cotia,4,cor sob o ponto interno,4,0.89,4,0.78,304.0,23.0,19.0,26.0,16.0,False,False,False
+351300905000273,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,354.0,13.0,24.0,22.0,32.0,False,False,False
+351300905000274,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,531.0,34.0,37.0,31.0,41.0,False,False,False
+351300905000275,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,398.0,14.0,29.0,22.0,37.0,False,False,False
+351300905000276,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,480.0,23.0,41.0,30.0,28.0,False,False,False
+351300905000277,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,398.0,12.0,23.0,38.0,35.0,False,False,False
+351300905000278,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,510.0,26.0,33.0,30.0,30.0,False,False,False
+351300905000279,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,586.0,36.0,36.0,39.0,40.0,False,False,False
+351300905000280,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,0.97,34.0,,,,,False,False,False
+351300905000282,Rural,Cotia,7,cor sob o ponto interno,7,1.0,7,1.0,271.0,15.0,21.0,29.0,24.0,False,False,False
+351300905000283,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,393.0,25.0,25.0,22.0,35.0,False,False,False
+351300905000284,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,103.0,8.0,7.0,8.0,9.0,False,False,False
+351300905000285,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,807.0,57.0,61.0,64.0,64.0,False,False,False
+351300905000286,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,393.0,27.0,33.0,36.0,31.0,False,False,False
+351300905000288,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.85,283.0,15.0,18.0,14.0,25.0,False,False,False
+351300905000289,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.63,329.0,14.0,22.0,25.0,30.0,False,False,False
+351300905000290,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,444.0,39.0,46.0,25.0,22.0,False,False,False
+351300905000291,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,56.0,4.0,,3.0,7.0,False,False,False
+351300905000292,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,854.0,53.0,63.0,58.0,58.0,False,False,False
+351300905000295,Rural,Cotia,7,cor sob o ponto interno,7,1.0,7,0.87,281.0,16.0,21.0,26.0,26.0,False,False,False
+351300905000297,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,0.96,592.0,47.0,48.0,45.0,39.0,False,False,False
+351300905000299,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,1046.0,61.0,67.0,64.0,83.0,False,False,False
+351300905000300,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,166.0,5.0,13.0,7.0,10.0,False,False,False
+351300905000301,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,460.0,25.0,21.0,27.0,27.0,False,False,False
+351300905000302,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,12.0,,0.0,,,False,False,False
+351300905000303,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,766.0,35.0,49.0,62.0,57.0,False,False,False
+351300905000304,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,114.0,5.0,9.0,8.0,10.0,False,False,False
+351300905000305,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,754.0,47.0,65.0,69.0,49.0,False,False,False
+351300905000309,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,1.0,454.0,20.0,31.0,43.0,28.0,False,False,False
+351300905000310,Urbana,Cotia,3,cor sob o ponto interno,3,0.88,3,0.83,190.0,13.0,11.0,14.0,11.0,False,False,False
+351300905000311,Urbana,Cotia,3,cor sob o ponto interno,3,0.86,3,0.83,373.0,24.0,26.0,29.0,30.0,False,False,False
+351300905000312,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,550.0,36.0,45.0,47.0,38.0,False,False,False
+351300905000313,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,1.0,404.0,29.0,22.0,35.0,22.0,False,False,False
+351300905000314,Urbana,Cotia,6,cor sob o ponto interno,6,0.94,6,0.58,560.0,33.0,46.0,32.0,51.0,False,False,False
+351300905000315,Urbana,Cotia,6,cor sob o ponto interno,6,0.93,6,1.0,523.0,34.0,39.0,33.0,34.0,False,False,False
+351300905000316,Urbana,Cotia,6,cor sob o ponto interno,6,0.47,4,0.5,539.0,44.0,42.0,38.0,51.0,False,False,True
+351300905000317,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,230.0,16.0,13.0,10.0,14.0,False,False,False
+351300905000318,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,209.0,10.0,11.0,12.0,14.0,False,False,False
+351300905000319,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,226.0,10.0,14.0,12.0,18.0,False,False,False
+351300905000320,Urbana,Cotia,4,cor sob o ponto interno,4,0.78,4,1.0,306.0,20.0,20.0,28.0,18.0,False,False,False
+351300905000321,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,316.0,18.0,20.0,20.0,16.0,False,False,False
+351300905000322,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,432.0,28.0,26.0,29.0,31.0,False,False,False
+351300905000323,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,243.0,16.0,23.0,17.0,16.0,False,False,False
+351300905000324,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,437.0,28.0,41.0,20.0,26.0,False,False,False
+351300905000325,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.91,497.0,26.0,32.0,35.0,37.0,False,False,False
+351300905000326,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,521.0,25.0,37.0,30.0,37.0,False,False,False
+351300905000327,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,316.0,24.0,16.0,23.0,25.0,False,False,False
+351300905000329,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,0.88,126.0,14.0,17.0,6.0,8.0,False,False,False
+351300905000331,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,630.0,39.0,53.0,57.0,44.0,False,False,False
+351300905000333,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.97,437.0,33.0,29.0,39.0,34.0,False,False,False
+351300905000334,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,585.0,37.0,40.0,45.0,37.0,False,False,False
+351300905000335,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,481.0,27.0,42.0,31.0,25.0,False,False,False
+351300905000336,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,214.0,15.0,16.0,14.0,14.0,False,False,False
+351300905000337,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,240.0,16.0,14.0,8.0,16.0,False,False,False
+351300905000338,Urbana,Cotia,3,cor sob o ponto interno,3,0.85,3,0.92,366.0,32.0,31.0,36.0,27.0,False,False,False
+351300905000339,Urbana,Cotia,4,cor sob o ponto interno,4,0.92,4,0.95,381.0,22.0,27.0,22.0,30.0,False,False,False
+351300905000341,Urbana,Cotia,4,cor sob o ponto interno,4,0.73,4,0.76,348.0,26.0,31.0,23.0,19.0,False,False,False
+351300905000342,Urbana,Cotia,4,cor sob o ponto interno,4,0.92,4,0.96,636.0,25.0,51.0,47.0,51.0,False,False,False
+351300905000343,Urbana,Cotia,4,cor sob o ponto interno,4,0.95,4,0.91,849.0,60.0,79.0,61.0,68.0,False,False,False
+351300905000344,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,653.0,41.0,47.0,58.0,49.0,False,False,False
+351300905000345,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,345.0,31.0,29.0,20.0,22.0,False,False,False
+351300905000346,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,346.0,25.0,31.0,14.0,27.0,False,False,False
+351300905000348,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,523.0,50.0,56.0,45.0,33.0,False,False,False
+351300905000349,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,413.0,37.0,34.0,28.0,24.0,False,False,False
+351300905000350,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,430.0,32.0,47.0,29.0,29.0,False,False,False
+351300905000351,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,194.0,17.0,17.0,10.0,18.0,False,False,False
+351300905000352,Urbana,Cotia,3,cor sob o ponto interno,3,0.96,3,0.98,187.0,9.0,12.0,11.0,12.0,False,False,False
+351300905000353,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,704.0,42.0,56.0,62.0,58.0,False,False,False
+351300905000354,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,460.0,43.0,41.0,35.0,38.0,False,False,False
+351300905000356,Urbana,Cotia,2,cor sob o ponto interno,2,0.8,4,0.66,139.0,4.0,11.0,10.0,11.0,False,False,True
+351300905000358,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,124.0,11.0,14.0,6.0,,False,False,False
+351300905000359,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,93.0,,3.0,6.0,4.0,False,False,False
+351300905000360,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,1.0,481.0,45.0,45.0,35.0,35.0,False,False,False
+351300905000361,Urbana,Cotia,3,cor sob o ponto interno,3,0.93,3,0.91,613.0,43.0,54.0,54.0,42.0,False,False,False
+351300905000362,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,0.88,458.0,27.0,42.0,38.0,49.0,False,False,False
+351300905000363,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,422.0,21.0,28.0,35.0,36.0,False,False,False
+351300905000364,Urbana,Cotia,3,cor sob o ponto interno,3,0.95,3,1.0,813.0,50.0,76.0,63.0,62.0,False,False,False
+351300905000365,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,502.0,35.0,31.0,30.0,28.0,False,False,False
+351300905000366,Urbana,Cotia,3,cor sob o ponto interno,3,0.95,3,1.0,257.0,18.0,33.0,27.0,9.0,False,False,False
+351300905000367,Urbana,Cotia,3,cor sob o ponto interno,3,0.68,3,0.6,80.0,5.0,6.0,4.0,,False,False,False
+351300905000368,Urbana,Cotia,3,cor sob o ponto interno,3,0.48,3,0.5,188.0,15.0,19.0,15.0,8.0,False,False,True
+351300905000369,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,0.93,756.0,55.0,65.0,54.0,79.0,False,False,False
+351300905000370,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,308.0,25.0,24.0,25.0,21.0,False,False,False
+351300905000371,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,728.0,48.0,60.0,39.0,44.0,False,False,False
+351300905000373,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,146.0,20.0,21.0,16.0,10.0,False,False,False
+351300905000374,Urbana,Cotia,4,cor sob o ponto interno,4,0.79,4,0.92,316.0,21.0,18.0,15.0,10.0,False,False,False
+351300905000376,Urbana,Cotia,4,cor sob o ponto interno,4,0.73,4,0.5,251.0,12.0,21.0,11.0,16.0,False,False,False
+351300905000377,Urbana,Cotia,4,cor sob o ponto interno,4,0.76,4,0.5,133.0,9.0,12.0,5.0,8.0,False,False,False
+351300905000378,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.87,320.0,13.0,15.0,16.0,14.0,False,False,False
+351300905000380,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,351.0,31.0,33.0,27.0,17.0,False,False,False
+351300905000382,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,400.0,37.0,49.0,37.0,26.0,False,False,False
+351300905000383,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,329.0,35.0,33.0,27.0,24.0,False,False,False
+351300905000384,Rural,Cotia,6,cor sob o ponto interno,6,0.46,6,0.48,75.0,6.0,6.0,7.0,,False,False,True
+351300905000385,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,181.0,14.0,15.0,17.0,16.0,False,False,False
+351300905000387,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,295.0,29.0,34.0,25.0,13.0,False,False,False
+351300905000388,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,440.0,38.0,46.0,41.0,37.0,False,False,False
+351300905000391,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,168.0,11.0,14.0,5.0,17.0,False,False,False
+351300905000392,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,0.97,282.0,21.0,17.0,20.0,16.0,False,False,False
+351300905000394,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,0.96,390.0,14.0,34.0,26.0,14.0,False,False,False
+351300905000395,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,0.82,127.0,7.0,12.0,8.0,9.0,False,False,False
+351300905000396,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.98,595.0,41.0,32.0,32.0,36.0,False,False,False
+351300905000397,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,4,0.48,326.0,8.0,16.0,27.0,24.0,False,False,True
+351300905000398,Urbana,Cotia,7,cor sob o ponto interno,7,1.0,7,0.92,582.0,66.0,47.0,39.0,39.0,False,False,False
+351300905000400,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,338.0,12.0,11.0,21.0,25.0,False,False,False
+351300905000401,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,352.0,16.0,20.0,25.0,24.0,False,False,False
+351300905000402,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,False,True,False
+351300905000403,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,753.0,22.0,46.0,51.0,44.0,False,False,False
+351300905000404,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,476.0,12.0,13.0,20.0,26.0,False,False,False
+351300905000405,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,210.0,5.0,6.0,11.0,18.0,False,False,False
+351300905000406,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,274.0,14.0,13.0,17.0,21.0,False,False,False
+351300905000407,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,365.0,11.0,21.0,27.0,24.0,False,False,False
+351300905000408,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,430.0,21.0,26.0,25.0,31.0,False,False,False
+351300905000409,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,603.0,36.0,23.0,17.0,26.0,False,False,False
+351300905000410,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,167.0,,8.0,9.0,10.0,False,False,False
+351300905000412,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,497.0,29.0,40.0,28.0,30.0,False,False,False
+351300905000413,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,289.0,12.0,20.0,15.0,16.0,False,False,False
+351300905000414,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,228.0,7.0,17.0,13.0,17.0,False,False,False
+351300905000415,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,370.0,27.0,27.0,18.0,20.0,False,False,False
+351300905000417,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,183.0,8.0,7.0,9.0,10.0,False,False,False
+351300905000418,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,226.0,6.0,14.0,17.0,7.0,False,False,False
+351300905000419,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,145.0,8.0,7.0,6.0,9.0,False,False,False
+351300905000420,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,200.0,9.0,11.0,7.0,9.0,False,False,False
+351300905000422,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,974.0,69.0,52.0,69.0,76.0,False,False,False
+351300905000423,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,352.0,22.0,25.0,23.0,27.0,False,False,False
+351300905000424,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,280.0,23.0,24.0,21.0,16.0,False,False,False
+351300905000425,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,190.0,15.0,16.0,11.0,8.0,False,False,False
+351300905000426,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,548.0,31.0,35.0,34.0,36.0,False,False,False
+351300905000428,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,271.0,12.0,19.0,24.0,19.0,False,False,False
+351300905000430,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,159.0,9.0,9.0,12.0,7.0,False,False,False
+351300905000433,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,302.0,12.0,16.0,18.0,24.0,False,False,False
+351300905000434,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,298.0,8.0,19.0,18.0,24.0,False,False,False
+351300905000435,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,210.0,11.0,7.0,10.0,10.0,False,False,False
+351300905000436,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,334.0,7.0,17.0,7.0,16.0,False,False,False
+351300905000437,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,209.0,12.0,17.0,14.0,21.0,False,False,False
+351300905000438,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,215.0,22.0,20.0,13.0,29.0,False,False,False
+351300905000439,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,133.0,10.0,10.0,9.0,13.0,False,False,False
+351300905000440,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,545.0,30.0,31.0,37.0,52.0,False,False,False
+351300905000441,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,331.0,19.0,33.0,21.0,17.0,False,False,False
+351300905000443,Urbana,Cotia,7,cor sob o ponto interno,7,1.0,7,0.78,843.0,55.0,78.0,73.0,79.0,False,False,False
+351300905000447,Urbana,Cotia,7,cor sob o ponto interno,7,1.0,7,0.71,329.0,22.0,23.0,17.0,29.0,False,False,False
+351300905000448,Urbana,Cotia,7,cor sob o ponto interno,7,1.0,7,0.92,711.0,48.0,77.0,58.0,54.0,False,False,False
+351300905000449,Urbana,Cotia,7,cor sob o ponto interno,7,0.82,7,0.92,363.0,29.0,33.0,30.0,29.0,False,False,False
+351300905000450,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,122.0,5.0,,8.0,5.0,False,False,False
+351300905000451,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,0.93,397.0,21.0,16.0,27.0,23.0,False,False,False
+351300905000452,Urbana,Cotia,2,cor sob o ponto interno,2,0.73,2,0.73,504.0,28.0,32.0,28.0,29.0,False,False,False
+351300905000453,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,454.0,29.0,23.0,30.0,38.0,False,False,False
+351300905000454,Urbana,Cotia,4,cor sob o ponto interno,4,0.79,4,0.67,340.0,23.0,23.0,24.0,22.0,False,False,False
+351300905000455,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,517.0,28.0,36.0,28.0,42.0,False,False,False
+351300905000456,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,650.0,38.0,46.0,36.0,46.0,False,False,False
+351300905000457,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,531.0,28.0,41.0,41.0,31.0,False,False,False
+351300905000458,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,138.0,6.0,5.0,8.0,8.0,False,False,False
+351300905000459,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,524.0,36.0,36.0,45.0,36.0,False,False,False
+351300905000460,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,389.0,16.0,28.0,34.0,30.0,False,False,False
+351300905000461,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,354.0,22.0,22.0,27.0,31.0,False,False,False
+351300905000462,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,550.0,29.0,41.0,35.0,39.0,False,False,False
+351300905000463,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,289.0,15.0,10.0,26.0,28.0,False,False,False
+351300905000464,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,503.0,26.0,33.0,32.0,48.0,False,False,False
+351300905000465,Urbana,Cotia,6,cor sob o ponto interno,6,0.92,6,1.0,256.0,11.0,20.0,21.0,24.0,False,False,False
+351300905000466,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,378.0,36.0,38.0,22.0,19.0,False,False,False
+351300905000467,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,256.0,17.0,20.0,26.0,23.0,False,False,False
+351300905000468,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,299.0,21.0,23.0,28.0,25.0,False,False,False
+351300905000469,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,331.0,23.0,37.0,31.0,21.0,False,False,False
+351300905000470,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,334.0,32.0,34.0,25.0,22.0,False,False,False
+351300905000471,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,342.0,33.0,23.0,22.0,19.0,False,False,False
+351300905000473,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,500.0,26.0,39.0,37.0,34.0,False,False,False
+351300905000474,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,648.0,39.0,54.0,49.0,58.0,False,False,False
+351300905000475,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,424.0,32.0,54.0,45.0,40.0,False,False,False
+351300905000476,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,597.0,40.0,65.0,73.0,75.0,False,False,False
+351300905000477,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,807.0,44.0,80.0,101.0,109.0,False,False,False
+351300905000478,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,305.0,17.0,18.0,26.0,24.0,False,False,False
+351300905000479,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,172.0,10.0,7.0,18.0,12.0,False,False,False
+351300905000481,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,,,,,,False,True,False
+351300905000482,Urbana,Cotia,3,cor sob o ponto interno,3,0.55,3,0.59,558.0,63.0,63.0,41.0,46.0,False,False,True
+351300905000483,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,83.0,6.0,9.0,6.0,9.0,False,False,False
+351300905000484,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,407.0,24.0,22.0,29.0,23.0,False,False,False
+351300905000485,Urbana,Cotia,3,cor sob o ponto interno,3,0.64,3,0.83,249.0,11.0,24.0,18.0,21.0,False,False,False
+351300905000486,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,393.0,23.0,31.0,31.0,30.0,False,False,False
+351300905000487,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,0.99,169.0,6.0,9.0,9.0,15.0,False,False,False
+351300905000489,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,355.0,16.0,16.0,27.0,22.0,False,False,False
+351300905000490,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,0.67,270.0,7.0,14.0,21.0,15.0,False,False,False
+351300905000491,Rural,Cotia,4,cor sob o ponto interno,4,1.0,4,0.89,281.0,18.0,16.0,25.0,17.0,False,False,False
+351300905000492,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,794.0,51.0,71.0,74.0,50.0,False,False,False
+351300905000493,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,0.83,254.0,14.0,15.0,15.0,16.0,False,False,False
+351300905000494,Urbana,Cotia,4,cor dominante do setor,8,0.88,4,0.52,153.0,4.0,12.0,14.0,9.0,False,False,True
+351300905000495,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.99,451.0,43.0,33.0,26.0,32.0,False,False,False
+351300905000496,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,0.65,37.0,0.0,,,,False,False,False
+351300905000497,Urbana,Cotia,4,cor dominante do setor,8,0.53,4,0.45,489.0,51.0,34.0,21.0,22.0,False,False,True
+351300905000498,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,371.0,25.0,33.0,18.0,18.0,False,False,False
+351300905000500,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,457.0,26.0,24.0,43.0,28.0,False,False,False
+351300905000501,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,606.0,47.0,52.0,39.0,38.0,False,False,False
+351300905000502,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,746.0,35.0,30.0,52.0,38.0,False,False,False
+351300905000503,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,439.0,29.0,29.0,25.0,29.0,False,False,False
+351300905000504,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,334.0,18.0,33.0,32.0,15.0,False,False,False
+351300905000505,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,592.0,33.0,45.0,31.0,30.0,False,False,False
+351300905000506,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,576.0,28.0,35.0,37.0,37.0,False,False,False
+351300905000507,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,428.0,27.0,16.0,26.0,17.0,False,False,False
+351300905000509,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,432.0,17.0,33.0,38.0,40.0,False,False,False
+351300905000510,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,293.0,7.0,10.0,9.0,9.0,False,False,False
+351300905000511,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,432.0,16.0,30.0,36.0,24.0,False,False,False
+351300905000512,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,475.0,24.0,22.0,23.0,28.0,False,False,False
+351300905000513,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,727.0,50.0,68.0,42.0,43.0,False,False,False
+351300905000514,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,309.0,31.0,20.0,15.0,17.0,False,False,False
+351300905000515,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,477.0,29.0,35.0,25.0,30.0,False,False,False
+351300905000516,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,339.0,19.0,29.0,28.0,25.0,False,False,False
+351300905000517,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,258.0,10.0,13.0,23.0,19.0,False,False,False
+351300905000518,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,20.0,3.0,0.0,0.0,,False,False,False
+351300905000519,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,230.0,18.0,21.0,21.0,17.0,False,False,False
+351300905000520,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,383.0,19.0,31.0,34.0,24.0,False,False,False
+351300905000521,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,222.0,15.0,19.0,10.0,19.0,False,False,False
+351300905000522,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,314.0,29.0,20.0,32.0,11.0,False,False,False
+351300905000523,Urbana,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,0.73,973.0,65.0,80.0,87.0,94.0,False,False,True
+351300905000524,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,223.0,,5.0,12.0,10.0,False,False,False
+351300905000525,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,337.0,7.0,14.0,14.0,20.0,False,False,False
+351300905000526,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,284.0,8.0,7.0,18.0,19.0,False,False,False
+351300905000527,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,232.0,8.0,15.0,27.0,23.0,False,False,False
+351300905000528,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,465.0,16.0,28.0,28.0,36.0,False,False,False
+351300905000530,Urbana,Cotia,4,cor sob o ponto interno,4,0.76,4,0.94,79.0,8.0,5.0,6.0,7.0,False,False,False
+351300905000531,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,410.0,35.0,32.0,39.0,24.0,False,False,False
+351300905000532,Urbana,Cotia,6,cor sob o ponto interno,6,0.92,6,1.0,425.0,41.0,42.0,33.0,31.0,False,False,False
+351300905000534,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,364.0,27.0,28.0,31.0,26.0,False,False,False
+351300905000535,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,420.0,37.0,28.0,23.0,30.0,False,False,False
+351300905000536,Urbana,Cotia,3,cor dominante do setor,8,0.44,3,0.42,121.0,5.0,9.0,14.0,7.0,False,False,True
+351300905000537,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,402.0,19.0,29.0,26.0,25.0,False,False,False
+351300905000539,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,622.0,39.0,59.0,55.0,41.0,False,False,False
+351300905000540,Urbana,Cotia,4,cor sob o ponto interno,4,0.67,4,0.45,513.0,19.0,53.0,40.0,35.0,False,False,False
+351300905000541,Urbana,Cotia,4,cor sob o ponto interno,4,0.86,4,0.88,569.0,25.0,37.0,51.0,47.0,False,False,False
+351300905000542,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.62,620.0,36.0,45.0,55.0,53.0,False,False,False
+351300905000543,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,8,1.0,465.0,29.0,49.0,36.0,30.0,False,False,False
+351300905000544,Urbana,Cotia,6,cor sob o ponto interno,6,0.62,6,0.75,577.0,40.0,38.0,50.0,47.0,False,False,False
+351300905000545,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,0,0.0,341.0,24.0,30.0,28.0,31.0,False,False,False
+351300905000546,Urbana,Cotia,6,cor sob o ponto interno,6,0.83,0,0.0,538.0,47.0,50.0,46.0,29.0,False,False,False
+351300905000547,Urbana,Cotia,6,cor sob o ponto interno,6,0.55,6,1.0,386.0,38.0,28.0,26.0,29.0,False,False,True
+351300905000548,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,299.0,23.0,31.0,29.0,19.0,False,False,False
+351300905000549,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,380.0,26.0,38.0,47.0,26.0,False,False,False
+351300905000550,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,8,1.0,697.0,55.0,71.0,37.0,42.0,False,False,False
+351300905000551,Urbana,Cotia,6,cor sob o ponto interno,6,0.86,6,0.67,510.0,34.0,47.0,37.0,27.0,False,False,False
+351300905000552,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,293.0,14.0,16.0,25.0,19.0,False,False,False
+351300905000553,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,194.0,7.0,14.0,11.0,10.0,False,False,False
+351300905000554,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,177.0,16.0,12.0,14.0,9.0,False,False,False
+351300905000555,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,446.0,20.0,38.0,32.0,23.0,False,False,False
+351300905000556,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,626.0,38.0,44.0,44.0,47.0,False,False,False
+351300905000557,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,203.0,21.0,11.0,12.0,16.0,False,False,False
+351300905000558,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,0.8,33.0,3.0,,,4.0,False,False,False
+351300905000559,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,490.0,32.0,30.0,41.0,24.0,False,False,False
+351300905000560,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,True,False,False
+351300905000561,Urbana,Cotia,3,cor sob o ponto interno,3,0.8,3,0.92,390.0,22.0,33.0,22.0,28.0,False,False,False
+351300905000562,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,355.0,16.0,18.0,15.0,27.0,False,False,False
+351300905000563,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,668.0,41.0,48.0,37.0,45.0,False,False,False
+351300905000565,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,310.0,32.0,31.0,18.0,9.0,False,False,False
+351300905000566,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,430.0,25.0,26.0,30.0,25.0,False,False,False
+351300905000567,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,484.0,22.0,41.0,31.0,28.0,False,False,False
+351300905000568,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,101.0,0.0,5.0,8.0,8.0,False,False,False
+351300905000569,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,176.0,24.0,23.0,15.0,15.0,False,False,False
+351300905000570,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,453.0,61.0,56.0,51.0,45.0,False,False,False
+351300905000571,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,0.92,527.0,58.0,68.0,46.0,33.0,False,False,False
+351300905000572,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,884.0,55.0,71.0,57.0,76.0,False,False,False
+351300905000574,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,389.0,26.0,25.0,28.0,22.0,False,False,False
+351300905000575,Urbana,Cotia,4,cor sob o ponto interno,4,0.75,4,0.92,418.0,36.0,34.0,22.0,12.0,False,False,False
+351300905000576,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,11.0,0.0,0.0,,,False,False,False
+351300905000577,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,318.0,26.0,27.0,16.0,11.0,False,False,False
+351300905000579,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,211.0,20.0,15.0,10.0,11.0,False,False,False
+351300905000580,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,132.0,3.0,5.0,14.0,7.0,False,False,False
+351300905000581,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,161.0,11.0,16.0,21.0,6.0,False,False,False
+351300905000582,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.94,319.0,20.0,14.0,15.0,19.0,False,False,False
+351300905000583,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,0.92,,,,,,True,False,False
+351300905000584,Urbana,Cotia,4,cor sob o ponto interno,4,0.83,4,0.88,726.0,44.0,42.0,42.0,45.0,False,False,False
+351300905000585,Urbana,Cotia,6,cor sob o ponto interno,6,0.95,6,1.0,585.0,53.0,58.0,54.0,68.0,False,False,False
+351300905000586,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,430.0,34.0,37.0,15.0,31.0,False,False,False
+351300905000587,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,271.0,17.0,26.0,16.0,17.0,False,False,False
+351300905000588,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,446.0,34.0,38.0,37.0,34.0,False,False,False
+351300905000590,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,423.0,26.0,41.0,36.0,32.0,False,False,False
+351300905000591,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,266.0,20.0,30.0,16.0,17.0,False,False,False
+351300905000592,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,244.0,15.0,24.0,17.0,14.0,False,False,False
+351300905000593,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,436.0,24.0,36.0,33.0,28.0,False,False,False
+351300905000594,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,433.0,20.0,25.0,27.0,47.0,False,False,False
+351300905000595,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,435.0,29.0,39.0,30.0,39.0,False,False,False
+351300905000596,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,342.0,22.0,9.0,18.0,19.0,False,False,False
+351300905000597,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,82.0,4.0,5.0,7.0,,False,False,False
+351300905000598,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,155.0,6.0,8.0,11.0,9.0,False,False,False
+351300905000599,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,467.0,22.0,25.0,33.0,27.0,False,False,False
+351300905000601,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,235.0,14.0,14.0,18.0,11.0,False,False,False
+351300905000602,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,194.0,8.0,17.0,10.0,8.0,False,False,False
+351300905000603,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,290.0,31.0,18.0,21.0,8.0,False,False,False
+351300905000604,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,422.0,23.0,29.0,19.0,22.0,False,False,False
+351300905000605,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,443.0,23.0,24.0,30.0,35.0,False,False,False
+351300905000606,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,251.0,13.0,16.0,25.0,15.0,False,False,False
+351300905000607,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,236.0,18.0,21.0,13.0,9.0,False,False,False
+351300905000608,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,234.0,3.0,10.0,16.0,18.0,False,False,False
+351300905000609,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,69.0,0.0,,4.0,4.0,False,False,False
+351300905000610,Urbana,Cotia,6,cor sob o ponto interno,6,0.9,6,0.91,410.0,31.0,38.0,22.0,36.0,False,False,False
+351300905000611,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,354.0,14.0,24.0,29.0,32.0,False,False,False
+351300905000612,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,315.0,7.0,8.0,13.0,28.0,False,False,False
+351300905000613,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,162.0,6.0,6.0,6.0,8.0,False,False,False
+351300905000616,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,312.0,21.0,19.0,18.0,21.0,False,False,False
+351300905000617,Urbana,Cotia,7,cor sob o ponto interno,7,0.87,7,0.75,584.0,52.0,58.0,51.0,51.0,False,False,False
+351300905000619,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,17.0,,0.0,0.0,,False,False,False
+351300905000620,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,446.0,22.0,43.0,25.0,33.0,False,False,False
+351300905000621,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,506.0,44.0,39.0,32.0,11.0,False,False,False
+351300905000622,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,484.0,14.0,31.0,40.0,27.0,False,False,False
+351300905000623,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,True,False,False
+351300905000624,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,249.0,18.0,21.0,16.0,13.0,False,False,False
+351300905000625,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,586.0,17.0,38.0,30.0,40.0,False,False,False
+351300905000626,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,135.0,8.0,12.0,6.0,11.0,False,False,False
+351300905000627,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,79.0,,4.0,3.0,3.0,False,False,False
+351300905000628,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,424.0,25.0,40.0,21.0,28.0,False,False,False
+351300905000629,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,1.0,451.0,25.0,42.0,34.0,31.0,False,False,False
+351300905000630,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,142.0,6.0,10.0,8.0,7.0,False,False,False
+351300905000631,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,369.0,16.0,22.0,32.0,32.0,False,False,False
+351300905000632,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,404.0,17.0,32.0,31.0,35.0,False,False,False
+351300905000633,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,401.0,20.0,27.0,28.0,32.0,False,False,False
+351300905000634,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,332.0,24.0,26.0,20.0,26.0,False,False,False
+351300905000635,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,591.0,58.0,57.0,49.0,41.0,False,False,False
+351300905000636,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,538.0,36.0,34.0,49.0,41.0,False,False,False
+351300905000637,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,164.0,17.0,15.0,11.0,10.0,False,False,False
+351300905000640,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,294.0,27.0,23.0,24.0,17.0,False,False,False
+351300905000641,Urbana,Cotia,3,cor sob o ponto interno,3,0.56,3,0.72,417.0,28.0,44.0,44.0,32.0,False,False,True
+351300905000642,Urbana,Cotia,3,cor sob o ponto interno,3,0.76,3,0.67,292.0,18.0,26.0,17.0,16.0,False,False,False
+351300905000643,Urbana,Cotia,3,cor sob o ponto interno,3,0.94,3,0.84,261.0,16.0,26.0,21.0,10.0,False,False,False
+351300905000644,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,282.0,21.0,22.0,17.0,12.0,False,False,False
+351300905000645,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,347.0,42.0,25.0,21.0,16.0,False,False,False
+351300905000646,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,286.0,27.0,30.0,14.0,13.0,False,False,False
+351300905000647,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,355.0,34.0,26.0,33.0,15.0,False,False,False
+351300905000648,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,335.0,22.0,26.0,24.0,19.0,False,False,False
+351300905000649,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,335.0,21.0,24.0,20.0,19.0,False,False,False
+351300905000650,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,479.0,28.0,35.0,45.0,37.0,False,False,False
+351300905000652,Urbana,Cotia,4,cor sob o ponto interno,4,0.75,4,0.8,506.0,30.0,53.0,33.0,37.0,False,False,False
+351300905000653,Urbana,Cotia,4,cor sob o ponto interno,4,0.92,4,1.0,302.0,29.0,23.0,21.0,16.0,False,False,False
+351300905000654,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,148.0,7.0,9.0,11.0,13.0,False,False,False
+351300905000655,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,669.0,59.0,67.0,46.0,30.0,False,False,False
+351300905000656,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,664.0,51.0,61.0,52.0,27.0,False,False,False
+351300905000657,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,473.0,29.0,49.0,55.0,34.0,False,False,False
+351300905000658,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,562.0,36.0,56.0,58.0,43.0,False,False,False
+351300905000659,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,225.0,10.0,20.0,17.0,15.0,False,False,False
+351300905000660,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,352.0,36.0,40.0,19.0,14.0,False,False,False
+351300905000661,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,344.0,13.0,19.0,19.0,20.0,False,False,False
+351300905000662,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,332.0,30.0,27.0,32.0,19.0,False,False,False
+351300905000663,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,418.0,13.0,24.0,25.0,23.0,False,False,False
+351300905000664,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,245.0,12.0,17.0,12.0,14.0,False,False,False
+351300905000666,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,535.0,15.0,33.0,49.0,46.0,False,False,False
+351300905000667,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,66.0,5.0,,5.0,,False,False,False
+351300905000668,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,470.0,30.0,45.0,43.0,31.0,False,False,False
+351300905000669,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,349.0,25.0,28.0,20.0,19.0,False,False,False
+351300905000670,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,345.0,21.0,34.0,19.0,19.0,False,False,False
+351300905000671,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.98,49.0,4.0,5.0,3.0,3.0,False,False,False
+351300905000674,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,593.0,24.0,47.0,75.0,41.0,False,False,False
+351300905000675,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,322.0,22.0,23.0,16.0,14.0,False,False,False
+351300905000676,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,396.0,22.0,26.0,29.0,22.0,False,False,False
+351300905000677,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,168.0,10.0,16.0,13.0,13.0,False,False,False
+351300905000678,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,377.0,26.0,30.0,27.0,16.0,False,False,False
+351300905000679,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,104.0,4.0,7.0,11.0,10.0,False,False,False
+351300905000680,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,473.0,31.0,20.0,22.0,23.0,False,False,False
+351300905000681,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,394.0,12.0,25.0,22.0,17.0,False,False,False
+351300905000682,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,143.0,,9.0,8.0,11.0,False,False,False
+351300905000683,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,204.0,8.0,14.0,20.0,12.0,False,False,False
+351300905000684,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,341.0,20.0,22.0,31.0,13.0,False,False,False
+351300905000685,Urbana,Cotia,4,cor sob o ponto interno,4,0.93,4,0.86,168.0,4.0,16.0,14.0,9.0,False,False,False
+351300905000686,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,157.0,12.0,14.0,11.0,12.0,False,False,False
+351300905000687,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,649.0,39.0,49.0,51.0,49.0,False,False,False
+351300905000688,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,641.0,32.0,47.0,49.0,48.0,False,False,False
+351300905000689,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.96,,,,,,True,False,False
+351300905000690,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,18.0,0.0,0.0,0.0,,False,False,False
+351300905000691,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,532.0,31.0,38.0,35.0,39.0,False,False,False
+351300905000692,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.98,513.0,25.0,28.0,35.0,29.0,False,False,False
+351300905000693,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,,,,,,False,True,False
+351300905000694,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,194.0,19.0,19.0,19.0,20.0,False,False,False
+351300905000695,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,0.92,65.0,5.0,,7.0,6.0,False,False,False
+351300905000696,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,,,,,,False,True,False
+351300905000697,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,142.0,14.0,13.0,14.0,9.0,False,False,False
+351300905000698,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,193.0,24.0,18.0,20.0,16.0,False,False,False
+351300905000699,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,251.0,19.0,31.0,26.0,22.0,False,False,False
+351300905000700,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,453.0,42.0,49.0,49.0,45.0,False,False,False
+351300905000701,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.97,,,,,,False,True,False
+351300905000702,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,0.92,574.0,26.0,37.0,31.0,33.0,False,False,False
+351300905000703,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,0.53,,,,,,True,False,False
+351300905000704,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,198.0,15.0,17.0,12.0,19.0,False,False,False
+351300905000705,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,57.0,3.0,5.0,6.0,6.0,False,False,False
+351300905000706,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,204.0,15.0,19.0,21.0,16.0,False,False,False
+351300905000708,Urbana,Cotia,4,cor sob o ponto interno,4,0.5,4,0.54,769.0,59.0,62.0,57.0,58.0,False,False,True
+351300905000709,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,400.0,21.0,33.0,29.0,24.0,False,False,False
+351300905000711,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,False,True,False
+351300905000712,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,77.0,5.0,,5.0,3.0,False,False,False
+351300905000713,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,327.0,12.0,16.0,20.0,21.0,False,False,False
+351300905000714,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,167.0,,7.0,10.0,11.0,False,False,False
+351300905000716,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,488.0,41.0,30.0,36.0,36.0,False,False,False
+351300905000717,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,0.98,406.0,24.0,27.0,24.0,26.0,False,False,False
+351300905000718,Urbana,Cotia,2,cor sob o ponto interno,2,1.0,2,1.0,361.0,22.0,30.0,23.0,31.0,False,False,False
+351300905000719,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,408.0,16.0,33.0,33.0,29.0,False,False,False
+351300905000720,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,292.0,16.0,21.0,33.0,21.0,False,False,False
+351300905000721,Urbana,Cotia,2,cor sob o ponto interno,2,0.4,2,0.45,201.0,12.0,18.0,16.0,24.0,False,False,True
+351300905000723,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,165.0,11.0,7.0,10.0,6.0,False,False,False
+351300905000724,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,414.0,25.0,34.0,38.0,34.0,False,False,False
+351300905000725,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,325.0,25.0,30.0,10.0,9.0,False,False,False
+351300905000726,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,249.0,7.0,15.0,15.0,18.0,False,False,False
+351300905000727,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,289.0,14.0,19.0,15.0,10.0,False,False,False
+351300905000728,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,316.0,21.0,25.0,38.0,21.0,False,False,False
+351300905000729,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,930.0,66.0,71.0,65.0,70.0,False,False,False
+351300905000731,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.77,188.0,15.0,9.0,17.0,15.0,False,False,False
+351300905000733,Urbana,Cotia,7,cor sob o ponto interno,7,0.84,7,0.87,392.0,28.0,38.0,33.0,27.0,False,False,False
+351300905000734,Rural,Cotia,4,cor sob o ponto interno,4,1.0,4,0.77,165.0,16.0,9.0,12.0,11.0,False,False,False
+351300905000735,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,352.0,39.0,28.0,29.0,19.0,False,False,False
+351300905000736,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,605.0,57.0,53.0,36.0,58.0,False,False,False
+351300905000737,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,325.0,22.0,26.0,19.0,29.0,False,False,False
+351300905000738,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,321.0,14.0,21.0,21.0,28.0,False,False,False
+351300905000739,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,0.98,297.0,20.0,22.0,21.0,20.0,False,False,False
+351300905000740,Urbana,Cotia,6,cor sob o ponto interno,6,0.56,4,0.62,384.0,29.0,27.0,35.0,42.0,False,False,True
+351300905000741,Urbana,Cotia,6,cor sob o ponto interno,6,0.9,6,1.0,290.0,30.0,43.0,21.0,18.0,False,False,False
+351300905000742,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,757.0,62.0,59.0,53.0,61.0,False,False,False
+351300905000743,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,605.0,45.0,60.0,46.0,56.0,False,False,False
+351300905000746,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,712.0,26.0,40.0,51.0,46.0,False,False,False
+351300905000747,Urbana,Cotia,2,cor sob o ponto interno,2,0.44,3,0.7,109.0,7.0,6.0,5.0,7.0,False,False,True
+351300905000748,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,0.95,773.0,61.0,66.0,50.0,43.0,False,False,False
+351300905000749,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,236.0,16.0,17.0,15.0,23.0,False,False,False
+351300905000751,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,243.0,26.0,23.0,16.0,13.0,False,False,False
+351300905000752,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,294.0,12.0,11.0,16.0,22.0,False,False,False
+351300905000753,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,513.0,42.0,47.0,38.0,41.0,False,False,False
+351300905000754,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,645.0,38.0,48.0,37.0,35.0,False,False,False
+351300905000755,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,482.0,43.0,50.0,36.0,32.0,False,False,False
+351300905000756,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,111.0,,3.0,4.0,6.0,False,False,False
+351300905000757,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,False,True,False
+351300905000758,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,185.0,7.0,7.0,7.0,6.0,False,False,False
+351300905000759,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,427.0,16.0,18.0,23.0,42.0,False,False,False
+351300905000760,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,463.0,23.0,24.0,19.0,24.0,False,False,False
+351300905000762,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,0.76,352.0,18.0,25.0,33.0,27.0,False,False,False
+351300905000763,Urbana,Cotia,4,cor sob o ponto interno,4,0.61,5,0.6,261.0,16.0,18.0,18.0,16.0,False,False,True
+351300905000764,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,340.0,24.0,20.0,13.0,26.0,False,False,False
+351300905000765,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,,,,,,True,False,False
+351300905000766,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,422.0,35.0,35.0,23.0,22.0,False,False,False
+351300905000767,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,505.0,32.0,33.0,34.0,42.0,False,False,False
+351300905000768,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,115.0,9.0,7.0,7.0,9.0,False,False,False
+351300905000769,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,346.0,23.0,27.0,28.0,28.0,False,False,False
+351300905000770,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,495.0,41.0,39.0,46.0,38.0,False,False,False
+351300905000771,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,101.0,4.0,6.0,11.0,9.0,False,False,False
+351300905000772,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,562.0,39.0,52.0,36.0,16.0,False,False,False
+351300905000773,Urbana,Cotia,4,cor sob o ponto interno,4,0.88,4,0.96,687.0,39.0,57.0,58.0,53.0,False,False,False
+351300905000774,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,110.0,6.0,11.0,11.0,4.0,False,False,False
+351300905000775,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,,,,,,False,True,False
+351300905000777,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,480.0,32.0,41.0,35.0,30.0,False,False,False
+351300905000778,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,376.0,32.0,30.0,29.0,27.0,False,False,False
+351300905000780,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,272.0,25.0,21.0,24.0,16.0,False,False,False
+351300905000782,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,52.0,,,7.0,5.0,False,False,False
+351300905000786,Urbana,Cotia,3,cor sob o ponto interno,3,0.65,3,0.77,30.0,3.0,,0.0,,False,False,False
+351300905000787,Urbana,Cotia,4,cor sob o ponto interno,4,0.94,4,0.54,48.0,,6.0,4.0,6.0,False,False,False
+351300905000793,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,203.0,12.0,20.0,12.0,8.0,False,False,False
+351300905000794,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,458.0,36.0,30.0,33.0,16.0,False,False,False
+351300905000795,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,85.0,5.0,5.0,11.0,7.0,False,False,False
+351300905000797,Urbana,Cotia,6,cor sob o ponto interno,6,0.5,4,0.43,103.0,4.0,8.0,5.0,4.0,False,False,True
+351300905000798,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,478.0,31.0,27.0,32.0,31.0,False,False,False
+351300905000799,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,False,True,False
+351300905000800,Urbana,Cotia,4,cor sob o ponto interno,4,0.8,4,0.8,413.0,30.0,40.0,29.0,25.0,False,False,False
+351300905000801,Urbana,Cotia,4,cor sob o ponto interno,4,0.88,4,1.0,82.0,8.0,6.0,4.0,7.0,False,False,False
+351300905000802,Urbana,Cotia,3,cor sob o ponto interno,3,1.0,3,1.0,476.0,24.0,38.0,30.0,33.0,False,False,False
+351300905000804,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,14.0,,0.0,,0.0,False,False,False
+351300905000806,Urbana,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,1.0,129.0,7.0,7.0,11.0,10.0,False,False,True
+351300905000809,Urbana,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,0.82,447.0,31.0,32.0,29.0,53.0,False,False,True
+351300905000810,Urbana,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,1.0,629.0,47.0,42.0,48.0,46.0,False,False,True
+351300905000812,Rural,Cotia,7,cor sob o ponto interno,7,1.0,7,0.79,125.0,11.0,10.0,6.0,6.0,False,False,False
+351300905000813,Urbana,Cotia,7,cor sob o ponto interno,7,0.96,7,0.98,220.0,21.0,24.0,15.0,11.0,False,False,False
+351300905000814,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,94.0,7.0,7.0,10.0,6.0,False,False,False
+351300905000815,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,573.0,36.0,45.0,43.0,31.0,False,False,False
+351300905000816,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,False,True,False
+351300905000817,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,628.0,38.0,36.0,52.0,41.0,False,False,False
+351300905000818,Rural,Cotia,6,cor sob o ponto interno,6,0.74,6,0.51,65.0,,9.0,5.0,6.0,False,False,False
+351300905000819,Urbana,Cotia,2,cor dominante do setor,8,0.56,2,0.86,102.0,3.0,6.0,9.0,8.0,False,False,True
+351300905000820,Urbana,Cotia,6,cor sob o ponto interno,6,0.5,6,0.86,119.0,3.0,5.0,4.0,7.0,False,False,True
+351300905000821,Rural,Cotia,6,cor sob o ponto interno,6,1.0,6,0.79,259.0,14.0,22.0,10.0,15.0,False,False,False
+351300905000822,Urbana,Cotia,6,miolo sem CRAS → vizinho,8,0.65,8,0.59,119.0,8.0,7.0,14.0,9.0,False,False,True
+351300905000823,Rural,Cotia,6,miolo sem CRAS → vizinho,8,0.8,8,0.62,105.0,10.0,5.0,12.0,11.0,False,False,True
+351300905000824,Urbana,Cotia,6,cor sob o ponto interno,6,0.42,6,0.46,322.0,30.0,31.0,23.0,21.0,False,False,True
+351300905000825,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,190.0,19.0,18.0,18.0,20.0,False,False,False
+351300905000826,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,150.0,9.0,13.0,10.0,14.0,False,False,False
+351300905000827,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,370.0,44.0,47.0,35.0,22.0,False,False,False
+351300905000828,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,218.0,16.0,16.0,18.0,22.0,False,False,False
+351300905000829,Urbana,Cotia,4,cor sob o ponto interno,4,0.5,6,0.53,74.0,11.0,9.0,3.0,3.0,False,False,True
+351300905000830,Rural,Cotia,4,cor sob o ponto interno,4,1.0,4,0.94,,,,,,True,False,False
+351300905000831,Urbana,Cotia,4,cor sob o ponto interno,4,0.92,6,0.49,262.0,7.0,16.0,14.0,9.0,False,False,True
+351300905000832,Rural,Cotia,6,cor dominante do setor,8,0.5,6,0.54,54.0,,5.0,6.0,4.0,False,False,True
+351300905000833,Rural,Cotia,6,cor sob o ponto interno,6,1.0,6,0.88,,,,,,True,False,False
+351300905000834,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,607.0,32.0,35.0,30.0,43.0,False,False,False
+351300905000835,Rural,Cotia,4,cor sob o ponto interno,4,1.0,4,0.87,31.0,0.0,,6.0,0.0,False,False,False
+351300905000836,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,57.0,3.0,0.0,,0.0,False,False,False
+351300905000837,Rural,Cotia,4,cor sob o ponto interno,4,1.0,4,0.58,36.0,,,4.0,5.0,False,False,False
+351300905000838,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,572.0,29.0,26.0,31.0,40.0,False,False,False
+351300905000839,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,471.0,18.0,22.0,17.0,28.0,False,False,False
+351300905000840,Rural,Cotia,4,cor sob o ponto interno,4,0.54,4,0.4,,,,,,True,False,True
+351300905000841,Urbana,Cotia,3,cor sob o ponto interno,3,0.83,3,0.86,412.0,26.0,41.0,31.0,26.0,False,False,False
+351300905000842,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,43.0,3.0,3.0,3.0,,False,False,False
+351300905000843,Rural,Cotia,6,cor sob o ponto interno,6,1.0,6,1.0,137.0,5.0,8.0,12.0,16.0,False,False,False
+351300905000844,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,,,,,,True,False,False
+351300905000845,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,,,,,,False,True,False
+351300905000846,Urbana,Cotia,7,cor sob o ponto interno,7,1.0,7,0.98,319.0,21.0,34.0,35.0,21.0,False,False,False
+351300905000847,Rural,Cotia,7,cor sob o ponto interno,7,1.0,7,0.82,308.0,20.0,21.0,20.0,28.0,False,False,False
+351300905000848,Rural,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,0.9,44.0,,6.0,0.0,,False,False,True
+351300905000849,Rural,Cotia,7,cor dominante do setor,8,0.8,7,0.67,,,,,,True,False,True
+351300905000850,Urbana,Cotia,7,cor sob o ponto interno,7,0.4,7,0.74,279.0,20.0,27.0,26.0,27.0,False,False,True
+351300905000851,Urbana,Cotia,7,cor dominante do setor,8,0.76,7,0.75,232.0,11.0,17.0,10.0,22.0,False,False,True
+351300905000852,Rural,Cotia,7,cor sob o ponto interno,7,1.0,7,0.84,42.0,3.0,,4.0,,False,False,False
+351300905000853,Urbana,Cotia,7,cor sob o ponto interno,7,1.0,7,0.99,265.0,21.0,19.0,18.0,20.0,False,False,False
+351300905000854,Rural,Cotia,7,cor sob o ponto interno,7,0.95,7,0.86,104.0,12.0,4.0,4.0,4.0,False,False,False
+351300905000855,Urbana,Cotia,6,cor sob o ponto interno,6,1.0,6,0.96,289.0,23.0,15.0,25.0,26.0,False,False,False
+351300905000856,Rural,Cotia,6,cor sob o ponto interno,6,1.0,6,0.98,201.0,13.0,20.0,16.0,21.0,False,False,False
+351300905000857,Urbana,Cotia,4,cor sob o ponto interno,4,1.0,4,1.0,18.0,,,3.0,,False,False,False
+351300905000858,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,141.0,9.0,10.0,12.0,9.0,False,False,False
+351300905000859,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,,,,,,True,False,False
+351300905000860,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,399.0,14.0,18.0,14.0,19.0,False,False,False
+351300905000861,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,159.0,11.0,15.0,21.0,13.0,False,False,False
+351300905000862,Urbana,Cotia,5,cor sob o ponto interno,5,1.0,5,1.0,729.0,84.0,74.0,77.0,57.0,False,False,False
+351300905000863,Rural,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,0.77,133.0,13.0,10.0,10.0,16.0,False,False,True
+351300905000864,Rural,Cotia,3,cor sob o ponto interno,3,0.56,3,0.48,,,,,,True,False,True
+351300905000865,Rural,Cotia,6,cor dominante do setor,8,0.87,6,0.52,127.0,7.0,13.0,14.0,5.0,False,False,True
+351300905000866,Rural,Cotia,7,miolo sem CRAS → vizinho,8,1.0,8,0.83,128.0,14.0,13.0,13.0,11.0,False,False,True
+351300910000001,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,424.0,23.0,27.0,28.0,30.0,False,False,False
+351300910000019,Rural,Caucaia do Alto,2,miolo sem CRAS → vizinho,8,1.0,8,0.96,,,,,,False,True,True
+351300910000036,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,596.0,43.0,39.0,41.0,38.0,False,False,False
+351300910000038,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.96,380.0,29.0,20.0,21.0,25.0,False,False,False
+351300910000039,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,594.0,39.0,51.0,40.0,40.0,False,False,False
+351300910000040,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,12.0,0.0,,0.0,,False,False,False
+351300910000041,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,312.0,15.0,15.0,16.0,21.0,False,False,False
+351300910000042,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,1138.0,59.0,73.0,90.0,100.0,False,False,False
+351300910000043,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,399.0,24.0,25.0,30.0,31.0,False,False,False
+351300910000044,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,361.0,22.0,22.0,27.0,23.0,False,False,False
+351300910000045,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,565.0,31.0,37.0,49.0,38.0,False,False,False
+351300910000046,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,632.0,43.0,43.0,51.0,49.0,False,False,False
+351300910000047,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,291.0,16.0,17.0,22.0,21.0,False,False,False
+351300910000048,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,443.0,28.0,30.0,28.0,31.0,False,False,False
+351300910000049,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.92,,,,,,False,True,False
+351300910000050,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,748.0,48.0,58.0,58.0,57.0,False,False,False
+351300910000051,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,570.0,45.0,43.0,50.0,59.0,False,False,False
+351300910000052,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,1221.0,101.0,112.0,119.0,127.0,False,False,False
+351300910000053,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,576.0,39.0,49.0,32.0,52.0,False,False,False
+351300910000054,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,817.0,37.0,59.0,63.0,65.0,False,False,False
+351300910000055,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,18.0,,,,,False,False,False
+351300910000056,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,413.0,25.0,45.0,35.0,28.0,False,False,False
+351300910000057,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,0.92,2,0.97,299.0,16.0,25.0,27.0,20.0,False,False,False
+351300910000058,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.93,260.0,17.0,14.0,19.0,16.0,False,False,False
+351300910000059,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.99,,,,,,False,True,False
+351300910000060,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,299.0,24.0,25.0,27.0,26.0,False,False,False
+351300910000061,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,604.0,38.0,48.0,53.0,42.0,False,False,False
+351300910000062,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,467.0,32.0,47.0,38.0,35.0,False,False,False
+351300910000063,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,627.0,36.0,57.0,32.0,38.0,False,False,False
+351300910000064,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,229.0,13.0,12.0,17.0,12.0,False,False,False
+351300910000066,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,175.0,11.0,5.0,16.0,8.0,False,False,False
+351300910000067,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,259.0,16.0,34.0,23.0,12.0,False,False,False
+351300910000068,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,579.0,42.0,42.0,40.0,50.0,False,False,False
+351300910000069,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,401.0,31.0,31.0,26.0,45.0,False,False,False
+351300910000070,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,443.0,44.0,44.0,39.0,34.0,False,False,False
+351300910000071,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,750.0,49.0,61.0,78.0,60.0,False,False,False
+351300910000072,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,729.0,47.0,53.0,57.0,61.0,False,False,False
+351300910000074,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.9,152.0,10.0,5.0,14.0,9.0,False,False,False
+351300910000076,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,833.0,55.0,71.0,52.0,56.0,False,False,False
+351300910000077,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,95.0,3.0,5.0,5.0,4.0,False,False,False
+351300910000078,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,128.0,,6.0,15.0,8.0,False,False,False
+351300910000079,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,473.0,38.0,37.0,26.0,53.0,False,False,False
+351300910000082,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,355.0,28.0,22.0,31.0,24.0,False,False,False
+351300910000083,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,44.0,4.0,,,5.0,False,False,False
+351300910000086,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,8,0.66,211.0,13.0,22.0,16.0,12.0,False,False,False
+351300910000092,Urbana,Caucaia do Alto,1,miolo sem CRAS → vizinho,8,1.0,8,1.0,753.0,58.0,61.0,76.0,67.0,False,False,True
+351300910000094,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,1.0,881.0,73.0,76.0,77.0,63.0,False,False,False
+351300910000096,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,1.0,706.0,45.0,50.0,47.0,56.0,False,False,False
+351300910000097,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,1.0,523.0,30.0,54.0,37.0,46.0,False,False,False
+351300910000098,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,1.0,362.0,18.0,24.0,29.0,43.0,False,False,False
+351300910000099,Rural,Caucaia do Alto,1,cor sob o ponto interno,1,0.5,1,0.67,,,,,,True,False,True
+351300910000100,Rural,Caucaia do Alto,1,miolo sem CRAS → vizinho,8,1.0,8,0.59,64.0,5.0,3.0,4.0,6.0,False,False,True
+351300910000102,Urbana,Caucaia do Alto,1,miolo sem CRAS → vizinho,8,0.56,8,0.63,203.0,8.0,11.0,12.0,12.0,False,False,True
+351300910000103,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,8,0.5,341.0,23.0,16.0,24.0,25.0,False,False,False
+351300910000104,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.84,383.0,24.0,29.0,31.0,34.0,False,False,False
+351300910000105,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.6,257.0,19.0,13.0,16.0,15.0,False,False,False
+351300910000106,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,608.0,44.0,50.0,41.0,44.0,False,False,False
+351300910000107,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,204.0,7.0,8.0,17.0,19.0,False,False,False
+351300910000108,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.71,384.0,27.0,25.0,21.0,16.0,False,False,False
+351300910000114,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.95,685.0,48.0,73.0,49.0,55.0,False,False,False
+351300910000115,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,269.0,17.0,23.0,16.0,16.0,False,False,False
+351300910000118,Urbana,Caucaia do Alto,2,cor dominante do setor,8,0.54,2,0.54,47.0,3.0,3.0,4.0,,False,False,True
+351300910000119,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,0.83,2,0.92,355.0,33.0,29.0,30.0,17.0,False,False,False
+351300910000122,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,423.0,40.0,43.0,35.0,26.0,False,False,False
+351300910000123,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,312.0,25.0,38.0,23.0,18.0,False,False,False
+351300910000124,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,358.0,35.0,29.0,26.0,24.0,False,False,False
+351300910000125,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,330.0,31.0,39.0,22.0,5.0,False,False,False
+351300910000126,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,127.0,8.0,6.0,7.0,11.0,False,False,False
+351300910000128,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,369.0,23.0,33.0,28.0,31.0,False,False,False
+351300910000129,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,166.0,16.0,9.0,10.0,11.0,False,False,False
+351300910000130,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,574.0,38.0,41.0,50.0,37.0,False,False,False
+351300910000131,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,478.0,42.0,36.0,30.0,41.0,False,False,False
+351300910000133,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,300.0,24.0,28.0,25.0,11.0,False,False,False
+351300910000134,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,313.0,17.0,22.0,25.0,23.0,False,False,False
+351300910000135,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,668.0,39.0,56.0,52.0,53.0,False,False,False
+351300910000136,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,377.0,34.0,42.0,17.0,23.0,False,False,False
+351300910000137,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,143.0,12.0,11.0,8.0,14.0,False,False,False
+351300910000139,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,0.5,8,0.69,333.0,21.0,30.0,36.0,25.0,False,False,True
+351300910000140,Urbana,Caucaia do Alto,1,miolo sem CRAS → vizinho,8,0.58,8,0.94,584.0,74.0,54.0,47.0,27.0,False,False,True
+351300910000141,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.9,307.0,17.0,25.0,20.0,31.0,False,False,False
+351300910000142,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.91,637.0,41.0,58.0,54.0,50.0,False,False,False
+351300910000143,Rural,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,0.77,82.0,5.0,6.0,6.0,3.0,False,False,False
+351300910000144,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,79.0,3.0,,,,False,False,False
+351300910000146,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.87,940.0,75.0,80.0,67.0,61.0,False,False,False
+351300910000147,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,281.0,19.0,29.0,26.0,15.0,False,False,False
+351300910000148,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,169.0,12.0,19.0,8.0,7.0,False,False,False
+351300910000149,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,467.0,30.0,31.0,42.0,30.0,False,False,False
+351300910000150,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,1.0,536.0,31.0,44.0,31.0,43.0,False,False,False
+351300910000152,Rural,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,0.64,50.0,4.0,4.0,,4.0,False,False,False
+351300910000153,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,0.9,302.0,9.0,17.0,15.0,20.0,False,False,False
+351300910000154,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,631.0,44.0,49.0,52.0,53.0,False,False,False
+351300910000155,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,0.75,833.0,53.0,65.0,64.0,69.0,False,False,False
+351300910000156,Urbana,Caucaia do Alto,1,cor dominante do setor,8,0.56,1,0.71,568.0,42.0,57.0,38.0,40.0,False,False,True
+351300910000157,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,0.78,445.0,32.0,42.0,36.0,25.0,False,False,False
+351300910000158,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.83,446.0,34.0,29.0,32.0,30.0,False,False,False
+351300910000159,Urbana,Caucaia do Alto,4,cor sob o ponto interno,4,0.75,2,0.87,288.0,23.0,25.0,23.0,31.0,False,False,True
+351300910000160,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.69,362.0,26.0,16.0,22.0,12.0,False,False,False
+351300910000165,Rural,Caucaia do Alto,2,miolo sem CRAS → vizinho,8,0.6,8,0.61,361.0,27.0,25.0,33.0,33.0,False,False,True
+351300910000167,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,304.0,25.0,28.0,22.0,21.0,False,False,False
+351300910000169,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,262.0,16.0,20.0,16.0,10.0,False,False,False
+351300910000172,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,889.0,63.0,86.0,70.0,75.0,False,False,False
+351300910000173,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,112.0,18.0,15.0,6.0,12.0,False,False,False
+351300910000174,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,0.6,8,0.52,22.0,,3.0,0.0,,False,False,False
+351300910000175,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.98,448.0,33.0,32.0,40.0,45.0,False,False,False
+351300910000176,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,0.5,2,0.5,,,,,,True,False,True
+351300910000177,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,249.0,24.0,19.0,16.0,19.0,False,False,False
+351300910000178,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,57.0,7.0,3.0,8.0,,False,False,False
+351300910000179,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,257.0,17.0,17.0,18.0,26.0,False,False,False
+351300910000180,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.75,414.0,31.0,33.0,24.0,28.0,False,False,False
+351300910000181,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,220.0,12.0,17.0,23.0,25.0,False,False,False
+351300910000182,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.86,264.0,15.0,24.0,15.0,11.0,False,False,False
+351300910000183,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,125.0,6.0,10.0,8.0,7.0,False,False,False
+351300910000184,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.86,123.0,6.0,7.0,13.0,9.0,False,False,False
+351300910000185,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.91,,,,,,True,False,False
+351300910000186,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,176.0,8.0,15.0,6.0,12.0,False,False,False
+351300910000187,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.86,518.0,42.0,43.0,41.0,36.0,False,False,False
+351300910000188,Rural,Caucaia do Alto,2,cor dominante do setor,8,0.8,2,0.58,161.0,7.0,13.0,17.0,13.0,False,False,True
+351300910000189,Rural,Caucaia do Alto,2,miolo sem CRAS → vizinho,8,1.0,8,0.76,53.0,6.0,5.0,,5.0,False,False,True
+351300910000190,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.95,57.0,4.0,3.0,4.0,,False,False,False
+351300910000191,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,0.52,1,0.51,381.0,23.0,29.0,18.0,23.0,False,False,True
+351300910000192,Urbana,Caucaia do Alto,1,cor sob o ponto interno,1,1.0,1,1.0,87.0,8.0,9.0,4.0,6.0,False,False,False
+351300910000193,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,118.0,6.0,9.0,10.0,10.0,False,False,False
+351300910000194,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,587.0,45.0,45.0,56.0,34.0,False,False,False
+351300910000195,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,0.72,2,0.7,144.0,14.0,10.0,8.0,9.0,False,False,False
+351300910000196,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,0.92,2,0.77,112.0,8.0,11.0,8.0,6.0,False,False,False
+351300910000197,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,207.0,10.0,15.0,13.0,10.0,False,False,False
+351300910000198,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,258.0,19.0,18.0,15.0,16.0,False,False,False
+351300910000199,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,380.0,28.0,37.0,36.0,26.0,False,False,False
+351300910000200,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.95,197.0,14.0,17.0,14.0,10.0,False,False,False
+351300910000201,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.67,349.0,22.0,23.0,27.0,26.0,False,False,False
+351300910000202,Rural,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,0.98,229.0,11.0,18.0,19.0,19.0,False,False,False
+351300910000203,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,183.0,13.0,17.0,18.0,13.0,False,False,False
+351300910000204,Rural,Caucaia do Alto,2,cor dominante do setor,8,1.0,2,0.45,177.0,13.0,11.0,12.0,11.0,False,False,True
+351300910000205,Urbana,Caucaia do Alto,2,cor sob o ponto interno,2,1.0,2,1.0,364.0,22.0,29.0,25.0,26.0,False,False,False
