@@ -2,94 +2,158 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mapa Infância Cotia</title>
   <meta name="description" content="Onde estão os equipamentos públicos de saúde, educação infantil, assistência social e proteção que atendem as crianças de Cotia (SP), e quantas crianças moram em cada um dos 7 territórios de CRAS.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#162027" media="(prefers-color-scheme: dark)">
   <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/atkinson-next-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
         integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="css/estilo.css?v=7">
+  <link rel="stylesheet" href="css/estilo.css?v=8">
 </head>
-<body>
-  <a class="pular" href="#mapa">Pular para o mapa</a>
+<body class="pagina-app">
+  <a class="pular" href="#folha">Pular para a busca</a>
 
-  <header class="topo">
-    <div class="marca">
-      <p class="sobretitulo">Cotia (SP) · 7 territórios de CRAS</p>
-      <h1>Mapa Infância Cotia</h1>
-    </div>
-    <p class="lede">Onde estão os equipamentos públicos de saúde, educação infantil, assistência social e proteção, e quantas crianças moram em cada território.</p>
-    <nav class="nav-topo" aria-label="Seções">
-      <a href="#comparar">Comparar territórios</a>
-      <a href="metodologia.html">Metodologia</a>
-      <a href="#dados">Baixar dados</a>
-    </nav>
-  </header>
+  <div class="app" id="app">
+    <header class="topo">
+      <div class="marca">
+        <p class="sobretitulo">Cotia (SP) · 7 territórios de CRAS</p>
+        <h1>Mapa Infância Cotia</h1>
+      </div>
+      <p class="lede">Onde estão os equipamentos públicos de saúde, educação infantil, assistência social e proteção, e quantas crianças moram em cada território.</p>
+      <nav class="nav-topo" aria-label="Seções">
+        <a href="#comparar" data-ir="comparar">Comparar territórios</a>
+        <a href="metodologia.html">Metodologia</a>
+        <a href="#dados" data-ir="dados">Baixar dados</a>
+      </nav>
+      <button type="button" class="botao-menu" id="btn-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <div class="menu" id="menu" hidden>
+        <a href="#comparar" data-ir="comparar">Comparar territórios</a>
+        <a href="metodologia.html">Metodologia, fontes e limitações</a>
+        <a href="#dados" data-ir="dados">Baixar dados</a>
+        <dl class="menu-fontes">
+          <dt>Territórios</dt><dd>PMAS 2026–2029, redesenhado sobre setores do IBGE</dd>
+          <dt>População</dt><dd>Censo 2022 · IBGE</dd>
+          <dt>Saúde</dt><dd>CNES · coleta em 19/10/2026</dd>
+          <dt>Educação infantil</dt><dd>Censo Escolar 2025 · INEP</dd>
+          <dt>Assistência e proteção</dt><dd>Prefeitura de Cotia · páginas de jul/2026</dd>
+        </dl>
+      </div>
+    </header>
 
-  <main>
-    <section class="area-mapa" id="area-mapa" aria-label="Mapa dos equipamentos e territórios">
-      <div class="coluna-controles">
-        <section class="bloco bloco-onde" aria-labelledby="t-onde">
-          <h2 id="t-onde" class="rotulo">Encontrar um lugar</h2>
-          <div class="abas" role="tablist" aria-label="Tipo de busca">
+    <main class="palco" id="palco">
+      <section class="folha" id="folha" aria-label="Busca, territórios e comparação" tabindex="-1">
+        <button type="button" class="folha-alca" id="folha-alca" aria-controls="folha" aria-expanded="true" aria-label="Expandir o painel"><span aria-hidden="true"></span></button>
+
+        <div class="vista" id="vista-abas">
+          <div class="abas" role="tablist" aria-label="O que você quer ver">
             <button role="tab" id="aba-btn-territorio" aria-controls="aba-territorio" aria-selected="true">Território</button>
             <button role="tab" id="aba-btn-bairro" aria-controls="aba-bairro" aria-selected="false" tabindex="-1">Bairro</button>
             <button role="tab" id="aba-btn-endereco" aria-controls="aba-endereco" aria-selected="false" tabindex="-1">Endereço</button>
+            <button role="tab" id="aba-btn-comparar" aria-controls="aba-comparar" aria-selected="false" tabindex="-1">Comparar</button>
           </div>
 
-          <div role="tabpanel" id="aba-territorio" aria-labelledby="aba-btn-territorio" class="aba-painel">
-            <label for="sel-territorio" class="campo-rotulo">Escolha um território</label>
-            <select id="sel-territorio">
-              <option value="">Todos os territórios</option>
-            </select>
+          <div class="folha-corpo">
+            <div role="tabpanel" id="aba-territorio" aria-labelledby="aba-btn-territorio" class="aba-painel">
+              <p class="instrucao">Escolha um território para ver quantas crianças moram nele e quais equipamentos ficam ali.</p>
+              <ul class="lista-territorios" id="lista-territorios"></ul>
+            </div>
+
+            <div role="tabpanel" id="aba-bairro" aria-labelledby="aba-btn-bairro" class="aba-painel" hidden>
+              <label for="in-bairro" class="campo-rotulo">Filtrar bairros</label>
+              <input type="search" id="in-bairro" placeholder="Ex.: Nomura" autocomplete="off" enterkeyhint="search">
+              <p class="nota">Bairros de cada território, segundo o Plano Municipal de Assistência Social 2026–2029. Toque num bairro para ver o território dele.</p>
+              <div id="lista-bairros" class="lista-bairros"></div>
+            </div>
+
+            <div role="tabpanel" id="aba-endereco" aria-labelledby="aba-btn-endereco" class="aba-painel" hidden>
+              <form id="form-endereco" class="busca" autocomplete="off">
+                <label for="in-endereco" class="campo-rotulo">Rua e número, em Cotia</label>
+                <div class="busca-linha">
+                  <input type="search" id="in-endereco" placeholder="Ex.: Rua Topázio, 159" required enterkeyhint="search">
+                  <button type="submit">Buscar</button>
+                </div>
+              </form>
+              <button type="button" id="btn-local" class="botao-secundario">Usar minha localização</button>
+              <p class="nota">A busca de endereço consulta o Nominatim, do OpenStreetMap. A sua localização não sai do navegador.</p>
+              <div id="resultado-busca" class="resultado" aria-live="polite"></div>
+            </div>
+
+            <div role="tabpanel" id="aba-comparar" aria-labelledby="aba-btn-comparar" class="aba-painel" hidden>
+              <section class="comparar" id="comparar" aria-labelledby="t-comparar">
+                <h2 id="t-comparar" class="titulo-secao">Comparar os 7 territórios</h2>
+                <p class="nota">Censo 2022 e equipamentos coletados em outubro de 2026. “Crianças” são as pessoas de 0 a 14 anos.</p>
+                <label for="sel-metrica" class="campo-rotulo">Ordenar por</label>
+                <select id="sel-metrica"></select>
+                <ol class="ranking" id="ranking"></ol>
+                <p class="nota" id="nota-ranking"></p>
+
+                <h3 class="titulo-secao">Tabela completa</h3>
+                <p class="nota">Toque no título de uma coluna para ordenar e numa linha para ver o território no mapa.</p>
+                <div class="tabela-wrap" tabindex="0" role="region" aria-label="Tabela comparativa, role para os lados para ver todas as colunas">
+                  <table id="tabela" class="tabela">
+                    <caption class="sr-only">Moradores, crianças e equipamentos por território de CRAS de Cotia</caption>
+                    <thead></thead>
+                    <tbody></tbody>
+                    <tfoot></tfoot>
+                  </table>
+                </div>
+                <p class="nota" id="nota-tabela"></p>
+              </section>
+
+              <section class="dados" id="dados" aria-labelledby="t-dados">
+                <h3 id="t-dados" class="titulo-secao">Baixar dados</h3>
+                <p class="nota">Os mesmos dados do mapa, com a fonte e a data de coleta de cada linha.</p>
+                <ul class="downloads">
+                  <li><a href="data/equipamentos.csv" download><strong>equipamentos.csv</strong><span>132 equipamentos: nome, camada, endereço, território, coordenadas, fonte e data</span></a></li>
+                  <li><a href="data/territorios.geojson" download><strong>territorios.geojson</strong><span>7 territórios: limites aproximados, população por faixa etária e contagens</span></a></li>
+                </ul>
+              </section>
+
+              <p class="creditos">Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia. Busca por endereço com o Nominatim, © colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Sem cookies e sem rastreamento. <a href="metodologia.html">Metodologia</a> · <a href="https://github.com/jotavLabs/mapa-infancia-cotia">Código e dados no GitHub</a></p>
+            </div>
           </div>
+        </div>
 
-          <div role="tabpanel" id="aba-bairro" aria-labelledby="aba-btn-bairro" class="aba-painel" hidden>
-            <form id="form-bairro" class="busca" autocomplete="off">
-              <label for="in-bairro" class="campo-rotulo">Nome do bairro (lista do PMAS 2026–2029)</label>
-              <div class="busca-linha">
-                <input id="in-bairro" list="lista-bairros" placeholder="Ex.: Jd. Nomura" required>
-                <button type="submit">Buscar</button>
-              </div>
-              <datalist id="lista-bairros"></datalist>
-            </form>
+        <div class="vista" id="vista-territorio" hidden>
+          <div class="folha-corpo">
+            <button type="button" class="voltar" id="pt-voltar">Todos os territórios</button>
+            <div id="pt-conteudo"></div>
           </div>
+        </div>
+      </section>
 
-          <div role="tabpanel" id="aba-endereco" aria-labelledby="aba-btn-endereco" class="aba-painel" hidden>
-            <form id="form-endereco" class="busca" autocomplete="off">
-              <label for="in-endereco" class="campo-rotulo">Rua e número, em Cotia</label>
-              <div class="busca-linha">
-                <input id="in-endereco" placeholder="Ex.: Rua Topázio, 159" required>
-                <button type="submit">Buscar</button>
-              </div>
-            </form>
-            <button type="button" id="btn-local" class="botao-secundario">Usar minha localização</button>
-            <p class="nota">A busca de endereço consulta o Nominatim, do OpenStreetMap. A sua localização não sai do navegador.</p>
+      <div class="mapa-wrap">
+        <div id="mapa" aria-label="Mapa de Cotia com os 7 territórios e os equipamentos" tabindex="0"></div>
+
+        <div class="mapa-botoes">
+          <button type="button" class="botao-mapa" id="btn-camadas" aria-expanded="false" aria-controls="painel-camadas">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1.5 15 5 8 8.5 1 5zM2.6 7.9 8 10.6l5.4-2.7L15 8.7 8 12.2 1 8.7zm0 3.6L8 14.2l5.4-2.7 1.6.8L8 15.8 1 12.3z"/></svg>
+            Camadas
+          </button>
+          <button type="button" class="botao-mapa" id="btn-cotia">Ver Cotia inteira</button>
+        </div>
+
+        <div class="legenda-modo" id="legenda-modo" hidden></div>
+
+        <section class="painel-camadas" id="painel-camadas" aria-labelledby="t-camadas" hidden>
+          <div class="painel-camadas-cabeca">
+            <h2 id="t-camadas" class="titulo-secao">Camadas</h2>
+            <button type="button" class="fechar" id="fechar-camadas" aria-label="Fechar camadas">×</button>
           </div>
-
-          <div id="resultado-busca" class="resultado" aria-live="polite"></div>
-        </section>
-
-        <section class="bloco bloco-camadas" aria-labelledby="t-camadas">
-          <h2 id="t-camadas" class="rotulo">Camadas</h2>
           <div id="lista-camadas"></div>
           <p class="legenda-aprox"><span class="mk-amostra mk-aprox" aria-hidden="true"></span> Localização aproximada, ainda não conferida</p>
-        </section>
-
-        <section class="bloco bloco-cores" aria-labelledby="t-cores">
-          <h2 id="t-cores" class="rotulo">Cor dos territórios</h2>
+          <h2 id="t-cores" class="titulo-secao">Cor dos territórios</h2>
           <div class="segmentado" role="radiogroup" aria-labelledby="t-cores" id="modos"></div>
           <div id="legenda-territorios" class="legenda-territorios"></div>
         </section>
-      </div>
 
-      <div class="mapa-wrap">
-        <div id="mapa" aria-label="Mapa de Cotia com territórios e equipamentos" tabindex="0"></div>
-        <details class="carimbo" id="carimbo" open>
+        <details class="carimbo" id="carimbo">
           <summary>
-            <span class="carimbo-titulo">Mapa Infância Cotia</span>
-            <span class="carimbo-sub" id="carimbo-sub">Fontes e datas</span>
+            <span class="carimbo-titulo">Fontes e datas</span>
+            <span class="carimbo-sub" id="carimbo-sub"></span>
           </summary>
           <dl class="carimbo-grade">
             <dt>Territórios</dt><dd>PMAS 2026–2029, redesenhado sobre setores do IBGE</dd>
@@ -101,50 +165,11 @@
           <p class="carimbo-rodape"><a href="metodologia.html">Como os dados foram montados</a></p>
         </details>
       </div>
-
-      <aside class="painel-territorio" id="painel-territorio" aria-labelledby="pt-nome" hidden>
-        <div class="painel-alca" aria-hidden="true"></div>
-        <button type="button" class="fechar" id="pt-fechar" aria-label="Fechar o painel do território">×</button>
-        <div id="pt-conteudo"></div>
-      </aside>
-    </section>
-
-    <section class="comparar" id="comparar" aria-labelledby="t-comparar">
-      <div class="secao-cabeca">
-        <p class="sobretitulo">Censo 2022 e equipamentos coletados em outubro de 2026</p>
-        <h2 id="t-comparar">Comparar os 7 territórios</h2>
-        <p class="secao-texto">Clique no título de uma coluna para ordenar. Clique numa linha para ver o território no mapa. “Crianças” são as pessoas de 0 a 14 anos.</p>
-      </div>
-      <div class="tabela-wrap" tabindex="0" role="region" aria-label="Tabela comparativa, role para os lados para ver todas as colunas">
-        <table id="tabela" class="tabela">
-          <caption class="sr-only">Moradores, crianças e equipamentos por território de CRAS de Cotia</caption>
-          <thead></thead>
-          <tbody></tbody>
-          <tfoot></tfoot>
-        </table>
-      </div>
-      <p class="nota" id="nota-tabela"></p>
-    </section>
-
-    <section class="dados" id="dados" aria-labelledby="t-dados">
-      <div class="secao-cabeca">
-        <h2 id="t-dados">Baixar dados</h2>
-        <p class="secao-texto">Os mesmos dados do mapa, com a fonte e a data de coleta de cada linha.</p>
-      </div>
-      <ul class="downloads">
-        <li><a href="data/equipamentos.csv" download><strong>equipamentos.csv</strong><span>132 equipamentos: nome, camada, endereço, território, coordenadas, fonte e data</span></a></li>
-        <li><a href="data/territorios.geojson" download><strong>territorios.geojson</strong><span>7 territórios: limites aproximados, população por faixa etária e contagens</span></a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="rodape">
-    <p>Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia. Mapa-base © colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Sem cookies e sem rastreamento.</p>
-    <p><a href="metodologia.html">Metodologia, fontes e limitações</a> · <a href="https://github.com/jotavLabs/mapa-infancia-cotia">Código e dados no GitHub</a></p>
-  </footer>
+    </main>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
           integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/app.js?v=7"></script>
+  <script src="js/app.js?v=8"></script>
 </body>
 </html>

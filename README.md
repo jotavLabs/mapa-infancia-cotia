@@ -4,7 +4,7 @@ Mapa de onde estão, e onde faltam, os equipamentos públicos de saúde, educaç
 
 Site publicado: https://jotavlabs.github.io/mapa-infancia-cotia/
 
-Site estático (HTML, CSS e JavaScript, com Leaflet 1.9.4 e OpenStreetMap), sem servidor, sem chave de API e sem cookies. Os dados saem de fontes oficiais abertas e são montados pelos scripts em `scripts/`. A metodologia completa está em `site/metodologia.html`.
+Site estático (HTML, CSS e JavaScript, com Leaflet 1.9.4), sem servidor, sem chave de API e sem cookies. O mapa desenha só Cotia, com os 7 territórios em cores lisas e sem mapa de ruas ao fundo; a busca por endereço usa o Nominatim, do OpenStreetMap. No celular, o mapa ocupa a tela e o painel sobe do rodapé. Os dados saem de fontes oficiais abertas e são montados pelos scripts em `scripts/`. A metodologia completa está em `site/metodologia.html`.
 
 ## Estrutura
 
@@ -66,4 +66,4 @@ O workflow `.github/workflows/pages.yml` publica a pasta `site/` no GitHub Pages
 
 ## Créditos
 
-Feito por João Bento em colaboração com o Claude Code (Anthropic), a partir do plano e dos insumos preparados pelo Guilherme. Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia; mapa-base e geocodificação © colaboradores do OpenStreetMap (ODbL).
+Feito por João Bento em colaboração com o Claude Code (Anthropic), a partir do plano e dos insumos preparados pelo Guilherme. Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia; geocodificação, e mapa-base das páginas de conferência, © colaboradores do OpenStreetMap (ODbL).
