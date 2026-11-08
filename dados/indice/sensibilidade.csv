@@ -1,0 +1,8 @@
+numero,nome,base,pesos_por_indicador,pesos_imapi,norm_minmax,norm_zscore,sem_municipais,sem_E1,sem_E2,sem_S1,sem_S2,sem_S3,sem_S4,sem_A1,sem_A2,s2_1km,s2_2km,s2_2sfca,amplitude
+1,Jd. Japão,4,5,6,5,5,1,3,4,5,4,4,3,5,2,4,4,3,5
+2,Caucaia do Alto,2,2,5,3,3,5,2,3,3,2,3,2,2,5,2,3,2,3
+3,Miguel Mirizola,3,2,3,2,2,3,3,2,2,3,2,4,3,3,3,2,4,2
+4,Central (Monte Serrat),1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1
+5,KM 21 / Granja Viana,6,5,4,6,6,6,6,6,6,6,6,6,5,6,6,6,6,2
+6,Jd. Arco-Íris / Jd. Sandra,5,2,2,4,4,4,5,5,4,5,5,5,4,4,5,5,5,3
+7,Caputera,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,0
