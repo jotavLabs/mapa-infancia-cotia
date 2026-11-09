@@ -74,7 +74,7 @@
       <li><strong>Contorno do município</strong>, API de malhas do IBGE.
         <a href="https://servicodados.ibge.gov.br/api/v3/malhas/municipios/3513009?formato=application/vnd.geo%2Bjson&amp;qualidade=maxima">servicodados.ibge.gov.br</a>
         <span class="data">Coleta em 19/10/2026.</span></li>
-      <li><strong>OpenStreetMap</strong>. Mapa-base e localização por endereço (Nominatim) dos pontos sem coordenada oficial.
+      <li><strong>OpenStreetMap</strong>. Localização por endereço (Nominatim) dos pontos sem coordenada oficial e busca por endereço no mapa.
         <a href="https://www.openstreetmap.org/copyright">openstreetmap.org</a>
         <span class="data">Consultas em outubro de 2026.</span></li>
     </ul>
@@ -136,14 +136,14 @@
     </ul>
 
     <h2 id="privacidade">Privacidade</h2>
-    <p>O site não usa cookies nem ferramentas de rastreamento. As fontes tipográficas ficam no próprio site. A busca por endereço envia o texto digitado ao Nominatim, serviço da Fundação OpenStreetMap; a opção “Usar minha localização” calcula as distâncias no próprio navegador e não envia a posição a lugar nenhum. O mapa-base é carregado dos servidores do OpenStreetMap.</p>
+    <p>O site não usa cookies nem ferramentas de rastreamento. As fontes tipográficas ficam no próprio site. A busca por endereço envia o texto digitado ao Nominatim, serviço da Fundação OpenStreetMap; a opção “Usar minha localização” calcula as distâncias no próprio navegador e não envia a posição a lugar nenhum. O desenho do mapa sai dos arquivos do próprio site, sem mapa-base de outro servidor; só a biblioteca do mapa, o Leaflet, é carregada do cdnjs.</p>
 
     <h2 id="refazer">Dados e reprodução</h2>
     <p>Os dados do mapa podem ser baixados na <a href="index.html#dados">página principal</a>, com fonte e data de coleta em cada linha. Os scripts que baixam, conferem e montam os dados, e os relatórios de cada verificação, ficam no <a href="https://github.com/jotavLabs/mapa-infancia-cotia">repositório do projeto no GitHub</a>, com a ordem de execução no README.</p>
   </main>
 
   <footer class="rodape">
-    <p>Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia. Mapa-base © colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Sem cookies e sem rastreamento.</p>
+    <p>Dados públicos de CNES, INEP, IBGE e Prefeitura de Cotia. Busca por endereço com o Nominatim, © colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Sem cookies e sem rastreamento.</p>
     <p><a href="index.html">Voltar ao mapa</a></p>
   </footer>
 </body>

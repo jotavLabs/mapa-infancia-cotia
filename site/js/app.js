@@ -5,9 +5,13 @@
   const fmt = (n) => NUM.format(Math.round(n));
   const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const celular = window.matchMedia("(max-width: 759.98px)");
-  // Prévia hospedada onde a página não pode carregar recursos de outros sites (tiles, Nominatim, downloads)
+  const largo = window.matchMedia("(min-width: 900px)");
+  const comMouse = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const temaEscuro = window.matchMedia("(prefers-color-scheme: dark)");
+  // Prévia hospedada onde a página não pode chamar outros sites (Nominatim) nem baixar arquivos
   const PREVIA = window.MODO_PREVIA === true || new URLSearchParams(location.search).has("previa");
+  // Miolo verde-pálido do mapa do PMAS, sem CRAS de referência (scripts/desenhar_territorios.py)
+  const CENTRO_RESERVA = [-23.74285, -46.96886];
 
   // ---------- configuração ----------
 
@@ -28,6 +32,7 @@
     assistencia_social: { rotulo: "CRAS e CREAS", icone: "assistencia" },
     protecao: { rotulo: "Conselhos Tutelares", icone: "protecao" },
   };
+  const TODAS_CAMADAS = FAMILIAS.flatMap((f) => f.camadas);
   const FAMILIA_DA_CAMADA = Object.fromEntries(FAMILIAS.flatMap((f) => f.camadas.map((c) => [c, f.id])));
   const ICONES = {
     ubs: "M6.5 2.5h3v4h4v3h-4v4h-3v-4h-4v-3h4z",
@@ -42,12 +47,14 @@
   };
   const svg = (icone) => `<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="${ICONES[icone]}"/></svg>`;
   const amostra = (camada) => `<span class="mk-amostra" style="--cor: var(--${FAMILIA_DA_CAMADA[camada]})">${svg(CAMADAS[camada].icone)}</span>`;
+  const corFundo = (numero) => `var(--t${numero}-fundo)`;
 
   const RAZOES = [
     { id: "ubs", campo: "n_saude_atencao_basica", nome: "UBS", um: "1 UBS", nenhum: "Nenhuma UBS dentro do território." },
     { id: "cras", campo: "n_cras", nome: "CRAS", um: "1 CRAS", nenhum: "Nenhum CRAS dentro do território." },
     { id: "educ", campo: "n_educacao_infantil", nome: "Educação infantil", um: "1 creche ou pré-escola", nenhum: "Nenhuma creche ou pré-escola dentro do território." },
   ];
+  const nomeRazao = (r) => (r.id === "educ" ? "creche ou pré-escola" : r.nome);
   const MODOS = [
     { id: "pmas", rotulo: "Cores do PMAS" },
     { id: "ubs", rotulo: "Crianças por UBS" },
@@ -68,21 +75,36 @@
     { rotulo: "CRAS", teste: (p) => p.subtipo === "CRAS" },
     { rotulo: "Conselho Tutelar", teste: (p) => p.camada === "protecao" },
   ];
+  const ROTULO_VOLTAR = {
+    territorio: "Todos os territórios",
+    bairro: "Voltar aos bairros",
+    endereco: "Voltar à busca",
+    comparar: "Voltar à comparação",
+  };
 
   const estado = {
     camadas: new Set(Object.keys(CAMADAS)),
     territorio: null,
     modo: "pmas",
     ordem: { col: "numero", dir: 1 },
+    metrica: "criancas",
+    aba: "territorio",
   };
 
   // ---------- utilidades ----------
 
   const cssVar = (nome) => getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
-  const normalizar = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
-    .replace(/\b(jd|jardim|pq|parque|vl|vila|chac|chacara|res|residencial)\b\.?/g, " ")
-    .replace(/[^a-z0-9]+/g, " ").trim();
   const dataBR = (iso) => (iso || "").split("-").reverse().join("/");
+  const leve = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const ABREVIACOES = { jd: "jardim", pq: "parque", vl: "vila", chac: "chacara", res: "residencial", sta: "santa", sto: "santo", cond: "condominio", est: "estrada" };
+  const porExtenso = (s) => leve(s).split(" ").map((p) => ABREVIACOES[p] || p).join(" ");
+
+  // mistura duas cores #rrggbb; peso é a fração da primeira
+  function misturar(a, b, peso) {
+    const rgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+    const x = rgb(a), y = rgb(b);
+    return `#${x.map((v, i) => Math.round(v * peso + y[i] * (1 - peso)).toString(16).padStart(2, "0")).join("")}`;
+  }
 
   function distanciaM(a, b) {
     const R = 6371000, rad = Math.PI / 180;
@@ -128,6 +150,8 @@
       const p = { ...f.properties, geometria: f.geometry };
       p.criancas = p.pop_0_4 + p.pop_5_9 + p.pop_10_14;
       p.n_creas = p.n_assistencia_social - p.n_cras;
+      p.n_equipamentos = TODAS_CAMADAS.reduce((s, c) => s + (p[`n_${c}`] || 0), 0);
+      p.bairros = bairros.filter((b) => b.territorios.includes(p.numero)).sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
       return p;
     }).sort((a, b) => a.numero - b.numero);
     porNumero = Object.fromEntries(territorios.map((t) => [t.numero, t]));
@@ -144,46 +168,86 @@
     return CLASSES.find((c) => c.teste(rel));
   }
 
-  // ---------- mapa ----------
+  // ---------- elementos ----------
 
-  const mapa = L.map("mapa", { zoomSnap: 0.5, minZoom: 10, maxZoom: 18 });
-  if (!PREVIA) {
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
-    }).addTo(mapa);
-  }
+  const app = document.getElementById("app");
+  const topo = document.querySelector(".topo");
+  const folha = document.getElementById("folha");
+  const alca = document.getElementById("folha-alca");
+  const vistaAbas = document.getElementById("vista-abas");
+  const vistaTerritorio = document.getElementById("vista-territorio");
+  const corpoAbas = vistaAbas.querySelector(".folha-corpo");
+  const corpoTerritorio = vistaTerritorio.querySelector(".folha-corpo");
+  const conteudoPainel = document.getElementById("pt-conteudo");
+  const botaoVoltar = document.getElementById("pt-voltar");
+  const btnMenu = document.getElementById("btn-menu");
+  const menu = document.getElementById("menu");
+  const btnCamadas = document.getElementById("btn-camadas");
+  const painelCamadas = document.getElementById("painel-camadas");
+  const legendaModo = document.getElementById("legenda-modo");
+  const resultado = document.getElementById("resultado-busca");
+
+  // ---------- mapa: só Cotia, em formas lisas, sem mapa de ruas ----------
+
+  const mapa = L.map("mapa", {
+    zoomControl: false,
+    attributionControl: false,
+    renderer: L.svg({ padding: 0.6 }),
+    zoomSnap: 0.25,
+    zoomDelta: 0.5,
+    minZoom: 8,
+    maxZoom: 17,
+    maxBoundsViscosity: 1,
+  });
+  L.control.zoom({ position: "topright", zoomInTitle: "Aproximar", zoomOutTitle: "Afastar" }).addTo(mapa);
   L.control.scale({ imperial: false, position: "bottomleft" }).addTo(mapa);
   mapa.createPane("rotulos");
-  mapa.getPane("rotulos").style.zIndex = 450;
   mapa.getPane("rotulos").style.pointerEvents = "none";
 
-  const atualizarZoom = () => mapa.getContainer().classList.toggle("zoom-baixo", mapa.getZoom() < 13);
+  // Afastado, os pontos encolhem e os nomes dos territórios passam para cima deles
+  function atualizarZoom() {
+    const z = mapa.getZoom();
+    mapa.getContainer().classList.toggle("zoom-baixo", z < 13);
+    mapa.getContainer().classList.toggle("zoom-minimo", z < 11.5);
+    mapa.getPane("rotulos").style.zIndex = z < 13 ? 620 : 450;
+  }
   mapa.on("zoomend", atualizarZoom);
 
-  let camadaTerritorios, camadaContorno, limitesCotia;
+  let camadaBase, camadaTerritorios, camadaContorno, limitesCotia;
   const marcadores = [];
   let marcadorBusca = null;
 
+  // Embaixo, Cotia inteira na cor das divisas (fecha as frestas entre setores); por cima, o contorno firme
+  const estiloBase = () => ({ stroke: false, fillColor: cssVar("--mapa-divisa"), fillOpacity: 1 });
+  const estiloContorno = () => ({ color: cssVar("--mapa-contorno"), weight: 2.5, opacity: 1, fill: false, lineJoin: "round" });
+
   function corDoTerritorio(t) {
-    if (estado.modo === "pmas") return { cor: t.cor_png, opacidade: 0.32 };
-    const r = RAZOES.find((x) => x.id === estado.modo);
-    const c = classeDe(t, r);
-    return { cor: cssVar(`--div-${c.id}`), opacidade: c.id === "nenhum" ? 0.45 : 0.62 };
+    if (estado.modo === "pmas") return cssVar(`--t${t.numero}-fundo`);
+    return cssVar(`--div-${classeDe(t, RAZOES.find((x) => x.id === estado.modo)).id}`);
   }
 
   function estiloTerritorio(f) {
     const t = porNumero[f.properties.numero];
     const sel = estado.territorio;
-    const ativo = !sel || sel === t.numero;
-    const { cor, opacidade } = corDoTerritorio(t);
+    const cor = corDoTerritorio(t);
     return {
-      color: sel === t.numero ? cssVar("--tinta") : estado.modo === "pmas" ? t.cor_png : cssVar("--tinta-2"),
-      weight: sel === t.numero ? 3 : estado.modo === "pmas" ? 1.6 : 1,
-      opacity: ativo ? 0.95 : 0.35,
-      fillColor: cor,
-      fillOpacity: ativo ? opacidade : 0.06,
+      color: sel === t.numero ? cssVar("--mapa-contorno") : cssVar("--mapa-divisa"),
+      weight: sel === t.numero ? 3.5 : 1.5,
+      opacity: 1,
+      lineJoin: "round",
+      fillColor: sel && sel !== t.numero ? misturar(cor, cssVar("--mapa-fundo"), 0.4) : cor,
+      fillOpacity: 1,
     };
+  }
+
+  const camadaDoTerritorio = (num) => camadaTerritorios.getLayers().find((l) => l.feature.properties.numero === num);
+
+  function redesenharMapa() {
+    camadaBase.setStyle(estiloBase());
+    camadaTerritorios.setStyle(estiloTerritorio);
+    if (estado.territorio) camadaDoTerritorio(estado.territorio).bringToFront();
+    camadaContorno.setStyle(estiloContorno());
+    camadaContorno.bringToFront();
   }
 
   function desenharTerritorios(gj) {
@@ -192,16 +256,32 @@
       onEachFeature: (f, camada) => {
         camada.on("click", (e) => {
           L.DomEvent.stopPropagation(e);
-          selecionarTerritorio(f.properties.numero, { enquadrar: false });
+          if (!painelCamadas.hidden) { alternarCamadas(false); return; }
+          if (estado.territorio === f.properties.numero) return;
+          selecionarTerritorio(f.properties.numero, { enquadrar: !largo.matches });
         });
       },
     }).addTo(mapa);
+  }
+
+  // Com o mapa bem afastado, nomes curtos, para os territórios do norte não se atropelarem
+  const NOME_CURTO = { 1: "Jd. Japão", 2: "Caucaia do Alto", 3: "Mirizola", 4: "Central", 5: "KM 21", 6: "Arco-Íris", 7: "Caputera" };
+
+  function desenharRotulos() {
+    const quebrar = (nome) => esc(nome).replace(" / ", " /<br>").replace(" (", "<br>(");
     for (const t of territorios) {
       L.marker([t.rotulo_lat, t.rotulo_lon], {
         pane: "rotulos", interactive: false, keyboard: false,
-        icon: L.divIcon({ className: "rotulo-territorio", html: `<span style="display:inline-block;transform:translate(-50%,-50%)">${esc(t.nome)}</span>`, iconSize: [0, 0] }),
+        icon: L.divIcon({
+          className: "rotulo-territorio", iconSize: [0, 0],
+          html: `<span class="longo">${quebrar(t.nome)}</span><span class="curto">${esc(NOME_CURTO[t.numero] || t.nome)}</span>`,
+        }),
       }).addTo(mapa);
     }
+    L.marker(CENTRO_RESERVA, {
+      pane: "rotulos", interactive: false, keyboard: false,
+      icon: L.divIcon({ className: "rotulo-reserva", html: "<span>Reserva do<br>Morro Grande</span>", iconSize: [0, 0] }),
+    }).addTo(mapa);
   }
 
   function ficha(p) {
@@ -224,6 +304,19 @@
       ${avisos.map((a) => `<p class="aviso">${a}</p>`).join("")}</div>`;
   }
 
+  // No celular, a ficha abre com a folha recolhida e o mapa desvia dela
+  function prepararPopup(marcador) {
+    const popup = marcador.getPopup();
+    if (!popup) return;
+    if (!painelCamadas.hidden) alternarCamadas(false);
+    if (largo.matches) {
+      popup.options.autoPanPaddingBottomRight = L.point(16, 16);
+    } else {
+      if (posicaoFolha !== "baixo") definirFolha("baixo");
+      popup.options.autoPanPaddingBottomRight = L.point(16, alturas().baixo + 16);
+    }
+  }
+
   function desenharEquipamentos(gj) {
     for (const f of gj.features) {
       const p = f.properties;
@@ -239,8 +332,9 @@
         title: `${p.nome} (${CAMADAS[p.camada].rotulo})`,
         riseOnHover: true,
       });
-      m.bindPopup(ficha(p), { maxWidth: 320 });
-      m.bindTooltip(esc(p.nome), { direction: "top", className: "dica" });
+      m.on("click", () => prepararPopup(m));
+      m.bindPopup(ficha(p), { maxWidth: 300, autoPanPaddingTopLeft: L.point(16, 64) });
+      if (comMouse.matches) m.bindTooltip(esc(p.nome), { direction: "top", className: "dica" });
       m.props = p;
       marcadores.push(m);
       equipamentos.push({ ...p, lat, lon, marcador: m });
@@ -257,27 +351,157 @@
     }
   }
 
-  function enquadrarCotia() {
-    if (limitesCotia) mapa.fitBounds(limitesCotia, { padding: [16, 16] });
+  // Área útil do mapa: no celular, desconta a folha (no máximo a altura média); em cima, os botões flutuantes
+  function margens() {
+    const alt = alturas();
+    let baixo = largo.matches ? 20 : Math.min(alt[posicaoFolha], alt.meio) + 16;
+    baixo = Math.max(20, Math.min(baixo, mapa.getSize().y - 68 - 120)); // tela baixa (celular deitado): sobra ao menos 120 px
+    return { paddingTopLeft: L.point(20, 68), paddingBottomRight: L.point(20, baixo) };
+  }
+  function ajustarVista(limites, opcoes = {}) {
+    mapa.fitBounds(limites, { ...margens(), animate: !reduzMovimento, ...opcoes });
+  }
+  const enquadrarCotia = () => limitesCotia && ajustarVista(limitesCotia);
+
+  // Não deixa arrastar Cotia para fora da tela nem afastar além de um passo do enquadramento.
+  // Folga maior ao sul: no celular, a folha cobre a parte de baixo do mapa.
+  function limitarMapa() {
+    const sw = limitesCotia.getSouthWest(), ne = limitesCotia.getNorthEast();
+    const dLat = ne.lat - sw.lat, dLng = ne.lng - sw.lng;
+    mapa.setMaxBounds(L.latLngBounds([sw.lat - dLat * 2.5, sw.lng - dLng * 0.6], [ne.lat + dLat * 0.6, ne.lng + dLng * 0.6]));
+    ajustarZoomMinimo();
+  }
+  function ajustarZoomMinimo() {
+    const { x, y } = mapa.getSize();
+    if (!x || !y) return;
+    const m = margens();
+    mapa.options.minZoom = 8;
+    const zCotia = mapa.getBoundsZoom(limitesCotia, false, m.paddingTopLeft.add(m.paddingBottomRight));
+    mapa.setMinZoom(Math.max(8, zCotia - 1));
   }
 
-  // O contêiner do mapa pode nascer sem tamanho (aba em segundo plano); enquadra quando houver tamanho.
-  function quandoVisivel(fn) {
-    let feito = false;
-    const tentar = () => {
-      mapa.invalidateSize();
-      const { x, y } = mapa.getSize();
-      if (!feito && x > 0 && y > 0) { feito = true; fn(); }
-    };
-    new ResizeObserver(tentar).observe(mapa.getContainer());
-    tentar();
+  // ---------- folha (celular) ----------
+
+  const POSICOES = ["baixo", "meio", "alto"];
+  let posicaoFolha = "meio";
+
+  function alturas() {
+    const h = window.innerHeight;
+    const alto = Math.max(160, h - topo.offsetHeight - 10);
+    return { baixo: Math.min(132, alto), meio: Math.min(alto, Math.max(280, Math.round(h * 0.44))), alto };
+  }
+
+  function definirFolha(pos) {
+    posicaoFolha = pos;
+    folha.dataset.posicao = pos;
+    if (largo.matches) {
+      folha.style.removeProperty("--folha-h");
+      return;
+    }
+    folha.style.setProperty("--folha-h", `${alturas()[pos]}px`);
+    if (pos === "alto") mapa.closePopup();
+    alca.setAttribute("aria-expanded", String(pos !== "baixo"));
+    alca.setAttribute("aria-label", { baixo: "Abrir o painel", meio: "Expandir o painel", alto: "Recolher o painel" }[pos]);
+  }
+
+  let arrasto = null;
+  let fimDoArrasto = 0;
+  alca.addEventListener("pointerdown", (e) => {
+    if (largo.matches || e.button !== 0) return;
+    arrasto = { id: e.pointerId, y0: e.clientY, h0: folha.getBoundingClientRect().height, yAnt: e.clientY, tAnt: e.timeStamp, v: 0, moveu: false };
+    alca.setPointerCapture(e.pointerId);
+  });
+  alca.addEventListener("pointermove", (e) => {
+    if (!arrasto || e.pointerId !== arrasto.id) return;
+    const dy = e.clientY - arrasto.y0;
+    if (!arrasto.moveu && Math.abs(dy) < 6) return;
+    if (!arrasto.moveu) { arrasto.moveu = true; folha.classList.add("arrastando"); }
+    const dt = e.timeStamp - arrasto.tAnt;
+    if (dt > 0) arrasto.v = 0.7 * ((e.clientY - arrasto.yAnt) / dt) + 0.3 * arrasto.v;
+    arrasto.yAnt = e.clientY;
+    arrasto.tAnt = e.timeStamp;
+    const alt = alturas();
+    folha.style.setProperty("--folha-h", `${Math.min(alt.alto, Math.max(alt.baixo * 0.75, arrasto.h0 - dy))}px`);
+  });
+  function soltarFolha(e) {
+    if (!arrasto || e.pointerId !== arrasto.id) return;
+    const a = arrasto;
+    arrasto = null;
+    if (!a.moveu) return; // toque simples: o clique decide
+    fimDoArrasto = performance.now();
+    folha.classList.remove("arrastando");
+    const h = folha.getBoundingClientRect().height;
+    const alt = alturas();
+    let alvo;
+    if (Math.abs(a.v) > 0.45) {
+      const acima = POSICOES.filter((p) => alt[p] > h + 1);
+      const abaixo = POSICOES.filter((p) => alt[p] < h - 1);
+      alvo = a.v < 0 ? acima[0] || "alto" : abaixo[abaixo.length - 1] || "baixo";
+    } else {
+      alvo = POSICOES.reduce((m, p) => (Math.abs(alt[p] - h) < Math.abs(alt[m] - h) ? p : m), "meio");
+    }
+    definirFolha(alvo);
+  }
+  alca.addEventListener("pointerup", soltarFolha);
+  alca.addEventListener("pointercancel", soltarFolha);
+  alca.addEventListener("click", () => {
+    if (performance.now() - fimDoArrasto < 400) return;
+    definirFolha(posicaoFolha === "alto" ? "baixo" : POSICOES[POSICOES.indexOf(posicaoFolha) + 1]);
+  });
+  alca.addEventListener("keydown", (e) => {
+    const i = POSICOES.indexOf(posicaoFolha);
+    if (e.key === "ArrowUp") { e.preventDefault(); definirFolha(POSICOES[Math.min(2, i + 1)]); }
+    if (e.key === "ArrowDown") { e.preventDefault(); definirFolha(POSICOES[Math.max(0, i - 1)]); }
+  });
+
+  // ---------- abas e vistas da folha ----------
+
+  const listaAbas = () => [...document.querySelectorAll('.abas [role="tab"]')];
+
+  function atualizarComparando() {
+    const agora = largo.matches && !vistaAbas.hidden && estado.aba === "comparar";
+    if (app.classList.contains("comparando") !== agora) {
+      app.classList.toggle("comparando", agora);
+      mapa.invalidateSize({ animate: false });
+      if (!estado.territorio && limitesCotia) ajustarVista(limitesCotia, { animate: false });
+    }
+  }
+
+  function mostrarVista(qual) {
+    vistaAbas.hidden = qual !== "abas";
+    vistaTerritorio.hidden = qual !== "territorio";
+    atualizarComparando();
+  }
+
+  function ativarAba(id, { focar = false, posicao = null, rolar = true } = {}) {
+    estado.aba = id;
+    for (const a of listaAbas()) {
+      const sel = a.id === `aba-btn-${id}`;
+      a.setAttribute("aria-selected", String(sel));
+      a.tabIndex = sel ? 0 : -1;
+      document.getElementById(a.getAttribute("aria-controls")).hidden = !sel;
+      if (sel && focar) a.focus();
+    }
+    mostrarVista("abas");
+    if (rolar) corpoAbas.scrollTop = 0;
+    if (!largo.matches) definirFolha(posicao || (id === "bairro" || id === "comparar" ? "alto" : "meio"));
+  }
+
+  function montarAbas() {
+    const abas = listaAbas();
+    abas.forEach((a, i) => {
+      const id = a.id.replace("aba-btn-", "");
+      a.addEventListener("click", () => ativarAba(id));
+      a.addEventListener("keydown", (e) => {
+        const ir = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: abas.length - 1 }[e.key];
+        if (ir === undefined) return;
+        e.preventDefault();
+        ativarAba(abas[(ir + abas.length) % abas.length].id.replace("aba-btn-", ""), { focar: true, posicao: posicaoFolha });
+      });
+    });
   }
 
   // ---------- painel do território ----------
-
-  const area = document.getElementById("area-mapa");
-  const painel = document.getElementById("painel-territorio");
-  const conteudoPainel = document.getElementById("pt-conteudo");
 
   function regua(t, r) {
     const valores = territorios.map((x) => ({ t: x, v: razao(x, r) })).filter((x) => x.v !== null);
@@ -309,16 +533,17 @@
         : `${r.um} para cada <strong>${fmt(v)}</strong> crianças. Média de Cotia: 1 para ${fmt(media(r))}.`;
       return `<div class="razao"><p class="razao-titulo">${r.nome}</p><p class="razao-texto">${texto}</p>${regua(t, r)}</div>`;
     }).join("");
-    const lista = FAMILIAS.flatMap((f) => f.camadas).map((c) => {
+    const lista = TODAS_CAMADAS.map((c) => {
       const n = t[`n_${c}`] || 0;
       return `<li class="${n ? "" : "zero"}">${amostra(c)}<span>${esc(CAMADAS[c].rotulo)}</span><span class="n">${n}</span></li>`;
     }).join("");
     const aprox = t.n_aproximados
       ? ` ${t.n_aproximados} ${t.n_aproximados === 1 ? "equipamento deste território tem" : "equipamentos deste território têm"} localização aproximada.`
       : "";
+    const nb = t.bairros.length;
     return `
       <div class="pt-cabeca">
-        <p class="sobretitulo pt-numero" style="--c: ${esc(t.cor_png)}">Território ${t.numero} de 7</p>
+        <p class="sobretitulo pt-numero" style="--c: ${corFundo(t.numero)}">Território ${t.numero} de 7</p>
         <h2 id="pt-nome" tabindex="-1">${esc(t.nome)}</h2>
         <p class="pt-cras">CRAS de referência: ${crasTexto}</p>
       </div>
@@ -337,227 +562,120 @@
         ${razoes}
       </section>
       <section class="pt-secao">
-        <h3>Equipamentos no território</h3>
+        <h3>Equipamentos no território · ${t.n_equipamentos}</h3>
         <ul class="eq-lista">${lista}</ul>
       </section>
+      ${nb ? `<section class="pt-secao">
+        <h3>Bairros na lista do PMAS · ${nb}</h3>
+        <details class="pt-bairros"><summary>Ver ${nb === 1 ? "o bairro" : `os ${nb} bairros`}</summary>
+          <p>${t.bairros.map((b) => esc(b.nome)).join(" · ")}</p></details>
+      </section>` : ""}
       <p class="pt-nota">Os limites são uma aproximação do mapa do PMAS 2026–2029, refeita com os setores do Censo 2022.${aprox}
         Contar equipamentos não mede qualidade, equipe nem fila. <a href="metodologia.html#territorios">Como os territórios foram desenhados</a></p>`;
   }
 
-  function abrirPainel(t, focar) {
-    conteudoPainel.innerHTML = htmlPainel(t);
-    painel.hidden = false;
-    area.classList.add("com-painel");
-    document.getElementById("carimbo").open = false;
-    if (focar) document.getElementById("pt-nome").focus({ preventScroll: true });
-  }
-  function fecharPainel() {
-    painel.hidden = true;
-    area.classList.remove("com-painel");
-  }
-  document.getElementById("pt-fechar").addEventListener("click", () => selecionarTerritorio(null));
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && estado.territorio && !document.querySelector(".leaflet-popup")) selecionarTerritorio(null);
-  });
+  let origemFoco = null;
+  let rolagemAbas = 0;
 
-  // ---------- seleção de território ----------
-
-  const selTerritorio = document.getElementById("sel-territorio");
+  function marcarSelecionados() {
+    document.querySelectorAll("#tabela tbody tr").forEach((tr) => tr.classList.toggle("selecionada", Number(tr.dataset.t) === estado.territorio));
+    document.querySelectorAll("#ranking button").forEach((b) => b.classList.toggle("selecionada", Number(b.dataset.t) === estado.territorio));
+  }
 
   function selecionarTerritorio(num, { enquadrar = true, focar = false } = {}) {
+    const anterior = estado.territorio;
     estado.territorio = num || null;
-    selTerritorio.value = num ? String(num) : "";
-    camadaTerritorios.setStyle(estiloTerritorio);
+    redesenharMapa();
     atualizarMarcadores();
-    document.querySelectorAll("#tabela tbody tr").forEach((tr) => tr.classList.toggle("selecionada", Number(tr.dataset.t) === estado.territorio));
+    marcarSelecionados();
     if (num) {
-      abrirPainel(porNumero[num], focar);
-      mapa.invalidateSize({ animate: false });
-      if (enquadrar) {
-        const camada = camadaTerritorios.getLayers().find((l) => l.feature.properties.numero === num);
-        let baixo = 24;
-        if (celular.matches) {
-          // no celular o painel é uma gaveta sobre o mapa: enquadra o território na faixa que fica visível
-          mapa.getContainer().scrollIntoView({ block: "start", behavior: "auto" });
-          const r = mapa.getContainer().getBoundingClientRect();
-          baixo += Math.max(0, r.bottom - (window.innerHeight - painel.offsetHeight));
-        }
-        mapa.fitBounds(camada.getBounds(), { paddingTopLeft: [24, 24], paddingBottomRight: [24, baixo], animate: !reduzMovimento });
-      }
+      if (!anterior) rolagemAbas = corpoAbas.scrollTop;
+      conteudoPainel.innerHTML = htmlPainel(porNumero[num]);
+      botaoVoltar.textContent = ROTULO_VOLTAR[estado.aba] || ROTULO_VOLTAR.territorio;
+      mostrarVista("territorio");
+      corpoTerritorio.scrollTop = 0;
+      if (!largo.matches && posicaoFolha !== "meio") definirFolha("meio");
+      if (focar) document.getElementById("pt-nome").focus({ preventScroll: true });
+      if (enquadrar) ajustarVista(camadaDoTerritorio(num).getBounds(), { maxZoom: 15 });
       history.replaceState(null, "", `#t${num}`);
     } else {
-      fecharPainel();
-      mapa.invalidateSize({ animate: false });
-      history.replaceState(null, "", location.pathname + location.search);
+      mostrarVista("abas");
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
     }
   }
 
-  // ---------- controles ----------
+  function voltarDoTerritorio() {
+    const num = estado.territorio;
+    selecionarTerritorio(null);
+    ativarAba(estado.aba, { rolar: false });
+    corpoAbas.scrollTop = rolagemAbas;
+    enquadrarCotia();
+    const alvo = origemFoco && document.contains(origemFoco) ? origemFoco
+      : (estado.aba === "territorio" && document.querySelector(`#lista-territorios [data-t="${num}"]`)) || document.getElementById(`aba-btn-${estado.aba}`);
+    alvo?.focus({ preventScroll: true });
+    origemFoco = null;
+  }
+  botaoVoltar.addEventListener("click", voltarDoTerritorio);
 
-  function ajustarPrevia() {
-    if (!PREVIA) return;
-    document.getElementById("aba-btn-endereco").remove();
-    document.getElementById("aba-endereco").remove();
-    document.querySelector(".mapa-wrap").insertAdjacentHTML("afterbegin",
-      '<p class="aviso-previa">Prévia: sem o mapa de ruas ao fundo e sem a busca por endereço, que funcionam no site publicado.</p>');
-    const downloads = document.querySelector(".downloads");
-    if (downloads) {
-      downloads.outerHTML = '<p class="secao-texto">Na prévia, os arquivos não podem ser baixados. No site publicado ficam aqui os links para <strong>equipamentos.csv</strong> e <strong>territorios.geojson</strong>.</p>';
-    }
+  // ---------- lista de territórios e de bairros ----------
+
+  function montarListaTerritorios() {
+    document.getElementById("lista-territorios").innerHTML = territorios.map((t) => `
+      <li><button type="button" data-t="${t.numero}">
+        <span class="sw" style="--c: ${corFundo(t.numero)}"></span>
+        <span><span class="lt-nome">${esc(t.nome)}</span>
+          <span class="lt-info">${fmt(t.criancas)} crianças · ${t.n_equipamentos} equipamentos</span></span>
+        <span class="lt-seta" aria-hidden="true">›</span>
+      </button></li>`).join("");
   }
 
-  function montarControles() {
-    ajustarPrevia();
-    for (const t of territorios) selTerritorio.insertAdjacentHTML("beforeend", `<option value="${t.numero}">${t.numero}. ${esc(t.nome)}</option>`);
-    selTerritorio.addEventListener("change", () => selecionarTerritorio(Number(selTerritorio.value) || null, { focar: false }));
+  const entradaBairro = document.getElementById("in-bairro");
+  const listaBairros = document.getElementById("lista-bairros");
+  let statusBairros;
 
-    const contagem = {};
-    for (const e of equipamentos) contagem[e.camada] = (contagem[e.camada] || 0) + 1;
-    document.getElementById("lista-camadas").innerHTML = FAMILIAS.map((f) => `
-      <div class="familia" style="--cor: var(--${f.id})">
-        <p class="familia-nome">${esc(f.nome)}</p>
-        ${f.camadas.map((c) => `
-          <label class="camada${contagem[c] ? "" : " vazia"}">
-            <input type="checkbox" data-camada="${c}" checked>
-            ${amostra(c)}<span>${esc(CAMADAS[c].rotulo)}</span><span class="contagem">${contagem[c] || 0}</span>
-          </label>`).join("")}
-      </div>`).join("");
-    document.getElementById("lista-camadas").addEventListener("change", (e) => {
-      const c = e.target.dataset.camada;
-      if (!c) return;
-      if (e.target.checked) estado.camadas.add(c); else estado.camadas.delete(c);
-      atualizarMarcadores();
-    });
-
-    const modos = document.getElementById("modos");
-    modos.innerHTML = MODOS.map((m) => `<button type="button" role="radio" data-modo="${m.id}" aria-checked="${m.id === estado.modo}" tabindex="${m.id === estado.modo ? 0 : -1}">${esc(m.rotulo)}</button>`).join("");
-    const escolherModo = (id, focar) => {
-      estado.modo = id;
-      modos.querySelectorAll("button").forEach((b) => {
-        const ativo = b.dataset.modo === id;
-        b.setAttribute("aria-checked", ativo);
-        b.tabIndex = ativo ? 0 : -1;
-        if (ativo && focar) b.focus();
-      });
-      camadaTerritorios.setStyle(estiloTerritorio);
-      desenharLegenda();
-    };
-    modos.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) escolherModo(b.dataset.modo); });
-    modos.addEventListener("keydown", (e) => {
-      const ids = MODOS.map((m) => m.id);
-      const i = ids.indexOf(estado.modo);
-      if (["ArrowRight", "ArrowDown"].includes(e.key)) { e.preventDefault(); escolherModo(ids[(i + 1) % ids.length], true); }
-      if (["ArrowLeft", "ArrowUp"].includes(e.key)) { e.preventDefault(); escolherModo(ids[(i - 1 + ids.length) % ids.length], true); }
-    });
-    desenharLegenda();
-
-    montarAbas();
-    montarBuscas();
+  function filtrarBairros() {
+    const q = leve(entradaBairro.value);
+    return territorios
+      .map((t) => ({ t, lista: q ? t.bairros.filter((b) => b.busca.some((x) => x.includes(q))) : t.bairros }))
+      .filter((g) => g.lista.length);
   }
 
-  function desenharLegenda() {
-    const alvo = document.getElementById("legenda-territorios");
-    if (estado.modo === "pmas") {
-      alvo.innerHTML = `<p>As cores do mapa oficial do Plano Municipal de Assistência Social 2026–2029. Clique num território para ver os números.</p>` +
-        territorios.map((t) => `<div class="leg-item"><span class="leg-cor" style="--c: ${esc(t.cor_png)}"></span><span>${t.numero}. ${esc(t.nome)}</span></div>`).join("");
+  function desenharBairros() {
+    const filtro = entradaBairro.value.trim();
+    const grupos = filtrarBairros();
+    const total = grupos.reduce((s, g) => s + g.lista.length, 0);
+    statusBairros.textContent = filtro ? (total ? `${total} ${total === 1 ? "bairro encontrado" : "bairros encontrados"}` : "Nenhum bairro encontrado") : "";
+    if (!grupos.length) {
+      listaBairros.innerHTML = `<p class="vazio">“${esc(filtro)}” não está nas listas de bairros do PMAS 2026–2029. Tente outra grafia ou busque pelo endereço.</p>`;
       return;
     }
-    const r = RAZOES.find((x) => x.id === estado.modo);
-    alvo.innerHTML = `<p>Crianças de 0 a 14 anos por ${r.id === "educ" ? "creche ou pré-escola" : r.nome} em cada território, comparado com a média de Cotia (1 para ${fmt(media(r))}). Acima da média = mais crianças para cada equipamento.</p>` +
-      CLASSES.map((c) => `<div class="leg-item"><span class="leg-cor" style="--c: var(--div-${c.id})"></span><span>${c.texto}</span></div>`).join("") +
-      (territorios.some((t) => razao(t, r) === null) ? `<div class="leg-item"><span class="leg-cor" style="--c: var(--div-nenhum)"></span><span>nenhum equipamento deste tipo no território</span></div>` : "");
+    listaBairros.innerHTML = grupos.map(({ t, lista }) => `
+      <section class="grupo-bairros" aria-labelledby="gb-${t.numero}">
+        <h3 class="titulo-grupo" id="gb-${t.numero}"><span class="sw" style="--c: ${corFundo(t.numero)}"></span>${esc(t.nome)}<span class="contagem">${lista.length} ${lista.length === 1 ? "bairro" : "bairros"}</span></h3>
+        <ul class="bairros">${lista.map((b) => {
+          const outros = b.territorios.filter((n) => n !== t.numero).map((n) => porNumero[n].nome);
+          return `<li><button type="button" data-t="${t.numero}"><span class="b-nome">${esc(b.nome)}</span>${outros.length ? `<span class="tambem">também na lista de ${esc(outros.join(" e "))}</span>` : ""}</button></li>`;
+        }).join("")}</ul>
+      </section>`).join("");
   }
 
-  function montarAbas() {
-    const abas = [...document.querySelectorAll('.abas [role="tab"]')];
-    const ativar = (aba, focar) => {
-      for (const a of abas) {
-        const sel = a === aba;
-        a.setAttribute("aria-selected", sel);
-        a.tabIndex = sel ? 0 : -1;
-        document.getElementById(a.getAttribute("aria-controls")).hidden = !sel;
-      }
-      if (focar) aba.focus();
-    };
-    abas.forEach((a, i) => {
-      a.addEventListener("click", () => ativar(a));
-      a.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") { e.preventDefault(); ativar(abas[(i + 1) % abas.length], true); }
-        if (e.key === "ArrowLeft") { e.preventDefault(); ativar(abas[(i - 1 + abas.length) % abas.length], true); }
-      });
+  function montarBairros() {
+    for (const b of bairros) b.busca = [leve(b.nome), porExtenso(b.nome)];
+    listaBairros.insertAdjacentHTML("beforebegin", '<p class="sr-only" id="bairros-status" aria-live="polite"></p>');
+    statusBairros = document.getElementById("bairros-status");
+    entradaBairro.addEventListener("input", desenharBairros);
+    entradaBairro.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+      e.preventDefault();
+      const botoes = listaBairros.querySelectorAll("button[data-t]");
+      if (botoes.length === 1) botoes[0].click();
     });
+    desenharBairros();
   }
 
-  // ---------- buscas: bairro, endereço, localização ----------
+  // ---------- busca por endereço e localização ----------
 
-  const resultado = document.getElementById("resultado-busca");
   const mostrar = (html) => { resultado.innerHTML = html; };
-
-  function montarBuscas() {
-    document.getElementById("lista-bairros").innerHTML = bairros.map((b) => `<option value="${esc(b.nome)}"></option>`).join("");
-
-    document.getElementById("form-bairro").addEventListener("submit", (e) => {
-      e.preventDefault();
-      buscarBairro(document.getElementById("in-bairro").value.trim());
-    });
-    document.getElementById("form-endereco")?.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const q = document.getElementById("in-endereco").value.trim();
-      if (!q) return;
-      mostrar("<p>Buscando o endereço…</p>");
-      try {
-        const achado = await geocodificar(q);
-        if (!achado) {
-          mostrar(`<p>Não encontrei “${esc(q)}” em Cotia. Confira a grafia ou escreva só a rua e o bairro.</p>`);
-          return;
-        }
-        mostrarPerto(achado.lat, achado.lon, achado.nome);
-      } catch {
-        mostrar("<p>A busca de endereço não respondeu. Tente de novo em alguns segundos.</p>");
-      }
-    });
-    document.getElementById("btn-local")?.addEventListener("click", () => {
-      if (!navigator.geolocation) { mostrar("<p>Este navegador não informa a localização.</p>"); return; }
-      mostrar("<p>Pedindo a localização ao navegador…</p>");
-      navigator.geolocation.getCurrentPosition(
-        (pos) => mostrarPerto(pos.coords.latitude, pos.coords.longitude, "Sua localização"),
-        (erro) => mostrar(`<p>${erro.code === 1 ? "A permissão de localização foi negada no navegador." : "Não foi possível obter a localização agora."} Você pode buscar pelo endereço.</p>`),
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
-      );
-    });
-    resultado.addEventListener("click", (e) => {
-      const b = e.target.closest("button");
-      if (!b) return;
-      if (b.dataset.t) selecionarTerritorio(Number(b.dataset.t), { focar: true });
-      if (b.dataset.bairro) buscarBairro(b.dataset.bairro);
-      if (b.dataset.eq) abrirEquipamento(b.dataset.eq);
-    });
-  }
-
-  function buscarBairro(texto) {
-    if (!texto) return;
-    const alvo = normalizar(texto);
-    let achados = bairros.filter((b) => normalizar(b.nome) === alvo || b.nome.toLowerCase() === texto.toLowerCase());
-    if (!achados.length && alvo.length >= 3) achados = bairros.filter((b) => normalizar(b.nome).includes(alvo));
-    if (!achados.length) {
-      mostrar(`<p>“${esc(texto)}” não está nas listas de bairros do PMAS 2026–2029. Tente outra grafia ou busque pelo endereço.</p>`);
-      return;
-    }
-    if (achados.length > 1 && !achados.every((b) => normalizar(b.nome) === alvo)) {
-      mostrar(`<p>Encontrei ${achados.length} bairros parecidos:</p>` +
-        achados.slice(0, 10).map((b) => `<button type="button" data-bairro="${esc(b.nome)}">${esc(b.nome)}</button>`).join(""));
-      return;
-    }
-    const b = achados[0];
-    const terrs = [...new Set(achados.flatMap((x) => x.territorios))];
-    if (terrs.length === 1) {
-      mostrar(`<p><strong>${esc(b.nome)}</strong> está na lista do território <strong>${esc(porNumero[terrs[0]].nome)}</strong> no PMAS 2026–2029.</p>`);
-      selecionarTerritorio(terrs[0]);
-    } else {
-      mostrar(`<p><strong>${esc(b.nome)}</strong> aparece na lista de ${terrs.length} territórios no PMAS 2026–2029:</p>` +
-        terrs.map((n) => `<button type="button" data-t="${n}">${esc(porNumero[n].nome)}</button>`).join(""));
-    }
-  }
 
   async function geocodificar(q) {
     const url = new URL("https://nominatim.openstreetmap.org/search");
@@ -571,17 +689,15 @@
     return h ? { lat: Number(h.lat), lon: Number(h.lon), nome: h.display_name.split(",").slice(0, 3).join(",") } : null;
   }
 
-  function territorioDoPonto(lat, lon) {
-    return territorios.find((t) => dentroDaGeometria(lon, lat, t.geometria)) || null;
-  }
+  const territorioDoPonto = (lat, lon) => territorios.find((t) => dentroDaGeometria(lon, lat, t.geometria)) || null;
 
   function mostrarPerto(lat, lon, rotulo) {
     if (estado.territorio) selecionarTerritorio(null, { enquadrar: false });
     if (marcadorBusca) marcadorBusca.remove();
     marcadorBusca = L.marker([lat, lon], {
-      icon: L.divIcon({ className: "", html: '<div class="marcador-busca"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }),
+      icon: L.divIcon({ className: "", html: '<div class="marcador-busca"></div>', iconSize: [20, 20], iconAnchor: [10, 10] }),
       title: rotulo, keyboard: false, zIndexOffset: 1000,
-    }).addTo(mapa).bindTooltip(esc(rotulo), { direction: "top", offset: [0, -10], className: "dica" });
+    }).addTo(mapa).bindTooltip(esc(rotulo), { direction: "top", offset: [0, -10], className: "dica", permanent: !comMouse.matches });
 
     const terr = territorioDoPonto(lat, lon);
     const perto = GRUPOS_PERTO.map((g) => {
@@ -592,10 +708,10 @@
       <li><button type="button" data-eq="${esc(e.id)}">${amostra(e.camada)}
         <span><span class="perto-nome">${esc(e.nome)}</span><span class="perto-tipo">${esc(g.rotulo)} mais perto${e.coord_origem === "pendente" ? " · ponto aproximado" : ""}</span></span>
         <span class="perto-dist">${textoDistancia(d)}</span></button></li>`).join("");
-    mostrar(`<p><strong>${esc(rotulo)}</strong>${terr ? ` fica no território <button type="button" data-t="${terr.numero}">${esc(terr.nome)}</button>` : " fica fora dos limites de Cotia."}</p>
+    mostrar(`<p><strong>${esc(rotulo)}</strong>${terr ? ` fica no território <button type="button" class="escolha" data-t="${terr.numero}">${esc(terr.nome)}</button>` : " fica fora dos limites de Cotia."}</p>
       <p>Mais perto deste ponto, em linha reta:</p><ul class="perto">${itens}</ul>`);
     const grupo = L.featureGroup([marcadorBusca, ...perto.map((p) => L.marker([p.e.lat, p.e.lon]))]);
-    mapa.fitBounds(grupo.getBounds(), { padding: [40, 40], maxZoom: 15, animate: !reduzMovimento });
+    ajustarVista(grupo.getBounds(), { maxZoom: 15 });
   }
 
   function abrirEquipamento(id) {
@@ -607,11 +723,185 @@
       if (caixa) caixa.checked = true;
     }
     atualizarMarcadores();
-    mapa.setView([e.lat, e.lon], Math.max(mapa.getZoom(), 15), { animate: !reduzMovimento });
+    prepararPopup(e.marcador);
+    mapa.setView([e.lat, e.lon], Math.max(mapa.getZoom(), 15), { animate: false });
     e.marcador.openPopup();
   }
 
-  // ---------- tabela comparativa ----------
+  function montarEndereco() {
+    const form = document.getElementById("form-endereco");
+    if (!form) return;
+    const entrada = document.getElementById("in-endereco");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const q = entrada.value.trim();
+      if (!q) return;
+      entrada.blur();
+      mostrar("<p>Buscando o endereço…</p>");
+      try {
+        const achado = await geocodificar(q);
+        if (!achado) {
+          mostrar(`<p>Não encontrei “${esc(q)}” em Cotia. Confira a grafia ou escreva só a rua e o bairro.</p>`);
+          return;
+        }
+        mostrarPerto(achado.lat, achado.lon, achado.nome);
+      } catch {
+        mostrar("<p>A busca de endereço não respondeu. Tente de novo em alguns segundos.</p>");
+      }
+    });
+    document.getElementById("btn-local").addEventListener("click", () => {
+      if (!navigator.geolocation) { mostrar("<p>Este navegador não informa a localização.</p>"); return; }
+      mostrar("<p>Pedindo a localização ao navegador…</p>");
+      navigator.geolocation.getCurrentPosition(
+        (pos) => mostrarPerto(pos.coords.latitude, pos.coords.longitude, "Sua localização"),
+        (erro) => mostrar(`<p>${erro.code === 1 ? "A permissão de localização foi negada no navegador." : "Não foi possível obter a localização agora."} Você pode buscar pelo endereço.</p>`),
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
+      );
+    });
+  }
+
+  // Botões com território (listas, ranking, resultado da busca) e com equipamento
+  folha.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    if (b.dataset.eq) { abrirEquipamento(b.dataset.eq); return; }
+    if (b.dataset.t) {
+      origemFoco = b;
+      selecionarTerritorio(Number(b.dataset.t), { focar: true });
+    }
+  });
+
+  // ---------- camadas, cores e legendas ----------
+
+  function alternarCamadas(abrir = painelCamadas.hidden, devolverFoco = false) {
+    painelCamadas.hidden = !abrir;
+    btnCamadas.setAttribute("aria-expanded", String(abrir));
+    legendaModo.hidden = abrir || estado.modo === "pmas";
+    if (abrir) {
+      if (!menu.hidden) alternarMenu(false);
+      document.getElementById("fechar-camadas").focus();
+    } else if (devolverFoco) {
+      btnCamadas.focus();
+    }
+  }
+  btnCamadas.addEventListener("click", () => alternarCamadas());
+  document.getElementById("fechar-camadas").addEventListener("click", () => alternarCamadas(false, true));
+  document.getElementById("btn-cotia").addEventListener("click", enquadrarCotia);
+
+  function montarCamadas() {
+    const contagem = {};
+    for (const e of equipamentos) contagem[e.camada] = (contagem[e.camada] || 0) + 1;
+    const lista = document.getElementById("lista-camadas");
+    lista.innerHTML = FAMILIAS.map((f) => `
+      <div class="familia" style="--cor: var(--${f.id})">
+        <p class="familia-nome">${esc(f.nome)}</p>
+        ${f.camadas.map((c) => `
+          <label class="camada${contagem[c] ? "" : " vazia"}">
+            <input type="checkbox" data-camada="${c}" checked>
+            ${amostra(c)}<span>${esc(CAMADAS[c].rotulo)}</span><span class="contagem">${contagem[c] || 0}</span>
+          </label>`).join("")}
+      </div>`).join("");
+    lista.addEventListener("change", (e) => {
+      const c = e.target.dataset.camada;
+      if (!c) return;
+      if (e.target.checked) estado.camadas.add(c); else estado.camadas.delete(c);
+      atualizarMarcadores();
+    });
+  }
+
+  function montarModos() {
+    const modos = document.getElementById("modos");
+    modos.innerHTML = MODOS.map((m) => `<button type="button" role="radio" data-modo="${m.id}" aria-checked="${m.id === estado.modo}" tabindex="${m.id === estado.modo ? 0 : -1}">${esc(m.rotulo)}</button>`).join("");
+    const escolherModo = (id, focar) => {
+      estado.modo = id;
+      modos.querySelectorAll("button").forEach((b) => {
+        const ativo = b.dataset.modo === id;
+        b.setAttribute("aria-checked", String(ativo));
+        b.tabIndex = ativo ? 0 : -1;
+        if (ativo && focar) b.focus();
+      });
+      redesenharMapa();
+      desenharLegenda();
+    };
+    modos.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) escolherModo(b.dataset.modo); });
+    modos.addEventListener("keydown", (e) => {
+      const ids = MODOS.map((m) => m.id);
+      const i = ids.indexOf(estado.modo);
+      if (["ArrowRight", "ArrowDown"].includes(e.key)) { e.preventDefault(); escolherModo(ids[(i + 1) % ids.length], true); }
+      if (["ArrowLeft", "ArrowUp"].includes(e.key)) { e.preventDefault(); escolherModo(ids[(i - 1 + ids.length) % ids.length], true); }
+    });
+    desenharLegenda();
+  }
+
+  function desenharLegenda() {
+    const alvo = document.getElementById("legenda-territorios");
+    if (estado.modo === "pmas") {
+      alvo.innerHTML = `<p>As cores do mapa oficial do Plano Municipal de Assistência Social 2026–2029, em tom mais claro. Toque num território para ver os números.</p>` +
+        territorios.map((t) => `<div class="leg-item"><span class="leg-cor" style="--c: ${corFundo(t.numero)}"></span><span>${t.numero}. ${esc(t.nome)}</span></div>`).join("");
+      legendaModo.hidden = true;
+      legendaModo.innerHTML = "";
+      return;
+    }
+    const r = RAZOES.find((x) => x.id === estado.modo);
+    const temSem = territorios.some((t) => razao(t, r) === null);
+    alvo.innerHTML = `<p>Crianças de 0 a 14 anos por ${nomeRazao(r)} em cada território, comparado com a média de Cotia (1 para ${fmt(media(r))}). Acima da média = mais crianças para cada equipamento.</p>` +
+      CLASSES.map((c) => `<div class="leg-item"><span class="leg-cor" style="--c: var(--div-${c.id})"></span><span>${c.texto}</span></div>`).join("") +
+      (temSem ? `<div class="leg-item"><span class="leg-cor" style="--c: var(--div-nenhum)"></span><span>nenhum equipamento deste tipo no território</span></div>` : "");
+    legendaModo.innerHTML = `<strong>Crianças por ${esc(nomeRazao(r))} × média de Cotia</strong>
+      <div class="escala">${CLASSES.map((c) => `<span style="--c: var(--div-${c.id})"></span>`).join("")}</div>
+      <div class="escala-rotulos"><span>menos</span><span>média</span><span>mais</span></div>
+      ${temSem ? `<span class="sem">${esc(r.nenhum.replace(" dentro do território.", ""))} no território</span>` : ""}`;
+    legendaModo.hidden = !painelCamadas.hidden;
+  }
+
+  // ---------- menu do topo e atalhos ----------
+
+  function alternarMenu(abrir = menu.hidden, devolverFoco = false) {
+    menu.hidden = !abrir;
+    btnMenu.setAttribute("aria-expanded", String(abrir));
+    if (abrir) {
+      if (!painelCamadas.hidden) alternarCamadas(false);
+      menu.querySelector("a")?.focus();
+    } else if (devolverFoco) {
+      btnMenu.focus();
+    }
+  }
+  btnMenu.addEventListener("click", () => alternarMenu());
+
+  function irPara(alvo) {
+    if (estado.territorio) selecionarTerritorio(null, { enquadrar: false });
+    ativarAba("comparar", { posicao: "alto" });
+    const titulo = document.getElementById(alvo === "dados" ? "t-dados" : "t-comparar");
+    titulo.tabIndex = -1;
+    // Rola só a folha (scrollIntoView rolaria também a página que contém o site, quando ele está num iframe)
+    requestAnimationFrame(() => {
+      corpoAbas.scrollTop += titulo.getBoundingClientRect().top - corpoAbas.getBoundingClientRect().top - 8;
+      titulo.focus({ preventScroll: true });
+    });
+  }
+
+  document.addEventListener("click", (e) => {
+    const ir = e.target.closest("[data-ir]");
+    if (ir) {
+      e.preventDefault();
+      alternarMenu(false);
+      irPara(ir.dataset.ir);
+      return;
+    }
+    if (!menu.hidden && !e.target.closest("#menu, #btn-menu")) alternarMenu(false);
+    if (!painelCamadas.hidden && !e.target.closest("#painel-camadas, #btn-camadas")) alternarCamadas(false);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!menu.hidden) { alternarMenu(false, true); return; }
+    if (!painelCamadas.hidden) { alternarCamadas(false, true); return; }
+    if (e.target.matches("input, select, textarea")) return;
+    if (document.querySelector(".leaflet-popup")) { mapa.closePopup(); return; }
+    if (estado.territorio) voltarDoTerritorio();
+  });
+
+  // ---------- comparar ----------
 
   const COLUNAS = [
     { id: "numero", rotulo: "Território", valor: (t) => t.numero },
@@ -631,9 +921,37 @@
     { id: "n_cras", rotulo: "CRAS", grupo: true },
     { id: "n_creas", rotulo: "CREAS" },
     { id: "n_protecao", rotulo: "Conselhos Tutelares" },
-    ...RAZOES.map((r, i) => ({ id: `r_${r.id}`, rotulo: `Crianças por ${r.id === "educ" ? "creche ou pré-escola" : r.nome}`, valor: (t) => razao(t, r), razao: r, grupo: i === 0 })),
+    ...RAZOES.map((r, i) => ({ id: `r_${r.id}`, rotulo: `Crianças por ${nomeRazao(r)}`, valor: (t) => razao(t, r), razao: r, grupo: i === 0 })),
   ];
   const valorDe = (c, t) => (c.valor ? c.valor(t) : t[c.id]);
+
+  function desenharRanking() {
+    const col = COLUNAS.find((c) => c.id === estado.metrica) || COLUNAS.find((c) => c.id === "criancas");
+    const itens = territorios.map((t) => ({ t, v: valorDe(col, t) ?? null }));
+    const ordenados = [
+      ...itens.filter((x) => x.v !== null).sort((a, b) => b.v - a.v || a.t.numero - b.t.numero),
+      ...itens.filter((x) => x.v === null),
+    ];
+    const max = Math.max(...ordenados.map((x) => x.v || 0)) || 1;
+    document.getElementById("ranking").innerHTML = ordenados.map(({ t, v }) => `
+      <li><button type="button" data-t="${t.numero}" class="${estado.territorio === t.numero ? "selecionada" : ""}">
+        <span class="sw" style="--c: ${corFundo(t.numero)}"></span>
+        <span class="r-nome">${esc(t.nome)}</span>
+        <span class="r-valor">${v === null ? "—" : fmt(v)}</span>
+        <span class="r-trilho" aria-hidden="true"><span class="r-barra" style="width: ${v === null ? 0 : Math.max(1.5, (v / max) * 100).toFixed(1)}%"></span></span>
+      </button></li>`).join("");
+    let nota;
+    if (col.razao) {
+      const r = col.razao;
+      nota = `Crianças de 0 a 14 anos para cada ${nomeRazao(r)} dentro do território. Média de Cotia: 1 para ${fmt(media(r))}.`;
+      if (ordenados.some((x) => x.v === null)) nota += ` “—”: ${r.nenhum.charAt(0).toLowerCase()}${r.nenhum.slice(1)}`;
+    } else if (col.id === "criancas" || col.id.startsWith("pop_")) {
+      nota = "Censo 2022 (IBGE).";
+    } else {
+      nota = "Equipamentos dentro dos limites do território. Contar equipamentos não mede qualidade, equipe, horário nem fila.";
+    }
+    document.getElementById("nota-ranking").textContent = nota;
+  }
 
   function desenharTabela() {
     const tabela = document.getElementById("tabela");
@@ -652,7 +970,7 @@
     const maxRazao = Object.fromEntries(RAZOES.map((r) => [r.id, Math.max(...territorios.map((t) => razao(t, r) || 0))]));
     tabela.querySelector("tbody").innerHTML = linhas.map((t) => `
       <tr data-t="${t.numero}" class="${estado.territorio === t.numero ? "selecionada" : ""}">${COLUNAS.map((c, i) => {
-        if (i === 0) return `<td><span class="terr" style="--c: ${esc(t.cor_png)}">${t.numero}. ${esc(t.nome)}</span></td>`;
+        if (i === 0) return `<td><span class="terr" style="--c: ${corFundo(t.numero)}">${t.numero}. ${esc(t.nome)}</span></td>`;
         const v = valorDe(c, t);
         const cls = c.grupo ? ' class="grupo-ini"' : "";
         if (c.razao) {
@@ -675,7 +993,13 @@
     }).join("")}</tr>`;
   }
 
-  function montarTabela() {
+  function montarComparar() {
+    const sel = document.getElementById("sel-metrica");
+    sel.innerHTML = COLUNAS.filter((c) => c.id !== "numero")
+      .map((c) => `<option value="${c.id}"${c.id === estado.metrica ? " selected" : ""}>${esc(c.rotulo)}</option>`).join("");
+    sel.addEventListener("change", () => { estado.metrica = sel.value; desenharRanking(); });
+    desenharRanking();
+
     desenharTabela();
     const tabela = document.getElementById("tabela");
     tabela.addEventListener("click", (e) => {
@@ -689,46 +1013,106 @@
       }
       const tr = e.target.closest("tbody tr");
       if (tr) {
-        selecionarTerritorio(Number(tr.dataset.t));
-        area.scrollIntoView({ behavior: reduzMovimento ? "auto" : "smooth", block: "start" });
+        origemFoco = null;
+        selecionarTerritorio(Number(tr.dataset.t), { focar: true });
       }
     });
   }
 
+  // ---------- prévia ----------
+
+  function ajustarPrevia() {
+    if (!PREVIA) return;
+    document.getElementById("aba-btn-endereco").remove();
+    document.getElementById("aba-endereco").remove();
+    document.getElementById("aba-territorio").insertAdjacentHTML("afterbegin",
+      '<p class="aviso-previa">Prévia: a busca por endereço e os downloads funcionam no site publicado.</p>');
+    const downloads = document.querySelector(".downloads");
+    if (downloads) {
+      downloads.outerHTML = '<p class="nota">Na prévia, os arquivos não podem ser baixados. No site publicado ficam aqui os links para <strong>equipamentos.csv</strong> e <strong>territorios.geojson</strong>.</p>';
+    }
+  }
+
   // ---------- início ----------
 
-  function ajustarTopo() {
-    document.documentElement.style.setProperty("--h-topo", `${document.querySelector(".topo").offsetHeight}px`);
+  function aplicarHash() {
+    const h = location.hash;
+    const m = h.match(/^#t([1-7])$/);
+    if (m) {
+      if (estado.territorio !== Number(m[1])) selecionarTerritorio(Number(m[1]));
+      return true;
+    }
+    if (h === "#comparar" || h === "#dados") irPara(h.slice(1));
+    return false;
   }
-  window.addEventListener("resize", ajustarTopo);
-  ajustarTopo();
-  if (window.matchMedia("(max-width: 759.98px)").matches) document.getElementById("carimbo").open = false;
+
+  let aoTerTamanho = null;
+  new ResizeObserver(() => {
+    mapa.invalidateSize({ animate: false });
+    const { x, y } = mapa.getSize();
+    if (aoTerTamanho && x > 0 && y > 0) {
+      const fn = aoTerTamanho;
+      aoTerTamanho = null;
+      fn();
+    }
+  }).observe(mapa.getContainer());
+
+  let quadro = 0;
+  window.addEventListener("resize", () => {
+    cancelAnimationFrame(quadro);
+    quadro = requestAnimationFrame(() => {
+      if (!largo.matches) definirFolha(posicaoFolha);
+      mapa.invalidateSize({ animate: false });
+      if (limitesCotia) ajustarZoomMinimo();
+    });
+  });
+  largo.addEventListener("change", () => {
+    definirFolha(posicaoFolha);
+    atualizarComparando();
+    mapa.invalidateSize({ animate: false });
+  });
+  temaEscuro.addEventListener("change", () => { if (camadaTerritorios) redesenharMapa(); });
 
   async function iniciar() {
-    const [contorno, terrGJ, eqGJ, listaBairros] = await Promise.all([
+    const [contorno, terrGJ, eqGJ, dadosBairros] = await Promise.all([
       carregar("data/cotia.geojson"), carregar("data/territorios.geojson"),
       carregar("data/equipamentos.geojson"), carregar("data/bairros.json"),
     ]);
-    bairros = listaBairros;
+    bairros = dadosBairros;
     prepararTerritorios(terrGJ);
+    camadaBase = L.geoJSON(contorno, { style: estiloBase, interactive: false }).addTo(mapa);
     desenharTerritorios(terrGJ);
-    camadaContorno = L.geoJSON(contorno, { style: { color: cssVar("--tinta"), weight: 2.2, fill: false }, interactive: false }).addTo(mapa);
+    camadaContorno = L.geoJSON(contorno, { style: estiloContorno, interactive: false }).addTo(mapa);
     limitesCotia = camadaContorno.getBounds();
+    desenharRotulos();
     desenharEquipamentos(eqGJ);
-    montarControles();
-    montarTabela();
-    document.getElementById("carimbo-sub").textContent = `${equipamentos.length} equipamentos · ${territorios.length} territórios · fontes e datas`;
-    atualizarZoom();
-    quandoVisivel(() => {
-      const m = location.hash.match(/^#t([1-7])$/);
-      if (m) selecionarTerritorio(Number(m[1]));
-      else enquadrarCotia();
-    });
+
+    ajustarPrevia();
+    montarAbas();
+    montarListaTerritorios();
+    montarBairros();
+    montarEndereco();
+    montarCamadas();
+    montarModos();
+    montarComparar();
+    document.getElementById("carimbo-sub").textContent = `${equipamentos.length} equipamentos · ${territorios.length} territórios`;
+    definirFolha(posicaoFolha);
+    document.fonts?.ready.then(() => definirFolha(posicaoFolha)); // a altura do topo muda quando as fontes chegam
+    window.addEventListener("hashchange", aplicarHash);
+
+    const aplicarInicio = () => {
+      mapa.fitBounds(limitesCotia, { ...margens(), animate: false });
+      limitarMapa();
+      atualizarZoom();
+      aplicarHash();
+    };
+    const { x, y } = mapa.getSize();
+    if (x > 0 && y > 0) aplicarInicio(); else aoTerTamanho = aplicarInicio;
   }
 
   iniciar().catch((erro) => {
     console.error(erro);
     document.getElementById("mapa").insertAdjacentHTML("beforeend",
-      `<p style="position:relative;z-index:1000;margin:16px;padding:12px;background:#fff;border-radius:6px">Não foi possível carregar os dados do mapa: ${esc(erro.message)}. Recarregue a página.</p>`);
+      `<p style="position:relative;z-index:1000;margin:16px;padding:12px;background:#fff;color:#14202a;border-radius:6px">Não foi possível carregar os dados do mapa: ${esc(erro.message)}. Recarregue a página.</p>`);
   });
 })();
