@@ -40,7 +40,8 @@ Rode de dentro de `scripts/`, nesta ordem. Os scripts de coleta reaproveitam o d
 | 8 | `desenhar_territorios.py` | Encaixa o mapa do PMAS nos setores e desenha os 7 territórios com população | `dados/territorios-base.geojson`, `dados/verificacoes/territorios.md`, `conferir-territorios.html` |
 | 9 | `listar_pendentes.py` | Lista pontos sem coordenada confiável, sugere um ponto provisório e gera a página de conferência | `dados/verificacoes/pendentes.md`, `coordenadas-provisorias.csv`, `conferir-coordenadas.html` |
 | 10 | `montar_equipamentos.py` | Junta as 9 camadas, liga cada ponto ao território e conta equipamentos por território | `site/data/equipamentos.csv`, `.geojson`, `territorios.geojson`, `bairros.json` |
-| 11 | `gerar_metodologia.py` | Preenche a página de metodologia com os números dos relatórios | `site/metodologia.html` |
+| 11 | `montar_indice.py` | Calcula o Índice de Oferta e Acesso a Equipamentos para a Infância: 8 indicadores, faixa de cada território e 17 cenários de sensibilidade (metodologia em `dados/indice/metodologia-indice.md`) | `dados/indice/`, `site/data/indice.json` |
+| 12 | `gerar_metodologia.py` | Preenche a página de metodologia com os números dos relatórios | `site/metodologia.html` |
 
 Conferência opcional: `extrair_insumos_pmas.py` extrai do PDF do PMAS os territórios e o mapa, para comparar com `insumos/`.
 

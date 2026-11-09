@@ -144,6 +144,8 @@
   let equipamentos = [];
   let bairros = [];
   let totais = {};
+  let indice = null;
+  let indicadorPorId = {};
 
   function prepararTerritorios(gj) {
     territorios = gj.features.map((f) => {
@@ -158,6 +160,14 @@
     const soma = (campo) => territorios.reduce((s, t) => s + (t[campo] || 0), 0);
     totais = { criancas: soma("criancas") };
     for (const r of RAZOES) totais[r.campo] = soma(r.campo);
+  }
+  function prepararIndice(dados) {
+    if (!dados || dados.formato !== "faixa") return;
+    indice = dados;
+    indicadorPorId = Object.fromEntries(dados.indicadores.map((i) => [i.id, i]));
+    for (const x of dados.territorios) if (porNumero[x.numero]) porNumero[x.numero].ix = x;
+    COLUNAS.splice(1, 0, COLUNA_INDICE);
+    document.getElementById("frase-indice").hidden = false;
   }
   const razao = (t, r) => (t[r.campo] > 0 ? t.criancas / t[r.campo] : null);
   const media = (r) => totais.criancas / totais[r.campo];
@@ -521,6 +531,56 @@
     </svg>`;
   }
 
+  // ---------- índice de oferta e acesso (scripts/montar_indice.py) ----------
+
+  const DEC1 = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const km = (m) => `${DEC1.format(m / 1000)} km`;
+  const FORMATO_INDICADOR = {
+    E1: { valor: (v) => DEC1.format(v), unidade: "matrículas por 100 crianças de 0 a 4 anos" },
+    E2: { valor: (v) => DEC1.format(v), unidade: "matrículas por 100 crianças de 0 a 4 anos" },
+    S1: { valor: (v) => DEC1.format(v), unidade: "UBS por 10 mil crianças de 0 a 14 anos" },
+    S2: { valor: (v) => `${fmt(v)}%`, unidade: "das crianças a até 1,5 km de uma UBS" },
+    S3: { valor: km, unidade: "em média, até o ponto de urgência ou o hospital mais próximo" },
+    S4: { valor: km, unidade: "em média, até o CAPS Infantil" },
+    A1: { valor: km, unidade: "em média, até o CRAS mais próximo" },
+    A2: { valor: km, unidade: "em média, até o Conselho Tutelar mais próximo" },
+  };
+  const FAIXAS = ["baixa", "média", "alta"];
+  const ORDEM_FAIXA = { baixa: 1, "média": 2, alta: 3 };
+  const TEXTO_FAIXA = {
+    alta: "um dos 2 territórios com o índice mais alto",
+    "média": "um dos 3 territórios do meio",
+    baixa: "um dos 2 territórios com o índice mais baixo",
+  };
+  const miniFaixa = (f) => `<span class="ix-mini" data-n="${ORDEM_FAIXA[f]}" aria-hidden="true"><i></i><i></i><i></i></span>`;
+
+  function linhaIndicador(id, t) {
+    const ind = indicadorPorId[id], f = FORMATO_INDICADOR[id];
+    return `<div class="ix-linha"><dt>${esc(ind.nome)}</dt><dd class="ix-valor">${f.valor(t.ix.valores[id])}</dd>
+      <dd class="ix-unidade">${f.unidade} · Cotia: ${f.valor(ind.cotia)}</dd></div>`;
+  }
+
+  function htmlIndice(t) {
+    if (!t.ix) return "";
+    const f = t.ix.faixa;
+    const grupos = indice.dimensoes.map((d) => `
+      <div class="ix-dim"><p class="ix-dim-nome">${esc(d.nome)}</p>
+        <dl>${d.indicadores.map((id) => linhaIndicador(id, t)).join("")}</dl></div>`).join("");
+    return `
+      <section class="pt-secao">
+        <h3>Índice de oferta e acesso</h3>
+        <p class="ix-destaque"><strong>Faixa ${f}</strong><span>${TEXTO_FAIXA[f]}, entre os 7 de Cotia</span></p>
+        <ol class="ix-escala" aria-hidden="true">${FAIXAS.map((x) => `<li class="${x === f ? "atual" : ""}">${x}</li>`).join("")}</ol>
+        <p class="ix-frase">${esc(indice.frase)}</p>
+        <p class="ix-nota">Só entram equipamentos públicos. Por isso, uma faixa baixa não quer dizer que as crianças do território fiquem sem atendimento.</p>
+        <details class="ix-detalhes"><summary><span>Ver os ${indice.indicadores.length} indicadores</span></summary>
+          ${grupos}
+          <p class="ix-nota">Distâncias em linha reta, do centro de cada setor do Censo até o equipamento, em média pelas crianças que moram em cada setor. As matrículas contam onde fica a escola.</p>
+        </details>
+        <p class="ix-link"><a href="metodologia.html#indice">Como o índice é calculado</a></p>
+      </section>`;
+  }
+
   function htmlPainel(t) {
     const cras = equipamentos.find((e) => e.id === t.cras_referencia);
     const crasTexto = cras
@@ -557,6 +617,7 @@
         </dl>
         <p class="pop-extra">${fmt(t.pop_15_19)} adolescentes de 15 a 19 anos · ${fmt(t.pop_total)} moradores no total</p>
       </section>
+      ${htmlIndice(t)}
       <section class="pt-secao">
         <h3>Crianças por equipamento</h3>
         ${razoes}
@@ -923,7 +984,15 @@
     { id: "n_protecao", rotulo: "Conselhos Tutelares" },
     ...RAZOES.map((r, i) => ({ id: `r_${r.id}`, rotulo: `Crianças por ${nomeRazao(r)}`, valor: (t) => razao(t, r), razao: r, grupo: i === 0 })),
   ];
+  // Entra como 2ª coluna quando data/indice.json carrega (prepararIndice); ordena pela faixa
+  const COLUNA_INDICE = {
+    id: "indice", rotulo: "Índice de oferta e acesso", classe: "col-indice",
+    valor: (t) => (t.ix ? ORDEM_FAIXA[t.ix.faixa] : null),
+    texto: (t) => t.ix.faixa,
+    celula: (t) => `<span class="ix-chip">${miniFaixa(t.ix.faixa)}${t.ix.faixa}</span>`,
+  };
   const valorDe = (c, t) => (c.valor ? c.valor(t) : t[c.id]);
+  const classeCol = (c) => [c.grupo ? "grupo-ini" : "", c.classe || ""].filter(Boolean).join(" ");
 
   function desenharRanking() {
     const col = COLUNAS.find((c) => c.id === estado.metrica) || COLUNAS.find((c) => c.id === "criancas");
@@ -937,11 +1006,14 @@
       <li><button type="button" data-t="${t.numero}" class="${estado.territorio === t.numero ? "selecionada" : ""}">
         <span class="sw" style="--c: ${corFundo(t.numero)}"></span>
         <span class="r-nome">${esc(t.nome)}</span>
-        <span class="r-valor">${v === null ? "—" : fmt(v)}</span>
+        <span class="r-valor">${v === null ? "—" : col.texto ? esc(col.texto(t)) : fmt(v)}</span>
         <span class="r-trilho" aria-hidden="true"><span class="r-barra" style="width: ${v === null ? 0 : Math.max(1.5, (v / max) * 100).toFixed(1)}%"></span></span>
       </button></li>`).join("");
-    let nota;
-    if (col.razao) {
+    let nota, metodologia = false;
+    if (col.id === "indice") {
+      nota = `${indice.frase} Faixas: alta para os 2 maiores índices, média para os 3 seguintes e baixa para os 2 menores.`;
+      metodologia = true;
+    } else if (col.razao) {
       const r = col.razao;
       nota = `Crianças de 0 a 14 anos para cada ${nomeRazao(r)} dentro do território. Média de Cotia: 1 para ${fmt(media(r))}.`;
       if (ordenados.some((x) => x.v === null)) nota += ` “—”: ${r.nenhum.charAt(0).toLowerCase()}${r.nenhum.slice(1)}`;
@@ -950,14 +1022,15 @@
     } else {
       nota = "Equipamentos dentro dos limites do território. Contar equipamentos não mede qualidade, equipe, horário nem fila.";
     }
-    document.getElementById("nota-ranking").textContent = nota;
+    document.getElementById("nota-ranking").innerHTML = esc(nota)
+      + (metodologia ? ' <a href="metodologia.html#indice">Como o índice é calculado</a>' : "");
   }
 
   function desenharTabela() {
     const tabela = document.getElementById("tabela");
     tabela.querySelector("thead").innerHTML = `<tr>${COLUNAS.map((c) => {
       const sort = estado.ordem.col === c.id ? (estado.ordem.dir > 0 ? "ascending" : "descending") : "none";
-      return `<th scope="col" aria-sort="${sort}" class="${c.grupo ? "grupo-ini" : ""}"><button type="button" data-col="${c.id}">${esc(c.rotulo)}</button></th>`;
+      return `<th scope="col" aria-sort="${sort}" class="${classeCol(c)}"><button type="button" data-col="${c.id}">${esc(c.rotulo)}</button></th>`;
     }).join("")}</tr>`;
 
     const col = COLUNAS.find((c) => c.id === estado.ordem.col);
@@ -972,7 +1045,8 @@
       <tr data-t="${t.numero}" class="${estado.territorio === t.numero ? "selecionada" : ""}">${COLUNAS.map((c, i) => {
         if (i === 0) return `<td><span class="terr" style="--c: ${corFundo(t.numero)}">${t.numero}. ${esc(t.nome)}</span></td>`;
         const v = valorDe(c, t);
-        const cls = c.grupo ? ' class="grupo-ini"' : "";
+        const cls = classeCol(c) ? ` class="${classeCol(c)}"` : "";
+        if (c.celula) return `<td${cls}>${v === null ? "—" : c.celula(t)}</td>`;
         if (c.razao) {
           if (v === null) return `<td${cls}>—</td>`;
           const w = Math.max(2, Math.round((v / maxRazao[c.razao.id]) * 48));
@@ -986,8 +1060,9 @@
     document.getElementById("nota-tabela").textContent =
       `A linha Cotia soma os 7 territórios. Ficam de fora os ${fmt(sigilo)} moradores dos setores em que o IBGE omite os números por sigilo (total oficial: ${fmt(soma("pop_total") + sigilo)}).`;
     tabela.querySelector("tfoot").innerHTML = `<tr>${COLUNAS.map((c, i) => {
-      const cls = c.grupo ? ' class="grupo-ini"' : "";
+      const cls = classeCol(c) ? ` class="${classeCol(c)}"` : "";
       if (i === 0) return "<td>Cotia</td>";
+      if (c.celula) return `<td${cls}></td>`;
       if (c.razao) return `<td${cls}>${fmt(media(c.razao))}</td>`;
       return `<td${cls}>${fmt(soma(c.id))}</td>`;
     }).join("")}</tr>`;
@@ -1074,12 +1149,15 @@
   temaEscuro.addEventListener("change", () => { if (camadaTerritorios) redesenharMapa(); });
 
   async function iniciar() {
-    const [contorno, terrGJ, eqGJ, dadosBairros] = await Promise.all([
+    const [contorno, terrGJ, eqGJ, dadosBairros, dadosIndice] = await Promise.all([
       carregar("data/cotia.geojson"), carregar("data/territorios.geojson"),
       carregar("data/equipamentos.geojson"), carregar("data/bairros.json"),
+      // sem o índice, o resto do site funciona igual
+      carregar("data/indice.json").catch((erro) => { console.warn(erro); return null; }),
     ]);
     bairros = dadosBairros;
     prepararTerritorios(terrGJ);
+    prepararIndice(dadosIndice);
     camadaBase = L.geoJSON(contorno, { style: estiloBase, interactive: false }).addTo(mapa);
     desenharTerritorios(terrGJ);
     camadaContorno = L.geoJSON(contorno, { style: estiloContorno, interactive: false }).addTo(mapa);

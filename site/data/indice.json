@@ -1,0 +1,236 @@
+{
+ "nome": "Índice de Oferta e Acesso a Equipamentos para a Infância",
+ "frase": "Este índice compara a oferta e o acesso a equipamentos públicos para crianças entre os 7 territórios de Cotia. Não mede a qualidade do atendimento, a saúde das crianças nem a rede particular.",
+ "formato": "faixa",
+ "faixas": [
+  {
+   "id": "alta",
+   "regra": "os 2 maiores índices"
+  },
+  {
+   "id": "média",
+   "regra": "os 3 índices seguintes"
+  },
+  {
+   "id": "baixa",
+   "regra": "os 2 menores índices"
+  }
+ ],
+ "cenarios_sensibilidade": 17,
+ "dimensoes": [
+  {
+   "id": "educacao",
+   "nome": "Educação infantil",
+   "indicadores": [
+    "E1",
+    "E2"
+   ]
+  },
+  {
+   "id": "saude",
+   "nome": "Saúde",
+   "indicadores": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ]
+  },
+  {
+   "id": "assistencia",
+   "nome": "Assistência e proteção",
+   "indicadores": [
+    "A1",
+    "A2"
+   ]
+  }
+ ],
+ "indicadores": [
+  {
+   "id": "E1",
+   "dimensao": "educacao",
+   "nome": "Matrículas em creche",
+   "sentido": "maior",
+   "unidade": "matrículas por 100 crianças de 0–4",
+   "peso": 0.166667,
+   "cotia": 33.4
+  },
+  {
+   "id": "E2",
+   "dimensao": "educacao",
+   "nome": "Matrículas em pré-escola",
+   "sentido": "maior",
+   "unidade": "matrículas por 100 crianças de 0–4",
+   "peso": 0.166667,
+   "cotia": 33.8
+  },
+  {
+   "id": "S1",
+   "dimensao": "saude",
+   "nome": "UBS por crianças",
+   "sentido": "maior",
+   "unidade": "UBS por 10 mil crianças de 0–14",
+   "peso": 0.083333,
+   "cotia": 4.53
+  },
+  {
+   "id": "S2",
+   "dimensao": "saude",
+   "nome": "Crianças perto de UBS",
+   "sentido": "maior",
+   "unidade": "% das crianças a até 1,5 km de uma UBS",
+   "peso": 0.083333,
+   "cotia": 82.4
+  },
+  {
+   "id": "S3",
+   "dimensao": "saude",
+   "nome": "Distância à urgência",
+   "sentido": "menor",
+   "unidade": "m, média ponderada por crianças",
+   "peso": 0.083333,
+   "cotia": 2454
+  },
+  {
+   "id": "S4",
+   "dimensao": "saude",
+   "nome": "Distância ao CAPS Infantil",
+   "sentido": "menor",
+   "unidade": "m, média ponderada por crianças",
+   "peso": 0.083333,
+   "cotia": 6104
+  },
+  {
+   "id": "A1",
+   "dimensao": "assistencia",
+   "nome": "Distância ao CRAS",
+   "sentido": "menor",
+   "unidade": "m, média ponderada por crianças",
+   "peso": 0.166667,
+   "cotia": 1849
+  },
+  {
+   "id": "A2",
+   "dimensao": "assistencia",
+   "nome": "Distância ao Conselho Tutelar",
+   "sentido": "menor",
+   "unidade": "m, média ponderada por crianças",
+   "peso": 0.166667,
+   "cotia": 3884
+  }
+ ],
+ "territorios": [
+  {
+   "numero": 1,
+   "nome": "Jd. Japão",
+   "faixa": "média",
+   "indice": 52.8,
+   "valores": {
+    "E1": 32.2,
+    "E2": 34.7,
+    "S1": 6.03,
+    "S2": 81.3,
+    "S3": 5827,
+    "S4": 17231,
+    "A1": 984,
+    "A2": 5846
+   }
+  },
+  {
+   "numero": 2,
+   "nome": "Caucaia do Alto",
+   "faixa": "alta",
+   "indice": 59.7,
+   "valores": {
+    "E1": 37.0,
+    "E2": 46.2,
+    "S1": 5.11,
+    "S2": 66.0,
+    "S3": 2422,
+    "S4": 13860,
+    "A1": 2334,
+    "A2": 2517
+   }
+  },
+  {
+   "numero": 3,
+   "nome": "Miguel Mirizola",
+   "faixa": "média",
+   "indice": 58.3,
+   "valores": {
+    "E1": 33.6,
+    "E2": 28.5,
+    "S1": 3.12,
+    "S2": 84.3,
+    "S3": 2596,
+    "S4": 2891,
+    "A1": 989,
+    "A2": 2783
+   }
+  },
+  {
+   "numero": 4,
+   "nome": "Central (Monte Serrat)",
+   "faixa": "alta",
+   "indice": 76.4,
+   "valores": {
+    "E1": 45.8,
+    "E2": 43.7,
+    "S1": 3.14,
+    "S2": 85.8,
+    "S3": 1521,
+    "S4": 2297,
+    "A1": 1607,
+    "A2": 2464
+   }
+  },
+  {
+   "numero": 5,
+   "nome": "KM 21 / Granja Viana",
+   "faixa": "baixa",
+   "indice": 38.9,
+   "valores": {
+    "E1": 29.4,
+    "E2": 24.2,
+    "S1": 7.1,
+    "S2": 89.7,
+    "S3": 2354,
+    "S4": 7050,
+    "A1": 3125,
+    "A2": 6254
+   }
+  },
+  {
+   "numero": 6,
+   "nome": "Jd. Arco-Íris / Jd. Sandra",
+   "faixa": "média",
+   "indice": 48.6,
+   "valores": {
+    "E1": 22.3,
+    "E2": 23.3,
+    "S1": 3.87,
+    "S2": 96.4,
+    "S3": 2120,
+    "S4": 3198,
+    "A1": 1115,
+    "A2": 4074
+   }
+  },
+  {
+   "numero": 7,
+   "nome": "Caputera",
+   "faixa": "baixa",
+   "indice": 15.3,
+   "valores": {
+    "E1": 0.0,
+    "E2": 17.1,
+    "S1": 4.8,
+    "S2": 19.4,
+    "S3": 8817,
+    "S4": 9169,
+    "A1": 1538,
+    "A2": 9296
+   }
+  }
+ ]
+}

@@ -11,7 +11,7 @@ import pandas as pd
 
 from comum import BRUTOS, DADOS, RAIZ, VERIFICACOES
 
-VERSAO_CSS = "8"
+VERSAO_CSS = "9"
 
 
 def br(n):

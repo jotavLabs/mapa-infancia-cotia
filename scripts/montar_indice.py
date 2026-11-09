@@ -1,4 +1,4 @@
-"""Índice de Oferta e Acesso a Equipamentos para a Infância (skill indice-oferta-cotia, Etapa 1).
+"""Índice de Oferta e Acesso a Equipamentos para a Infância (skill indice-oferta-cotia, Etapas 1 e 2).
 
 Compara a oferta e o acesso a equipamentos públicos para crianças entre os 7 territórios de CRAS.
 Decisão, indicadores e fontes: dados/indice/escolha-do-indice.md. O script não acessa a rede.
@@ -15,6 +15,8 @@ Saídas:
   dados/indice/sensibilidade.csv             posição em cada cenário e amplitude
   dados/indice/sensibilidade-valores.csv     valor do índice em cada cenário
   dados/indice/parada-1.md                   resumo para a Parada 1
+  site/data/indice.json                      o que o site mostra: indicadores, índice e faixa de cada território,
+                                             e o valor de Cotia inteira em cada indicador
 
 Crianças por setor: V01031 + V01032 + V01033. Um "X" do IBGE em qualquer faixa deixa o setor inteiro
 ausente, nunca zero (decisão do João em 08/11/2026). Assim a soma por setor dá 57.157 crianças, enquanto
@@ -33,6 +35,12 @@ INDICE = DADOS / "indice"
 UTM = 31983  # SIRGAS 2000 / UTM 23S, o mesmo de desenhar_territorios.py
 RAIO_S2_M = 1500
 
+NOME = "Índice de Oferta e Acesso a Equipamentos para a Infância"
+FRASE = ("Este índice compara a oferta e o acesso a equipamentos públicos para crianças entre os 7 territórios de "
+         "Cotia. Não mede a qualidade do atendimento, a saúde das crianças nem a rede particular.")
+# Formato do site: faixas, como recomendado na Parada 1 (3 territórios variam 3 ou mais posições)
+FORMATO_SITE = "faixa"
+
 INDICADORES = {
     # id: (dimensão, nome, sentido, unidade)
     "E1": ("educacao", "Matrículas em creche", "maior", "matrículas por 100 crianças de 0–4"),
@@ -45,6 +53,8 @@ INDICADORES = {
     "A2": ("assistencia", "Distância ao Conselho Tutelar", "menor", "m, média ponderada por crianças"),
 }
 DIMENSOES = {"educacao": ["E1", "E2"], "saude": ["S1", "S2", "S3", "S4"], "assistencia": ["A1", "A2"]}
+NOMES_DIMENSOES = {"educacao": "Educação infantil", "saude": "Saúde", "assistencia": "Assistência e proteção"}
+CASAS = {"E1": 1, "E2": 1, "S1": 2, "S2": 1, "S3": 0, "S4": 0, "A1": 0, "A2": 0}
 
 # Conferido em 08/11/2026 em https://pmc.ncbi.nlm.nih.gov/articles/PMC8968942 (Buccini et al.):
 # Tabela 1 traz 31 pesos analíticos que somam 118,35 (média 3,818); "Coverage of daycare and preschool"
@@ -249,6 +259,21 @@ def calcular_valores(territorios, setores, equipamentos, escolas, raio=RAIO_S2_M
     return v
 
 
+def valores_cotia(territorios, setores, equipamentos, escolas):
+    """Os 8 indicadores para Cotia inteira, com as mesmas bases do cálculo por território."""
+    validos = setores[setores.criancas.notna()]
+    pontos = {nome: equipamentos[filtro(equipamentos)] for nome, (filtro, _, _) in CONJUNTOS.items()}
+    peso = validos.criancas.to_numpy()
+    c = {"E1": escolas._mat_creche.sum() / territorios.pop_0_4.sum() * 100,
+         "E2": escolas._mat_pre.sum() / territorios.pop_0_4.sum() * 100,
+         "S1": territorios.n_saude_atencao_basica.sum() / territorios.criancas.sum() * 10_000}
+    perto = matriz_distancias(validos, pontos["UBS"]).min(axis=1) <= RAIO_S2_M
+    c["S2"] = peso[perto].sum() / peso.sum() * 100
+    for ind, conjunto in (("S3", "urgência e hospital"), ("S4", "CAPSi"), ("A1", "CRAS"), ("A2", "Conselho Tutelar")):
+        c[ind] = (peso * matriz_distancias(validos, pontos[conjunto]).min(axis=1)).sum() / peso.sum()
+    return {i: float(v) for i, v in c.items()}
+
+
 # ---------- normalização, pesos e índice ----------
 
 def normalizar(valores, metodo):
@@ -305,6 +330,35 @@ def faixas(posicao):
     return posicao.map(lambda p: "alta" if p <= 2 else ("média" if p <= 5 else "baixa"))
 
 
+# ---------- saídas ----------
+
+def arredondar(x, casas):
+    v = round(float(x), casas)
+    return int(v) if casas == 0 else v
+
+
+def escrever_json(territorios, base, cotia, n_cenarios):
+    faixa = faixas(base["posicao"])
+    dados = {
+        "nome": NOME,
+        "frase": FRASE,
+        "formato": FORMATO_SITE,
+        "faixas": [{"id": "alta", "regra": "os 2 maiores índices"},
+                   {"id": "média", "regra": "os 3 índices seguintes"},
+                   {"id": "baixa", "regra": "os 2 menores índices"}],
+        "cenarios_sensibilidade": n_cenarios,
+        "dimensoes": [{"id": d, "nome": NOMES_DIMENSOES[d], "indicadores": inds} for d, inds in DIMENSOES.items()],
+        "indicadores": [{"id": i, "dimensao": INDICADORES[i][0], "nome": INDICADORES[i][1], "sentido": INDICADORES[i][2],
+                         "unidade": INDICADORES[i][3], "peso": round(base["pesos"][i], 6),
+                         "cotia": arredondar(cotia[i], CASAS[i])} for i in INDICADORES],
+        "territorios": [{"numero": int(t), "nome": territorios.nome[t], "faixa": faixa[t],
+                         "indice": round(float(base["indice"][t]), 1),
+                         "valores": {i: arredondar(base["valores"][i][t], CASAS[i]) for i in INDICADORES}}
+                        for t in territorios.index],
+    }
+    (SITE_DATA / "indice.json").write_text(json.dumps(dados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
 # ---------- relatório ----------
 
 def num(x, casas=0):
@@ -320,7 +374,6 @@ def tabela_md(cabecalho, linhas):
 
 def escrever_relatorio(territorios, setores, base, sens_pos, cenarios_rodados, parciais, ubs_sem_demanda):
     nomes = territorios.nome
-    casas = {"E1": 1, "E2": 1, "S1": 2, "S2": 1, "S3": 0, "S4": 0, "A1": 0, "A2": 0}
     amplitude = sens_pos.max(axis=1) - sens_pos.min(axis=1)
     recomenda_faixas = bool((amplitude >= 3).any())
     mudanca = (sens_pos.sub(sens_pos["base"], axis=0)).abs().sum().drop("base").sort_values(ascending=False)
@@ -337,7 +390,7 @@ def escrever_relatorio(territorios, setores, base, sens_pos, cenarios_rodados, p
     L += ["", "## Indicadores: valor e posto (1 = melhor)", ""]
     L += tabela_md(["Indicador", "Unidade", "Melhor"] + [nomes[t] for t in territorios.index],
                    [[f"{i} {INDICADORES[i][1]}", INDICADORES[i][3], INDICADORES[i][2]]
-                    + [f"{num(base['valores'][i][t], casas[i])} ({base['postos'][i][t]}º)" for t in territorios.index]
+                    + [f"{num(base['valores'][i][t], CASAS[i])} ({base['postos'][i][t]}º)" for t in territorios.index]
                     for i in INDICADORES])
     L += ["", "## Pontos por indicador e pesos", "",
           "Pontos = (7 − posto) ÷ 6 × 100. Pesos: cada dimensão vale 1/3, dividido igualmente entre seus indicadores.", ""]
@@ -456,12 +509,14 @@ def main():
     ubs_sem_demanda = sorted(ubs.nome[demanda_2sfca(validos, ubs, RAIO_S2_M)[0] == 0])
     recomenda_faixas, amplitude, mudanca = escrever_relatorio(
         territorios, setores, base, sens_pos, nomes_cenarios, parciais, ubs_sem_demanda)
+    escrever_json(territorios, base, valores_cotia(territorios, setores, equipamentos, escolas), len(nomes_cenarios))
 
     print(f"{len(nomes_cenarios)} cenários; conferências ok")
     print(tabela[["numero", "nome", "indice", "posicao", "faixa"]].sort_values("posicao").to_string(index=False))
     print("Amplitude:", {territorios.nome[t]: int(a) for t, a in amplitude.items()})
     print("Recomendação:", "faixas" if recomenda_faixas else "posições")
-    print("-> dados/indice/indice-territorios.csv, sensibilidade.csv, sensibilidade-valores.csv, parada-1.md")
+    print("-> dados/indice/indice-territorios.csv, sensibilidade.csv, sensibilidade-valores.csv, parada-1.md;"
+          " site/data/indice.json")
 
 
 if __name__ == "__main__":

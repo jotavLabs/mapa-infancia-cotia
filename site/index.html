@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/atkinson-next-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
         integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="css/estilo.css?v=8">
+  <link rel="stylesheet" href="css/estilo.css?v=9">
 </head>
 <body class="pagina-app">
   <a class="pular" href="#folha">Pular para a busca</a>
@@ -92,9 +92,14 @@
 
                 <h3 class="titulo-secao">Tabela completa</h3>
                 <p class="nota">Toque no título de uma coluna para ordenar e numa linha para ver o território no mapa.</p>
+                <div class="frase-indice" id="frase-indice" hidden>
+                  <p><strong>Índice de oferta e acesso.</strong> A coluna mostra a faixa de cada território: alta para os 2 com o índice mais alto, média para os 3 seguintes e baixa para os 2 com o índice mais baixo.</p>
+                  <p>Este índice compara a oferta e o acesso a equipamentos públicos para crianças entre os 7 territórios de Cotia. Não mede a qualidade do atendimento, a saúde das crianças nem a rede particular.</p>
+                  <p><a href="metodologia.html#indice">Como o índice é calculado</a></p>
+                </div>
                 <div class="tabela-wrap" tabindex="0" role="region" aria-label="Tabela comparativa, role para os lados para ver todas as colunas">
                   <table id="tabela" class="tabela">
-                    <caption class="sr-only">Moradores, crianças e equipamentos por território de CRAS de Cotia</caption>
+                    <caption class="sr-only">Faixa do índice de oferta e acesso, moradores, crianças e equipamentos por território de CRAS de Cotia</caption>
                     <thead></thead>
                     <tbody></tbody>
                     <tfoot></tfoot>
@@ -170,6 +175,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
           integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/app.js?v=9"></script>
 </body>
 </html>

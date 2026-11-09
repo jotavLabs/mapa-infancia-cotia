@@ -95,6 +95,70 @@
     <p>Para cada território, divide-se o número de crianças de 0 a 14 anos pelo número de equipamentos de cada tipo que ficam dentro dele: UBS, CRAS e creches e pré-escolas. A média de Cotia é o total de crianças dividido pelo total de equipamentos daquele tipo. No mapa, a cor compara o território com essa média: perto da média (até 5% de diferença), de 5% a 20% e mais de 20% acima ou abaixo.</p>
     <p>A mesma faixa de 0 a 14 anos é usada nos três tipos, para comparar com a mesma régua, embora a educação infantil atenda só crianças até 5 anos.</p>
 
+    <h2 id="indice">Índice de oferta e acesso</h2>
+    <p class="frase-indice">Este índice compara a oferta e o acesso a equipamentos públicos para crianças entre os 7 territórios de Cotia. Não mede a qualidade do atendimento, a saúde das crianças nem a rede particular.</p>
+    <p>O <strong>Índice de Oferta e Acesso a Equipamentos para a Infância</strong> resume, para cada território de CRAS, oito indicadores em três dimensões: educação infantil, saúde, e assistência social e proteção. O valor vai de 0 a 100 e só tem sentido na comparação entre os 7 territórios. Por isso o site mostra uma faixa: <strong>alta</strong> para os 2 territórios com o índice mais alto, <strong>média</strong> para os 3 seguintes e <strong>baixa</strong> para os 2 com o índice mais baixo.</p>
+    <p>Nenhum índice publicado para a infância pode ser refeito com os dados deste mapa. Os que existem medem sobretudo resultados de saúde e condição social, como mortalidade, pré-natal e renda, e o mapa mede onde ficam os equipamentos. Este é um cálculo próprio, montado com peças de métodos publicados, citados abaixo.</p>
+
+    <h3>Os 8 indicadores</h3>
+    <div class="tabela-larga">
+      <table>
+        <thead><tr><th>Indicador</th><th>Como se calcula</th><th>Fonte</th></tr></thead>
+        <tbody>
+          <tr><td>E1. Matrículas em creche</td><td>matrículas em creche nas escolas do território para cada 100 crianças de 0 a 4 anos</td><td>Censo Escolar 2025 (INEP) e Censo 2022 (IBGE)</td></tr>
+          <tr><td>E2. Matrículas em pré-escola</td><td>matrículas em pré-escola nas escolas do território para cada 100 crianças de 0 a 4 anos</td><td>Censo Escolar 2025 e Censo 2022</td></tr>
+          <tr><td>S1. UBS por crianças</td><td>UBS no território para cada 10 mil crianças de 0 a 14 anos</td><td>CNES e Censo 2022</td></tr>
+          <tr><td>S2. Crianças perto de UBS</td><td>parte das crianças do território que moram a até 1,5 km de uma UBS</td><td>CNES e Censo 2022</td></tr>
+          <tr><td>S3. Distância à urgência</td><td>distância média até o mais próximo dos 4 pontos de urgência e do Hospital Regional</td><td>CNES</td></tr>
+          <tr><td>S4. Distância ao CAPS Infantil</td><td>distância média até o CAPS Infantil, que é um só para a cidade</td><td>CNES</td></tr>
+          <tr><td>A1. Distância ao CRAS</td><td>distância média até o CRAS mais próximo</td><td>Prefeitura de Cotia e PMAS 2026–2029</td></tr>
+          <tr><td>A2. Distância ao Conselho Tutelar</td><td>distância média até o mais próximo dos 2 Conselhos Tutelares</td><td>Prefeitura de Cotia</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>As datas de coleta estão em <a href="#fontes">Fontes e datas</a>. As distâncias são em linha reta, do ponto interno de cada setor do Censo até o equipamento. A média de cada território pesa cada setor pelo número de crianças que moram nele.</p>
+
+    <h3>Como o valor é calculado</h3>
+    <ol>
+      <li>Em cada indicador, os 7 territórios recebem um posto de 1 a 7. O posto 1 vai para a maior oferta ou a menor distância, e territórios empatados dividem o mesmo posto. A ordenação por postos vem do 3º Diagnóstico Territorial da Primeira Infância (INVUPRIN), da Prefeitura de São Paulo.</li>
+      <li>Cada posto vira pontos pela conta (7 − posto) ÷ 6 × 100: o posto 1 vale 100, e o posto 7 vale 0. Essa conversão é deste projeto.</li>
+      <li>Cada dimensão vale 1/3 do índice, dividido igualmente entre os seus indicadores: E1, E2, A1 e A2 valem 1/6 cada, e S1 a S4 valem 1/12 cada.</li>
+      <li>O índice é a soma ponderada dos pontos, de 0 a 100.</li>
+    </ol>
+    <p>As outras peças vêm de três fontes. A divisão das matrículas pelas crianças segue o IMAPI (Buccini et al.). A conta de UBS por população segue o Mapa da Desigualdade da Primeira Infância 2020, da Rede Nossa São Paulo. A construção e o teste de sensibilidade seguem o manual da OCDE e do JRC sobre indicadores compostos (2008).</p>
+
+    <h3>Por que o site mostra faixas</h3>
+    <p>O cálculo foi refeito em 17 cenários:</p>
+    <ul>
+      <li>com outros pesos: iguais para os 8 indicadores, ou os pesos publicados do IMAPI;</li>
+      <li>com outras escalas no lugar dos postos;</li>
+      <li>sem os equipamentos que atendem a cidade toda;</li>
+      <li>retirando um indicador de cada vez;</li>
+      <li>com outras medidas de acesso às UBS: raios de 1 e de 2 km e o método 2SFCA, de Luo e Wang (2003).</li>
+    </ul>
+    <p>Em 3 dos 7 territórios, a posição variou 3 lugares ou mais entre os cenários; num deles, 5 lugares. Com essa variação, uma posição exata diria mais do que os dados sustentam, por isso o site mostra faixas.</p>
+
+    <h3>O que o índice não permite afirmar</h3>
+    <ul>
+      <li><strong>Como é o atendimento.</strong> Equipe, horário, fila e capacidade não entram. Uma UBS grande e uma pequena contam igual.</li>
+      <li><strong>A saúde das crianças.</strong> Nenhum resultado de saúde entra no cálculo.</li>
+      <li><strong>Falta de atendimento.</strong> Só entram os equipamentos públicos e as escolas conveniadas. Uma faixa baixa não quer dizer que as crianças do território fiquem sem atendimento, porque escolas e clínicas particulares não entram na conta.</li>
+      <li><strong>Desempenho de gestão.</strong> O índice descreve onde ficam os equipamentos e não avalia gestão.</li>
+    </ul>
+
+    <h3>Limitações que afetam os números</h3>
+    <ul>
+      <li>Em S2 e nas distâncias, ficam de fora os 39 setores em que o IBGE esconde alguma faixa de idade com um “X”. Por isso a conta por setor soma 57.157 crianças, contra 57.452 nos territórios.</li>
+      <li>A matrícula é contada onde fica a escola, não onde a criança mora.</li>
+      <li>O Censo agrupa as idades de 0 a 4 e de 5 a 9 anos, o que não coincide com creche (0 a 3) nem com pré-escola (4 e 5). E1 e E2 servem para comparar os territórios, mas não são taxas de cobertura.</li>
+      <li>Caputera tem 0 matrícula em creche, porque as suas 2 escolas públicas constam só como pré-escola no Censo Escolar.</li>
+      <li>5 dos 7 CRAS e 1 dos 2 Conselhos Tutelares têm localização aproximada, o que afeta A1 e A2.</li>
+      <li>Os limites dos territórios são aproximados: {{SETORES_DUVIDOSOS}} setores têm fronteira duvidosa, e {{DIVERGENCIAS}} dos {{N_TOTAL}} equipamentos têm bairro listado em outro território.</li>
+      <li>O Hospital Regional, o CAPS Infantil e o Conselho Tutelar de Cotia ficam no território Central, que por isso tem distâncias curtas até eles.</li>
+      <li>Com só 7 territórios, um único equipamento pode mudar uma posição.</li>
+    </ul>
+    <p>A conta completa, com os valores de cada indicador, os 17 cenários e o comando para refazer, está na pasta <a href="https://github.com/jotavLabs/mapa-infancia-cotia/tree/publicacao-v1/dados/indice">dados/indice</a> do repositório. Ela é gerada pelo script <code>montar_indice.py</code>.</p>
+
     <h2 id="pontos">Como cada ponto foi localizado</h2>
     <table>
       <thead><tr><th>Origem da coordenada</th><th class="num">Pontos</th></tr></thead>
